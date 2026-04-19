@@ -140,6 +140,77 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .date-chip.due.overdue{background:var(--danger-light);color:var(--danger);font-weight:600}
 .date-chip.due.today{background:#FFF8E1;color:#8B6914;font-weight:600}
 
+/* notes & comments */
+.notes-section{margin-top:10px;border-top:1px solid var(--surface2);padding-top:10px}
+.notes-label{font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);font-weight:500;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.unread-badge{display:inline-flex;align-items:center;justify-content:center;min-width:16px;height:16px;border-radius:8px;font-size:10px;font-weight:600;padding:0 4px;background:var(--danger);color:white;animation:pulse-badge 2s infinite}
+@keyframes pulse-badge{0%,100%{opacity:1}50%{opacity:0.6}}
+.notes-display{font-size:13px;color:var(--muted);line-height:1.5;border-left:2px solid var(--border);padding-left:10px;cursor:pointer;min-height:20px}
+.notes-display:hover{border-left-color:var(--accent);color:var(--text)}
+.notes-edit{width:100%;padding:8px 10px;border:1px solid var(--accent);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text);background:white;resize:vertical;min-height:60px;outline:none;display:none}
+.notes-edit-actions{display:none;gap:6px;margin-top:6px}
+.notes-save-btn{padding:5px 14px;background:var(--accent);color:white;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer}
+.notes-cancel-btn{padding:5px 10px;background:none;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:12px;color:var(--muted);cursor:pointer}
+.comments-section{margin-top:10px;border-top:1px solid var(--surface2);padding-top:10px}
+.comment-item{display:flex;gap:8px;margin-bottom:8px;align-items:flex-start}
+.comment-item.unread .comment-dot{background:var(--danger)}
+.comment-item.unread .comment-text{font-weight:500}
+.comment-dot{width:6px;height:6px;border-radius:50%;background:var(--border);flex-shrink:0;margin-top:5px}
+.comment-body{flex:1}
+.comment-text{font-size:13px;color:var(--text);line-height:1.4}
+.comment-meta{font-size:11px;color:var(--muted);margin-top:2px}
+.comment-author{font-weight:500;color:var(--text)}
+.comment-datetime{color:var(--muted)}
+.comment-input-wrap{margin-top:8px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px}
+.comment-author-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.comment-author-label{font-size:11px;color:var(--muted);white-space:nowrap}
+.comment-author-select{flex:1;padding:5px 8px;border:1px solid var(--border);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:12px;color:var(--text);background:white;appearance:none;-webkit-appearance:none;outline:none}
+.comment-author-select:focus{border-color:var(--accent)}
+.comment-input-row{display:flex;gap:6px}
+.comment-input{flex:1;padding:8px 10px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text);background:white;outline:none;resize:none;min-height:36px}
+.comment-input:focus{border-color:var(--accent)}
+.comment-submit{padding:8px 12px;background:var(--accent);color:white;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;white-space:nowrap;align-self:flex-end}
+.expand-btn{font-size:11px;color:var(--accent);background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;padding:4px 0;margin-top:2px;display:block}
+.task-card.has-unread{border-left:3px solid var(--danger)}
+
+/* ── AGENDA & MEETINGS ── */
+.meeting-panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.meeting-panel-title{font-family:'DM Serif Display',serif;font-size:18px;font-weight:400;color:var(--text);margin-bottom:4px}
+.meeting-panel-sub{font-size:12px;color:var(--muted);margin-bottom:14px}
+.meeting-date-label{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:8px;margin-top:16px}
+.meeting-date-label:first-child{margin-top:0}
+.agenda-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:8px}
+.agenda-item-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:5px}
+.agenda-item-body{flex:1}
+.agenda-item-topic{font-size:14px;font-weight:500;color:var(--text);line-height:1.4}
+.agenda-item-meta{font-size:11px;color:var(--muted);margin-top:3px}
+.agenda-item-details{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.4}
+.agenda-item.discussed{opacity:0.5}
+.agenda-item.discussed .agenda-item-topic{text-decoration:line-through}
+.agenda-check{width:20px;height:20px;border-radius:4px;border:1px solid var(--border);background:white;cursor:pointer;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:12px}
+.agenda-check.checked{background:var(--accent-light);border-color:var(--accent);color:var(--accent)}
+.small-btn{padding:6px 12px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--surface);color:var(--muted);font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;transition:all 0.15s}
+.small-btn.primary{background:var(--accent);color:white;border-color:var(--accent)}
+.add-agenda-form{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;margin-top:10px;display:none}
+.meeting-notes-body{width:100%;min-height:120px;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text);background:var(--bg);resize:vertical;outline:none;line-height:1.6}
+.meeting-notes-body:focus{border-color:var(--accent);background:white}
+.attachment-list{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+.attachment-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;background:var(--cat-projects-bg);color:var(--cat-projects);border-radius:20px;font-size:12px;font-weight:500;text-decoration:none}
+.upload-area{border:1px dashed var(--border);border-radius:var(--radius-sm);padding:14px;text-align:center;font-size:12px;color:var(--muted);cursor:pointer;margin-top:10px;transition:border-color 0.2s}
+.upload-area:hover{border-color:var(--accent);color:var(--accent)}
+.upload-input{display:none}
+.cloudinary-setup{font-size:11px;color:var(--warn);background:var(--warn-light);padding:8px 10px;border-radius:var(--radius-sm);margin-bottom:12px;line-height:1.6}
+.new-meeting-btn{width:100%;padding:12px;border:1px dashed var(--border);border-radius:var(--radius-sm);font-family:'DM Serif Display',serif;font-size:15px;font-weight:400;color:var(--muted);background:none;cursor:pointer;margin-bottom:12px;transition:all 0.15s}
+.new-meeting-btn:hover{border-color:var(--accent);color:var(--accent)}
+.meeting-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--surface2);cursor:pointer}
+.meeting-row:last-child{border-bottom:none}
+.meeting-row:hover .meeting-row-title{color:var(--accent)}
+.meeting-row-title{font-weight:500;font-size:14px}
+.meeting-row-meta{font-size:12px;color:var(--muted)}
+.meeting-detail-back{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--accent);cursor:pointer;margin-bottom:16px;background:none;border:none;font-family:'DM Sans',sans-serif;padding:0}
+.section-divider{height:1px;background:var(--border);margin:16px 0}
+.tab-count.agenda-count{background:var(--cat-projects-bg);color:var(--cat-projects)}
+
 /* orphan note */
 .orphan-banner{background:var(--danger-light);border:1px solid #f5c0c0;border-radius:var(--radius-sm);padding:10px 14px;font-size:12px;color:var(--danger);margin-bottom:16px;line-height:1.5}
 
@@ -184,7 +255,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 
 <!-- SETUP -->
 <div class="setup-screen" id="setupScreen">
-  <div class="setup-logo">CCFWB<br>Employment<br>Team</div>
+  <div class="setup-logo">CCFWB<br>Team</div>
   <div class="setup-sub">One-time setup</div>
   <div class="setup-card">
     <h3>Step 1 — Create a free JSONBin account</h3>
@@ -221,7 +292,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 <!-- HEADER -->
 <div class="header" id="appHeader" style="display:none">
   <div class="header-sub">Calvary Chapel Fort Walton Beach</div>
-  <h1>Employment<br>Team</h1>
+  <h1>Team</h1>
   <div class="header-meta">
     <div class="header-stat" id="headerStat">—</div>
     <button class="settings-btn" onclick="showSettings()">⚙</button>
@@ -247,6 +318,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     <button class="tab" id="tab-btn-Projects"  onclick="switchTab('Projects')">Projects<span class="tab-count" id="tc-Projects">0</span></button>
     <div class="tab-divider"></div>
     <button class="tab" id="tab-btn-orphaned"  onclick="switchTab('orphaned')">Orphaned<span class="tab-count orphan-count" id="tc-orphaned">0</span></button>
+    <div class="tab-divider"></div>
+    <button class="tab" id="tab-btn-agenda"   onclick="switchTab('agenda')">Agenda<span class="tab-count agenda-count" id="tc-agenda">0</span></button>
+    <button class="tab" id="tab-btn-meetings" onclick="switchTab('meetings')">Meetings</button>
     <div class="tab-divider"></div>
     <button class="tab" id="tab-btn-add"    onclick="switchTab('add')">+ Add</button>
     <button class="tab" id="tab-btn-report" onclick="switchTab('report')">Report</button>
@@ -306,12 +380,122 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
   <!-- REPORT -->
   <div id="tab-report" style="display:none"><div id="report-content"></div></div>
 
+  <!-- AGENDA -->
+  <div id="tab-agenda" style="display:none">
+    <div class="meeting-panel">
+      <div class="meeting-panel-title">Meeting Agenda</div>
+      <div class="meeting-panel-sub">Add topics for the next meeting. Anyone can contribute.</div>
+      <div id="agenda-meeting-selector-wrap">
+        <select class="meeting-select" id="agenda-meeting-select" onchange="renderAgendaForMeeting()">
+          <option value="">— Select or create a meeting —</option>
+        </select>
+      </div>
+      <button class="new-meeting-btn" onclick="showNewMeetingForm('agenda')">+ Schedule a new meeting</button>
+      <div class="add-agenda-form" id="new-meeting-form">
+        <div class="form-row" style="margin-bottom:10px"><label style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);display:block;margin-bottom:5px">Meeting Date</label>
+          <input type="date" id="new-meeting-date" style="width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:14px;outline:none" />
+        </div>
+        <div class="form-row" style="margin-bottom:10px"><label style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);display:block;margin-bottom:5px">Meeting Title (optional)</label>
+          <input type="text" id="new-meeting-title" placeholder="e.g. Weekly Team Meeting" style="width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:14px;outline:none" />
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="small-btn primary" onclick="createMeeting()">Create Meeting</button>
+          <button class="small-btn" onclick="hideNewMeetingForm()">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <div id="agenda-items-panel" style="display:none">
+      <div class="meeting-panel">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+          <div>
+            <div class="meeting-panel-title" id="agenda-meeting-title-display">Agenda</div>
+            <div class="meeting-panel-sub" id="agenda-meeting-date-display"></div>
+          </div>
+          <button class="small-btn primary" onclick="showAddTopicForm()">+ Add Topic</button>
+        </div>
+        <div class="add-agenda-form" id="add-topic-form">
+          <div class="form-row" style="margin-bottom:8px">
+            <label style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);display:block;margin-bottom:5px">Topic</label>
+            <input type="text" id="topic-text" placeholder="What do you want to discuss?" style="width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:14px;outline:none" />
+          </div>
+          <div class="form-row" style="margin-bottom:8px">
+            <label style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);display:block;margin-bottom:5px">Details (optional)</label>
+            <textarea id="topic-details" placeholder="Any background info..." style="width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;resize:vertical;min-height:60px"></textarea>
+          </div>
+          <div class="form-row" style="margin-bottom:10px">
+            <label style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);display:block;margin-bottom:5px">Added by</label>
+            <select id="topic-author" style="width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;appearance:none;background:var(--bg)">
+              <option value="">— Select your name —</option>
+              <option value="Pastor Andy">Pastor Andy</option>
+              <option value="Kaitlyn">Kaitlyn</option>
+              <option value="Angie">Angie</option>
+            </select>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button class="small-btn primary" onclick="addAgendaTopic()">Add Topic</button>
+            <button class="small-btn" onclick="hideAddTopicForm()">Cancel</button>
+          </div>
+        </div>
+        <div id="agenda-items-list" style="margin-top:12px"></div>
+        <div id="agenda-empty" style="text-align:center;padding:20px;color:var(--muted);font-size:13px;display:none">No topics yet — be the first to add one.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MEETINGS -->
+  <div id="tab-meetings" style="display:none">
+    <div id="meetings-list-view">
+      <div class="meeting-panel">
+        <div class="meeting-panel-title">Meeting Notes</div>
+        <div class="meeting-panel-sub">Notes and attachments organized by meeting date.</div>
+        <button class="new-meeting-btn" onclick="showNewMeetingForm('meetings')">+ Add a meeting</button>
+        <div id="meetings-list"></div>
+        <div id="meetings-empty" style="text-align:center;padding:20px;color:var(--muted);font-size:13px">No meetings yet.</div>
+      </div>
+    </div>
+    <div id="meetings-detail-view" style="display:none">
+      <button class="meeting-detail-back" onclick="closeMeetingDetail()">← Back to meetings</button>
+      <div class="meeting-panel">
+        <div class="meeting-panel-title" id="detail-meeting-title"></div>
+        <div class="meeting-panel-sub" id="detail-meeting-date"></div>
+        <div class="section-divider"></div>
+        <div class="notes-label" style="margin-bottom:8px">Notes</div>
+        <textarea class="meeting-notes-body" id="detail-notes-body" placeholder="Type meeting notes here..."></textarea>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <button class="small-btn primary" onclick="saveMeetingNotes()">Save Notes</button>
+        </div>
+        <div class="section-divider"></div>
+        <div class="notes-label" style="margin-bottom:8px">Attachments</div>
+        <div id="cloudinary-setup-banner" class="cloudinary-setup" style="display:none">
+          To enable file uploads, add your Cloudinary details in ⚙ Settings. Get a free account at <strong>cloudinary.com</strong>.
+        </div>
+        <div class="attachment-list" id="detail-attachments"></div>
+        <label class="upload-area" for="file-upload-input">
+          📎 Tap to attach a photo or document
+        </label>
+        <input type="file" class="upload-input" id="file-upload-input" accept="image/*,.pdf,.doc,.docx" onchange="handleFileUpload(event)" />
+        <div id="upload-progress" style="font-size:12px;color:var(--muted);margin-top:6px;display:none">Uploading...</div>
+      </div>
+    </div>
+  </div>
+
   <div class="bottom-pad"></div>
 </div>
 
 <script>
 const CREDS_KEY='ccfwb_creds_v2', LOCAL_KEY='ccfwb_tasks_v3', POLL_MS=15000;
+const READ_KEY='ccfwb_read_v1'; // maps taskId -> last read timestamp (per device)
 let creds=null, tasks=[], activeTab='Andy', pollTimer=null, lastVersion=null, isSaving=false, notifTimer=null;
+let readLog={}; // { taskId: timestamp } — when this device last "saw" that task's comments
+
+function loadReadLog(){try{readLog=JSON.parse(localStorage.getItem(READ_KEY))||{};}catch(e){readLog={};}}
+function saveReadLog(){localStorage.setItem(READ_KEY,JSON.stringify(readLog));}
+function markTaskRead(id){readLog[id]=Date.now();saveReadLog();}
+function getUnreadCount(t){
+  if(!t.comments||!t.comments.length)return 0;
+  const lastRead=readLog[t.id]||0;
+  return t.comments.filter(c=>c.ts>lastRead).length;
+}
 
 const PEOPLE = [
   {key:'Andy',  label:'Pastor Andy', initials:'PA', color:'var(--person-Andy)',    bg:'var(--person-Andy-bg)',    match: t => ownerMatch(t,'Andy')},
@@ -324,7 +508,9 @@ const CATS = [
   {key:'Projects',    label:'Special Projects',    color:'var(--cat-Projects)',       bg:'var(--cat-Projects-bg)'},
   {key:'Administrative',label:'Administrative',    color:'var(--cat-Administrative)', bg:'var(--cat-Administrative-bg)'},
 ];
-const ALL_TABS = ['Andy','Kaitlyn','Angie','Events','Volunteer','Projects','orphaned','add','report'];
+const ALL_TABS = ['Andy','Kaitlyn','Angie','Events','Volunteer','Projects','orphaned','agenda','meetings','add','report'];
+let meetings=[]; // [{id,date,title,notes,attachments,agendaItems}]
+let activeMeetingId=null;
 
 function ownerMatch(t, key) {
   if (!t.owner) return false;
@@ -333,6 +519,7 @@ function ownerMatch(t, key) {
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
 function init() {
+  loadReadLog();
   try { creds=JSON.parse(localStorage.getItem(CREDS_KEY)); } catch(e){}
   if (creds) {
     showApp();
@@ -379,9 +566,21 @@ function showSetupErr(msg){const e=document.getElementById('setupErr');e.textCon
 function useDemoMode(){creds={demoMode:true};localStorage.setItem(CREDS_KEY,JSON.stringify(creds));loadLocal();showApp();renderAll();setSyncStatus('demo','Offline demo mode');}
 function showSettings(){
   if(!creds||creds.demoMode){if(confirm('Offline demo mode.\n\nReset to connect?'))reset();return;}
-  const action=confirm('Bin ID: '+creds.binId+'\n\nTap OK to copy for teammates.\nTap Cancel to reset.');
-  if(action){try{navigator.clipboard.writeText(creds.binId);showNotif('Bin ID copied');}catch(e){alert('Bin ID: '+creds.binId);}}
-  else{if(confirm('Reset setup?'))reset();}
+  const opts=['1 — Copy Bin ID for teammates','2 — Set up Cloudinary (file uploads)','3 — Reset setup'];
+  const choice=prompt('Settings:\n\n'+opts.join('\n')+'\n\nType 1, 2, or 3:');
+  if(choice==='1'){try{navigator.clipboard.writeText(creds.binId);showNotif('Bin ID copied');}catch(e){alert('Bin ID: '+creds.binId);}}
+  else if(choice==='2'){
+    const cloud=prompt('Cloudinary Cloud Name:\n(from cloudinary.com dashboard)');
+    if(!cloud)return;
+    const preset=prompt('Upload Preset name:\n(Settings → Upload → Add upload preset → set to Unsigned)');
+    if(!preset)return;
+    creds.cloudinaryCloud=cloud.trim();
+    creds.cloudinaryPreset=preset.trim();
+    localStorage.setItem(CREDS_KEY,JSON.stringify(creds));
+    showNotif('Cloudinary configured!');
+    document.getElementById('cloudinary-setup-banner').style.display='none';
+  }
+  else if(choice==='3'){if(confirm('Reset setup?'))reset();}
 }
 function reset(){localStorage.removeItem(CREDS_KEY);location.reload();}
 
@@ -401,7 +600,7 @@ async function pullTasks(initial){
     const d=await r.json(),ver=d.metadata.version;
     if(ver!==lastVersion){
       const wasEmpty=!tasks.length;
-      tasks=d.record.tasks||[]; lastVersion=ver; saveLocal(); renderAll();
+      tasks=d.record.tasks||[]; meetings=d.record.meetings||[]; lastVersion=ver; saveLocal(); renderAll();
       if(!wasEmpty&&!initial)showNotif('Updated by teammate');
     }
     setSyncStatus('synced','Up to date · '+timeAgo(Date.now()));
@@ -412,7 +611,7 @@ async function pushTasks(){
   if(!creds||creds.demoMode){saveLocal();return;}
   if(isSaving)return; isSaving=true; setSyncStatus('syncing','Saving...');
   try {
-    const r=await fetch('https://api.jsonbin.io/v3/b/'+creds.binId,{method:'PUT',headers:{'Content-Type':'application/json','X-Master-Key':creds.apiKey},body:JSON.stringify({tasks,v:Date.now()})});
+    const r=await fetch('https://api.jsonbin.io/v3/b/'+creds.binId,{method:'PUT',headers:{'Content-Type':'application/json','X-Master-Key':creds.apiKey},body:JSON.stringify({tasks,meetings,v:Date.now()})});
     if(!r.ok)throw new Error();
     const d=await r.json(); lastVersion=d.metadata.version; saveLocal(); setSyncStatus('synced','Saved · '+timeAgo(Date.now()));
   } catch(e){setSyncStatus('error','Save failed — tap Refresh');showNotif('Could not save');}
@@ -421,8 +620,14 @@ async function pushTasks(){
 function startPolling(){clearInterval(pollTimer);pollTimer=setInterval(pullTasks,POLL_MS);}
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&creds&&!creds.demoMode)pullTasks();});
 
-function saveLocal(){localStorage.setItem(LOCAL_KEY,JSON.stringify(tasks));}
-function loadLocal(){try{tasks=JSON.parse(localStorage.getItem(LOCAL_KEY))||defaultTasks();}catch(e){tasks=defaultTasks();}}
+function saveLocal(){localStorage.setItem(LOCAL_KEY,JSON.stringify({tasks,meetings}));}
+function loadLocal(){
+  try{
+    const raw=JSON.parse(localStorage.getItem(LOCAL_KEY));
+    if(raw&&raw.tasks){tasks=raw.tasks;meetings=raw.meetings||[];}
+    else{tasks=raw||defaultTasks();meetings=[];}
+  }catch(e){tasks=defaultTasks();meetings=[];}
+}
 function defaultTasks(){return[
   {id:uid(),name:'Job Fair Planning',cat:'Events',owner:'Pastor Andy',status:'prog',notes:'Venue confirmed, finalize vendors',due:'',created:Date.now()-86400000*5,ts:Date.now()-86400000},
   {id:uid(),name:'Resume Workshop Setup',cat:'Events',owner:'Kaitlyn',status:'not',notes:'',due:'',created:Date.now()-86400000*3,ts:Date.now()-50000000},
@@ -487,6 +692,10 @@ function updateTabCounts(){
   const orphans=tasks.filter(t=>!isDone(t)&&!t.owner);
   const oEl=document.getElementById('tc-orphaned');
   if(oEl){oEl.textContent=orphans.length;oEl.className='tab-count'+(orphans.length>0?' orphan-count':'');}
+  // agenda — count all pending topics across all meetings
+  const pendingTopics=meetings.reduce((n,m)=>n+(m.agendaItems||[]).filter(a=>!a.discussed).length,0);
+  const aEl=document.getElementById('tc-agenda');
+  if(aEl){aEl.textContent=pendingTopics;aEl.className='tab-count'+(pendingTopics>0?' agenda-count':'');}
   // global stats
   const tot=tasks.length,dn=tasks.filter(t=>t.status==='done').length;
   document.getElementById('headerStat').textContent=tot+' task'+(tot!==1?'s':'')+' · '+dn+' complete';
@@ -580,30 +789,30 @@ function buildCard(t, newId, currentTab){
     : `<span class="owner-chip"><span class="owner-dot">${ini(t.owner)}</span>${esc(t.owner)}</span>`;
 
   // Age chip
-  const createdTs = t.created || t.ts;
-  const ageDays = Math.floor((Date.now()-createdTs)/86400000);
-  let ageClass='age', ageLabel='';
-  if(ageDays===0) ageLabel='Created today';
-  else if(ageDays===1) ageLabel='1 day old';
+  const createdTs=t.created||t.ts;
+  const ageDays=Math.floor((Date.now()-createdTs)/86400000);
+  let ageClass='age',ageLabel='';
+  if(ageDays===0)ageLabel='Created today';
+  else if(ageDays===1)ageLabel='1 day old';
   else ageLabel=ageDays+' days old';
-  if(ageDays>=14) ageClass='age stale';
-  else if(ageDays>=7) ageClass='age old';
+  if(ageDays>=14)ageClass='age stale';
+  else if(ageDays>=7)ageClass='age old';
   const ageChip=`<span class="date-chip ${ageClass}">⏱ ${ageLabel}</span>`;
 
   // Due date chip
   let dueChip='';
-  if(t.due && t.status!=='done'){
+  if(t.due&&t.status!=='done'){
     const dueDate=new Date(t.due+'T00:00:00');
-    const today=new Date(); today.setHours(0,0,0,0);
+    const today=new Date();today.setHours(0,0,0,0);
     const diffDays=Math.round((dueDate-today)/86400000);
     const fmtDue=dueDate.toLocaleDateString('en-US',{month:'short',day:'numeric'});
-    let dueClass='due', dueLabel='';
+    let dueClass='due',dueLabel='';
     if(diffDays<0){dueClass='due overdue';dueLabel=`Overdue by ${Math.abs(diffDays)}d`;}
     else if(diffDays===0){dueClass='due today';dueLabel='Due today';}
     else if(diffDays<=3){dueClass='due soon';dueLabel=`Due ${fmtDue}`;}
     else{dueClass='due';dueLabel=`Due ${fmtDue}`;}
     dueChip=`<span class="date-chip ${dueClass}">📅 ${dueLabel}</span>`;
-  } else if(t.due && t.status==='done'){
+  } else if(t.due&&t.status==='done'){
     const dueDate=new Date(t.due+'T00:00:00');
     const fmtDue=dueDate.toLocaleDateString('en-US',{month:'short',day:'numeric'});
     dueChip=`<span class="date-chip due" style="opacity:0.5">📅 ${fmtDue}</span>`;
@@ -619,6 +828,39 @@ function buildCard(t, newId, currentTab){
     </div>`;
   }
 
+  // Comments & unread
+  const comments=t.comments||[];
+  const SHOW=3;
+  const unreadCount=getUnreadCount(t);
+  const showAll=comments.length<=SHOW;
+  const visibleComments=showAll?comments:comments.slice(-SHOW);
+  const hiddenCount=comments.length-SHOW;
+  const lastRead=readLog[t.id]||0;
+
+  function fmtCommentTime(ts){
+    const d=new Date(ts);
+    return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+' at '+d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+  }
+
+  const commentsHtml=visibleComments.map(c=>{
+    const isUnread=c.ts>lastRead;
+    return `<div class="comment-item${isUnread?' unread':''}">
+      <div class="comment-dot"></div>
+      <div class="comment-body">
+        <div class="comment-text">${esc(c.text)}</div>
+        <div class="comment-meta">
+          ${c.author?`<span class="comment-author">${esc(c.author)}</span> · `:''}
+          <span class="comment-datetime">${fmtCommentTime(c.ts)}</span>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  const unreadBadge=unreadCount>0?`<span class="unread-badge">${unreadCount} new</span>`:'';
+
+  // has-unread class on card
+  if(unreadCount>0) d.classList.add('has-unread');
+
   d.innerHTML=`<div class="task-card-top">
     <div class="task-name">${esc(t.name)}</div>
     <button class="delete-btn" onclick="deleteTask('${t.id}')">×</button>
@@ -629,14 +871,164 @@ function buildCard(t, newId, currentTab){
     <span class="timestamp">${timeAgo(t.ts)}</span>
   </div>
   <div class="date-row">${ageChip}${dueChip}</div>
-  ${t.notes?`<div class="task-notes">${esc(t.notes)}</div>`:''}
   <div class="status-toggle">
     <button class="status-btn ${t.status==='not'?'active-not':''}" onclick="setStatus('${t.id}','not')">Not Started</button>
     <button class="status-btn ${t.status==='prog'?'active-prog':''}" onclick="setStatus('${t.id}','prog')">In Progress</button>
     <button class="status-btn ${t.status==='done'?'active-done':''}" onclick="setStatus('${t.id}','done')">Complete</button>
   </div>
-  ${assignHtml}`;
+  ${assignHtml}
+  <div class="notes-section">
+    <div class="notes-label">Notes</div>
+    <div class="notes-display" id="nd-${t.id}" onclick="editNotes('${t.id}')">${t.notes?esc(t.notes):'<span style="opacity:0.45">Tap to add a note...</span>'}</div>
+    <textarea class="notes-edit" id="ne-${t.id}" placeholder="Add a note..."></textarea>
+    <div class="notes-edit-actions" id="nea-${t.id}">
+      <button class="notes-save-btn" onclick="saveNotes('${t.id}')">Save</button>
+      <button class="notes-cancel-btn" onclick="cancelNotes('${t.id}')">Cancel</button>
+    </div>
+  </div>
+  <div class="comments-section" id="cs-${t.id}">
+    <div class="notes-label">
+      Updates${comments.length>0?' ('+comments.length+')':''}
+      ${unreadBadge}
+    </div>
+    ${!showAll?`<button class="expand-btn" onclick="expandComments('${t.id}')">Show ${hiddenCount} earlier update${hiddenCount!==1?'s':''}</button>`:''}
+    <div id="cl-${t.id}">${commentsHtml}</div>
+    <div class="comment-input-wrap">
+      <div class="comment-author-row">
+        <span class="comment-author-label">From:</span>
+        <select class="comment-author-select" id="ca-${t.id}">
+          <option value="">— Select your name —</option>
+          <option value="Pastor Andy">Pastor Andy</option>
+          <option value="Kaitlyn">Kaitlyn</option>
+          <option value="Angie">Angie</option>
+        </select>
+      </div>
+      <div class="comment-input-row">
+        <textarea class="comment-input" id="ci-${t.id}" placeholder="Type an update..." rows="2" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();submitComment('${t.id}')}"></textarea>
+        <button class="comment-submit" onclick="submitComment('${t.id}')">Post</button>
+      </div>
+    </div>
+  </div>`;
   return d;
+}
+
+function editNotes(id){
+  const display=document.getElementById('nd-'+id);
+  const edit=document.getElementById('ne-'+id);
+  const actions=document.getElementById('nea-'+id);
+  const t=tasks.find(x=>x.id===id);
+  if(!t)return;
+  edit.value=t.notes||'';
+  display.style.display='none';
+  edit.style.display='block';
+  actions.style.display='flex';
+  edit.focus();
+}
+
+function cancelNotes(id){
+  document.getElementById('nd-'+id).style.display='';
+  document.getElementById('ne-'+id).style.display='none';
+  document.getElementById('nea-'+id).style.display='none';
+}
+
+async function saveNotes(id){
+  const t=tasks.find(x=>x.id===id);
+  if(!t)return;
+  t.notes=document.getElementById('ne-'+id).value.trim();
+  t.ts=Date.now();
+  cancelNotes(id);
+  // update display without full re-render
+  const display=document.getElementById('nd-'+id);
+  if(display) display.innerHTML=t.notes?esc(t.notes):'<span style="opacity:0.45">Tap to add a note...</span>';
+  await pushTasks();
+  showNotif('Note saved');
+}
+
+async function submitComment(id){
+  const input=document.getElementById('ci-'+id);
+  const authorSel=document.getElementById('ca-'+id);
+  const text=input.value.trim();
+  const author=authorSel?authorSel.value:'';
+  if(!text){input.focus();return;}
+  if(!author){if(authorSel)authorSel.style.border='1px solid var(--danger)';showNotif('Please select your name first');return;}
+  if(authorSel)authorSel.style.border='';
+  const t=tasks.find(x=>x.id===id);
+  if(!t)return;
+  if(!t.comments)t.comments=[];
+  const newComment={text,author,ts:Date.now()};
+  t.comments.push(newComment);
+  t.ts=Date.now();
+  input.value='';
+  // mark as read for this device (I just posted it)
+  markTaskRead(id);
+  // re-render comment list in place
+  refreshCommentList(id,t);
+  await pushTasks();
+  showNotif('Update posted');
+}
+
+function refreshCommentList(id,t){
+  const cl=document.getElementById('cl-'+id);
+  if(!cl)return;
+  const comments=t.comments||[];
+  const SHOW=3;
+  const lastRead=readLog[id]||0;
+  const visibleComments=comments.length<=SHOW?comments:comments.slice(-SHOW);
+  function fmtCommentTime(ts){
+    const d=new Date(ts);
+    return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+' at '+d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+  }
+  cl.innerHTML=visibleComments.map(c=>{
+    const isUnread=c.ts>lastRead;
+    return `<div class="comment-item${isUnread?' unread':''}">
+      <div class="comment-dot"></div>
+      <div class="comment-body">
+        <div class="comment-text">${esc(c.text)}</div>
+        <div class="comment-meta">
+          ${c.author?`<span class="comment-author">${esc(c.author)}</span> · `:''}
+          <span class="comment-datetime">${fmtCommentTime(c.ts)}</span>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+  // update header label and badge
+  const section=document.getElementById('cs-'+id);
+  if(section){
+    const unreadCount=getUnreadCount(t);
+    const label=section.querySelector('.notes-label');
+    if(label)label.innerHTML='Updates'+(comments.length>0?' ('+comments.length+')':'')+
+      (unreadCount>0?` <span class="unread-badge">${unreadCount} new</span>`:'');
+    // update card border
+    const card=section.closest('.task-card');
+    if(card)card.classList.toggle('has-unread',unreadCount>0);
+  }
+}
+
+function expandComments(id){
+  const t=tasks.find(x=>x.id===id);
+  if(!t||!t.comments)return;
+  // mark all as read when user expands
+  markTaskRead(id);
+  const cl=document.getElementById('cl-'+id);
+  if(!cl)return;
+  function fmtCommentTime(ts){
+    const d=new Date(ts);
+    return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+' at '+d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+  }
+  cl.innerHTML=t.comments.map(c=>`
+    <div class="comment-item">
+      <div class="comment-dot"></div>
+      <div class="comment-body">
+        <div class="comment-text">${esc(c.text)}</div>
+        <div class="comment-meta">
+          ${c.author?`<span class="comment-author">${esc(c.author)}</span> · `:''}
+          <span class="comment-datetime">${fmtCommentTime(c.ts)}</span>
+        </div>
+      </div>
+    </div>`).join('');
+  const expandBtn=cl.previousElementSibling;
+  if(expandBtn&&expandBtn.classList.contains('expand-btn'))expandBtn.remove();
+  refreshCommentList(id,t);
 }
 
 function renderReport(){
@@ -709,11 +1101,15 @@ function switchTab(tab){
     const btn=document.getElementById('tab-btn-'+k);
     if(btn)btn.classList.toggle('active',k===tab);
   });
-  const isView=!['add','report'].includes(tab);
+  const isView=!['add','report','agenda','meetings'].includes(tab);
   document.getElementById('tab-view').style.display=isView?'':'none';
   document.getElementById('tab-add').style.display=tab==='add'?'':'none';
   document.getElementById('tab-report').style.display=tab==='report'?'':'none';
+  document.getElementById('tab-agenda').style.display=tab==='agenda'?'':'none';
+  document.getElementById('tab-meetings').style.display=tab==='meetings'?'':'none';
   if(tab==='report')renderReport();
+  else if(tab==='agenda')renderAgendaTab();
+  else if(tab==='meetings')renderMeetingsTab();
   else if(isView)renderCurrentView();
 }
 
@@ -726,25 +1122,213 @@ function ini(n){if(!n)return'?';return n.trim().split(' ').map(x=>x[0]).slice(0,
 function timeAgo(ts){const d=Date.now()-ts;if(d<60000)return'just now';if(d<3600000)return Math.floor(d/60000)+'m ago';if(d<86400000)return Math.floor(d/3600000)+'h ago';return Math.floor(d/86400000)+'d ago';}
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
+// ── AGENDA & MEETINGS ─────────────────────────────────────────────────────────
+
+function fmtDate(dateStr){
+  if(!dateStr)return'';
+  const d=new Date(dateStr+'T00:00:00');
+  return d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+}
+
+function renderAgendaTab(){
+  const sel=document.getElementById('agenda-meeting-select');
+  const prev=sel.value;
+  sel.innerHTML='<option value="">— Select a meeting —</option>';
+  const sorted=[...meetings].sort((a,b)=>b.date.localeCompare(a.date));
+  sorted.forEach(m=>{
+    const opt=document.createElement('option');
+    opt.value=m.id;
+    opt.textContent=(m.title||'Meeting')+' · '+fmtDate(m.date);
+    sel.appendChild(opt);
+  });
+  if(prev)sel.value=prev;
+  renderAgendaForMeeting();
+}
+
+function renderAgendaForMeeting(){
+  const sel=document.getElementById('agenda-meeting-select');
+  const mid=sel.value;
+  const panel=document.getElementById('agenda-items-panel');
+  if(!mid){panel.style.display='none';return;}
+  panel.style.display='';
+  const m=meetings.find(x=>x.id===mid);
+  if(!m)return;
+  document.getElementById('agenda-meeting-title-display').textContent=m.title||'Meeting';
+  document.getElementById('agenda-meeting-date-display').textContent=fmtDate(m.date);
+  const list=document.getElementById('agenda-items-list');
+  const empty=document.getElementById('agenda-empty');
+  const items=m.agendaItems||[];
+  if(!items.length){list.innerHTML='';empty.style.display='';return;}
+  empty.style.display='none';
+  list.innerHTML=items.map((a,i)=>`
+    <div class="agenda-item${a.discussed?' discussed':''}" id="ai-${m.id}-${i}">
+      <div class="agenda-check${a.discussed?' checked':''}" onclick="toggleAgendaItem('${m.id}',${i})">${a.discussed?'✓':''}</div>
+      <div class="agenda-item-body">
+        <div class="agenda-item-topic">${esc(a.topic)}</div>
+        ${a.details?`<div class="agenda-item-details">${esc(a.details)}</div>`:''}
+        <div class="agenda-item-meta">${a.author?'Added by '+esc(a.author)+' · ':''}${timeAgo(a.ts)}</div>
+      </div>
+    </div>`).join('');
+}
+
+function showNewMeetingForm(context){
+  const form=document.getElementById('new-meeting-form');
+  form.style.display='block';
+  form.dataset.context=context;
+  document.getElementById('new-meeting-date').value='';
+  document.getElementById('new-meeting-title').value='';
+}
+function hideNewMeetingForm(){document.getElementById('new-meeting-form').style.display='none';}
+
+async function createMeeting(){
+  const date=document.getElementById('new-meeting-date').value;
+  const title=document.getElementById('new-meeting-title').value.trim()||'Team Meeting';
+  if(!date){showNotif('Please pick a date');return;}
+  const m={id:uid(),date,title,notes:'',attachments:[],agendaItems:[],ts:Date.now()};
+  meetings.push(m);
+  hideNewMeetingForm();
+  await pushTasks();
+  updateTabCounts();
+  const context=document.getElementById('new-meeting-form').dataset.context;
+  if(context==='meetings'){renderMeetingsTab();}
+  else{renderAgendaTab();document.getElementById('agenda-meeting-select').value=m.id;renderAgendaForMeeting();}
+  showNotif('Meeting created');
+}
+
+function showAddTopicForm(){document.getElementById('add-topic-form').style.display='block';}
+function hideAddTopicForm(){document.getElementById('add-topic-form').style.display='none';}
+
+async function addAgendaTopic(){
+  const topic=document.getElementById('topic-text').value.trim();
+  const author=document.getElementById('topic-author').value;
+  if(!topic){document.getElementById('topic-text').focus();return;}
+  if(!author){showNotif('Please select your name');return;}
+  const mid=document.getElementById('agenda-meeting-select').value;
+  const m=meetings.find(x=>x.id===mid);
+  if(!m)return;
+  if(!m.agendaItems)m.agendaItems=[];
+  m.agendaItems.push({topic,details:document.getElementById('topic-details').value.trim(),author,discussed:false,ts:Date.now()});
+  document.getElementById('topic-text').value='';
+  document.getElementById('topic-details').value='';
+  hideAddTopicForm();
+  await pushTasks();
+  updateTabCounts();
+  renderAgendaForMeeting();
+  showNotif('Topic added');
+}
+
+async function toggleAgendaItem(mid,idx){
+  const m=meetings.find(x=>x.id===mid);
+  if(!m||!m.agendaItems[idx])return;
+  m.agendaItems[idx].discussed=!m.agendaItems[idx].discussed;
+  await pushTasks();
+  updateTabCounts();
+  renderAgendaForMeeting();
+}
+
+// ── MEETINGS NOTES ────────────────────────────────────────────────────────────
+
+function renderMeetingsTab(){
+  const listEl=document.getElementById('meetings-list');
+  const emptyEl=document.getElementById('meetings-empty');
+  const sorted=[...meetings].sort((a,b)=>b.date.localeCompare(a.date));
+  if(!sorted.length){listEl.innerHTML='';emptyEl.style.display='';return;}
+  emptyEl.style.display='none';
+  listEl.innerHTML=sorted.map(m=>`
+    <div class="meeting-row" onclick="openMeetingDetail('${m.id}')">
+      <div>
+        <div class="meeting-row-title">${esc(m.title||'Meeting')}</div>
+        <div class="meeting-row-meta">${fmtDate(m.date)}${m.attachments&&m.attachments.length?' · '+m.attachments.length+' attachment'+(m.attachments.length!==1?'s':''):''}</div>
+      </div>
+      <span style="color:var(--muted);font-size:18px">›</span>
+    </div>`).join('');
+}
+
+function openMeetingDetail(mid){
+  activeMeetingId=mid;
+  const m=meetings.find(x=>x.id===mid);
+  if(!m)return;
+  document.getElementById('meetings-list-view').style.display='none';
+  document.getElementById('meetings-detail-view').style.display='';
+  document.getElementById('detail-meeting-title').textContent=m.title||'Meeting';
+  document.getElementById('detail-meeting-date').textContent=fmtDate(m.date);
+  document.getElementById('detail-notes-body').value=m.notes||'';
+  renderAttachments(m);
+  // show cloudinary setup banner if not configured
+  const needsSetup=!creds||!creds.cloudinaryCloud||!creds.cloudinaryPreset;
+  document.getElementById('cloudinary-setup-banner').style.display=needsSetup?'':'none';
+}
+
+function closeMeetingDetail(){
+  activeMeetingId=null;
+  document.getElementById('meetings-list-view').style.display='';
+  document.getElementById('meetings-detail-view').style.display='none';
+}
+
+async function saveMeetingNotes(){
+  const m=meetings.find(x=>x.id===activeMeetingId);
+  if(!m)return;
+  m.notes=document.getElementById('detail-notes-body').value;
+  await pushTasks();
+  showNotif('Notes saved');
+}
+
+function renderAttachments(m){
+  const list=document.getElementById('detail-attachments');
+  const attachments=m.attachments||[];
+  list.innerHTML=attachments.map(a=>`
+    <a class="attachment-chip" href="${a.url}" target="_blank">
+      📄 ${esc(a.name)}
+    </a>`).join('');
+}
+
+async function handleFileUpload(event){
+  const file=event.target.files[0];
+  if(!file)return;
+  if(!creds||!creds.cloudinaryCloud||!creds.cloudinaryPreset){
+    showNotif('Set up Cloudinary in ⚙ Settings first');
+    document.getElementById('cloudinary-setup-banner').style.display='';
+    return;
+  }
+  const prog=document.getElementById('upload-progress');
+  prog.style.display='';prog.textContent='Uploading '+file.name+'...';
+  try{
+    const fd=new FormData();
+    fd.append('file',file);
+    fd.append('upload_preset',creds.cloudinaryPreset);
+    const r=await fetch('https://api.cloudinary.com/v1_1/'+creds.cloudinaryCloud+'/auto/upload',{method:'POST',body:fd});
+    if(!r.ok)throw new Error('Upload failed');
+    const data=await r.json();
+    const m=meetings.find(x=>x.id===activeMeetingId);
+    if(!m)return;
+    if(!m.attachments)m.attachments=[];
+    m.attachments.push({name:file.name,url:data.secure_url,ts:Date.now()});
+    renderAttachments(m);
+    await pushTasks();
+    showNotif('File uploaded');
+  }catch(e){showNotif('Upload failed — check Cloudinary settings');}
+  finally{prog.style.display='none';event.target.value='';}
+}
+
 init();
 </script>
 </body>
 </html>
 
-ccfwb-task-tracker.html
+index.html
 cozyinflorida 
 (cozy1718@gmail.com)
 General Info
 TypeHTML
-Size43 KB
+Size74 KB
 Location
-Modified8:03 PM Apr 18
-Created8:03 PM Apr 18
-Opened by me6:39 PM Apr 19
+Modified6:37 PM Apr 19
+Created6:37 PM Apr 19
+Opened by me6:37 PM Apr 19
 Sharing
 
 cozyinflorida
 Owner
 Description
 No description
-Displaying ccfwb-task-tracker.html.
+Displaying index.html.
