@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="CCFWB Service">
+<title>CCFWB Service Checklist</title>
+<style>
+:root{
+  --ocean:#5279A0;--ocean-d:#3D5C82;--tide:#7BA7BC;--sunrise:#F5A623;
+  --seafoam:#4A9E8E;--bg:#F4F1EB;--card:#FFFFFF;--border:#E2D9CD;
+  --text:#2A3240;--text2:#7A8496;--r:12px;--sh:0 2px 12px rgba(0,0,0,.07);
+}
+body.dark{--bg:#191E2B;--card:#232938;--border:#2E3548;--text:#E4E8F0;--text2:#8892A4;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+
+/* WELCOME SCREEN */
+#welcome{position:fixed;inset:0;background:linear-gradient(145deg,var(--ocean),var(--ocean-d));display:flex;align-items:center;justify-content:center;padding:24px;z-index:1000;}
+.wcard{background:#fff;border-radius:20px;padding:32px;width:100%;max-width:360px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.2);}
+.wlogo{font-size:32px;margin-bottom:8px;}
+.wname{font-size:22px;font-weight:800;color:var(--ocean);margin-bottom:4px;}
+.wsub{font-size:13px;color:var(--text2);margin-bottom:24px;}
+.pin-dots{display:flex;gap:12px;justify-content:center;margin:16px 0;}
+.pin-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--border);transition:all .2s;}
+.pin-dot.filled{background:var(--ocean);border-color:var(--ocean);}
+.pin-pad{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:240px;margin:0 auto;}
+.pin-btn{padding:16px;font-size:20px;font-weight:600;border-radius:12px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer;transition:all .15s;}
+.pin-btn:hover,.pin-btn:active{background:var(--ocean);color:#fff;border-color:var(--ocean);}
+.pin-err{color:#DC3545;font-size:13px;min-height:20px;margin-bottom:8px;}
+.name-input{width:100%;padding:12px 16px;border:2px solid var(--border);border-radius:10px;font-size:16px;text-align:center;color:var(--text);font-family:inherit;outline:none;margin-bottom:14px;}
+.name-input:focus{border-color:var(--ocean);}
+
+/* HEADER */
+#hdr{background:var(--ocean);color:#fff;padding:10px 16px;display:flex;align-items:center;gap:8px;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.18);}
+.logo{font-size:16px;font-weight:800;}
+.hright{margin-left:auto;display:flex;align-items:center;gap:6px;}
+.hbtn{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:8px;padding:5px 9px;font-size:12px;cursor:pointer;font-weight:600;}
+.sdot{width:7px;height:7px;border-radius:50%;background:#5DDA6F;flex-shrink:0;}
+.sdot.syncing{background:var(--sunrise);animation:blink 1s infinite;}
+.sdot.err{background:#DC3545;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+/* NAV */
+#nav{background:var(--card);border-bottom:1px solid var(--border);display:flex;overflow-x:auto;scrollbar-width:none;}
+#nav::-webkit-scrollbar{display:none;}
+.ntab{padding:10px 14px;font-size:13px;font-weight:600;white-space:nowrap;border:none;background:none;color:var(--text2);cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;flex-shrink:0;}
+.ntab.active{color:var(--ocean);border-bottom-color:var(--ocean);}
+.panel{display:none;}.panel.active{display:block;}
+
+/* SERVICE BAR */
+.svc-bar{background:var(--card);border-bottom:1px solid var(--border);padding:10px 14px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+.svc-sel{flex:1;min-width:180px;padding:8px 10px;background:var(--bg);border:1px solid var(--border);border-radius:9px;color:var(--text);font-size:14px;font-family:inherit;outline:none;}
+
+/* MAIN */
+.main{padding:14px;max-width:680px;margin:0 auto;padding-bottom:80px;}
+
+/* SERVICE HEADER */
+.svc-hdr{background:var(--ocean);color:#fff;border-radius:var(--r);padding:16px;margin-bottom:14px;}
+.svc-date{font-size:19px;font-weight:800;margin-bottom:2px;}
+.svc-meta{font-size:13px;opacity:.85;margin-bottom:8px;}
+.svc-speaker{background:rgba(255,255,255,.15);border-radius:8px;padding:8px 12px;font-size:13px;display:flex;align-items:center;gap:8px;}
+.svc-speaker input{background:transparent;border:none;color:#fff;font-size:13px;font-weight:600;outline:none;width:100%;font-family:inherit;}
+.svc-speaker input::placeholder{color:rgba(255,255,255,.6);}
+.prog-wrap{margin-top:10px;}
+.prog-label{font-size:11px;opacity:.8;margin-bottom:4px;display:flex;justify-content:space-between;}
+.prog-bar{height:6px;background:rgba(255,255,255,.2);border-radius:3px;overflow:hidden;}
+.prog-fill{height:100%;background:#fff;border-radius:3px;transition:width .4s;}
+.warn-banner{background:#E8680A;border-radius:8px;padding:8px 12px;font-size:12px;font-weight:600;margin-top:8px;display:none;align-items:center;gap:6px;}
+.warn-banner.show{display:flex;}
+
+/* SECTIONS */
+.sec{background:var(--card);border:1px solid var(--border);border-radius:var(--r);margin-bottom:12px;overflow:hidden;box-shadow:var(--sh);}
+.sec-hdr{padding:12px 14px;display:flex;align-items:center;gap:10px;cursor:pointer;user-select:none;border-bottom:1px solid var(--border);}
+.sec-icon{font-size:18px;}
+.sec-title{font-size:14px;font-weight:700;flex:1;}
+.sec-prog{font-size:12px;color:var(--text2);font-weight:600;}
+.sec-mini-bar{height:4px;background:var(--border);border-radius:2px;overflow:hidden;width:60px;}
+.sec-mini-fill{height:100%;background:var(--seafoam);border-radius:2px;transition:width .3s;}
+.sec-complete .sec-mini-fill{background:#5DDA6F;}
+.sec-chev{font-size:11px;color:var(--text2);transition:transform .2s;}
+.sec.exp .sec-chev{transform:rotate(90deg);}
+.sec-body{display:none;animation:fi .15s ease;}
+.sec.exp .sec-body{display:block;}
+@keyframes fi{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:translateY(0);}}
+
+/* SECTION COMPLETE CELEBRATION */
+@keyframes celebrate{0%{transform:scale(1);}30%{transform:scale(1.03);}60%{transform:scale(.98);}100%{transform:scale(1);}}
+.sec.just-done{animation:celebrate .5s ease;}
+.sec-done-badge{display:none;background:#5DDA6F;color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:8px;}
+.sec-complete .sec-done-badge{display:inline-block;}
+
+/* CHECKLIST ITEMS */
+.ci{padding:11px 14px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;transition:background .15s;}
+.ci:last-child{border-bottom:none;}
+.ci.done{background:rgba(74,158,142,.04);}
+@keyframes warn-pulse{0%,100%{box-shadow:inset 3px 0 0 #E8680A;}50%{box-shadow:inset 3px 0 0 #F5A623;}}
+.ci.warn{animation:warn-pulse 2s ease-in-out infinite;background:rgba(232,104,10,.04);}
+.ci-check{width:22px;height:22px;border:2px solid var(--border);border-radius:6px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;transition:all .2s;margin-top:1px;}
+.ci-check:hover{border-color:var(--seafoam);}
+.ci.done .ci-check{background:var(--seafoam);border-color:var(--seafoam);color:#fff;}
+.ci-body{flex:1;min-width:0;}
+.ci-text{font-size:14px;line-height:1.35;}
+.ci.done .ci-text{text-decoration:line-through;color:var(--text2);}
+.ci-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;align-items:center;}
+.ci-assignee{font-size:11px;color:var(--text2);background:var(--bg);padding:2px 8px;border-radius:6px;}
+.ci-ts{font-size:11px;color:var(--seafoam);}
+.ci-note-text{font-size:12px;color:var(--text2);font-style:italic;margin-top:3px;}
+.ci-actions{display:none;margin-top:6px;gap:6px;}
+.ci:hover .ci-actions,.ci.exp-act .ci-actions{display:flex;}
+
+/* FORMS & BUTTONS */
+.fg{margin-bottom:12px;}
+.fl{display:block;font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;}
+.fi,.fs,.fta{width:100%;padding:9px 12px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:14px;font-family:inherit;outline:none;transition:border-color .2s;}
+.fi:focus,.fs:focus,.fta:focus{border-color:var(--ocean);}
+.fta{min-height:60px;resize:vertical;}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:9px 16px;border-radius:9px;border:none;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;white-space:nowrap;}
+.btn-pri{background:var(--ocean);color:#fff;}
+.btn-pri:hover{background:var(--ocean-d);}
+.btn-suc{background:var(--seafoam);color:#fff;}
+.btn-dan{background:#DC3545;color:#fff;}
+.btn-gh{background:transparent;border:1px solid var(--border);color:var(--text);}
+.btn-gh:hover{background:var(--border);}
+.sm{padding:5px 10px;font-size:12px;border-radius:7px;}
+.xs{padding:3px 7px;font-size:11px;border-radius:6px;}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+.rend{justify-content:flex-end;}
+.mt{margin-top:10px;}.mb{margin-bottom:10px;}
+.t2{font-size:12px;color:var(--text2);}
+
+/* MODALS */
+.mbg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.52);z-index:200;align-items:flex-end;justify-content:center;}
+@media(min-width:600px){.mbg{align-items:center;padding:24px;}}
+.mbg.open{display:flex;}
+.mbox{background:var(--card);border-radius:20px 20px 0 0;padding:24px 20px 44px;width:100%;max-width:520px;max-height:92vh;overflow-y:auto;}
+@media(min-width:600px){.mbox{border-radius:20px;padding:24px;}}
+.mtitle{font-size:18px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.mclose{margin-left:auto;background:none;border:none;font-size:18px;cursor:pointer;color:var(--text2);}
+
+/* QR */
+.qr-wrap{text-align:center;padding:10px 0;}
+.qr-wrap img{border-radius:12px;border:4px solid var(--border);}
+.qr-url{font-size:13px;font-family:monospace;background:var(--bg);padding:8px 12px;border-radius:8px;margin-top:10px;word-break:break-all;text-align:center;}
+
+/* SCHEDULE */
+.svc-list-item{padding:10px 12px;border:1px solid var(--border);border-radius:9px;margin-bottom:8px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:border-color .15s;}
+.svc-list-item:hover,.svc-list-item.active{border-color:var(--ocean);background:rgba(82,121,160,.05);}
+.sli-date{font-size:14px;font-weight:700;}
+.sli-sub{font-size:11px;color:var(--text2);}
+.sli-pct{margin-left:auto;font-size:12px;font-weight:700;color:var(--text2);}
+
+/* TEMPLATE EDITOR */
+.edit-row{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+.edit-input{flex:1;padding:7px 10px;background:var(--bg);border:1px solid var(--border);border-radius:7px;color:var(--text);font-size:13px;font-family:inherit;outline:none;}
+.edit-input:focus{border-color:var(--ocean);}
+
+/* PRINT */
+@media print{
+  #hdr,#nav,.svc-bar,.hbtn,.ci-actions,.btn,#toast{display:none!important;}
+  .sec{box-shadow:none;border:1px solid #ccc;break-inside:avoid;}
+  .sec-body{display:block!important;}
+  .ci-check{border:2px solid #999!important;background:none!important;}
+  body{background:#fff;color:#000;}
+  .svc-hdr{background:#5279A0!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
+/* MISC */
+.empty{text-align:center;padding:40px 20px;color:var(--text2);}
+.empty-icon{font-size:36px;margin-bottom:10px;}
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(16px);background:#2A3240;color:#fff;padding:10px 20px;border-radius:12px;font-size:14px;font-weight:500;z-index:500;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+</style>
+</head>
+<body>
+
+<!-- WELCOME / ACCESS SCREEN -->
+<div id="welcome">
+  <div class="wcard">
+    <div class="wlogo">✝</div>
+    <div class="wname">CCFWB Services</div>
+    <div class="wsub" id="w-sub">Enter access code to continue</div>
+    <div id="w-pin-view">
+      <div class="pin-dots">
+        <div class="pin-dot" id="pd0"></div>
+        <div class="pin-dot" id="pd1"></div>
+        <div class="pin-dot" id="pd2"></div>
+        <div class="pin-dot" id="pd3"></div>
+      </div>
+      <div class="pin-err" id="pin-err"></div>
+      <div class="pin-pad">
+        <button class="pin-btn" onclick="pinKey('1')">1</button>
+        <button class="pin-btn" onclick="pinKey('2')">2</button>
+        <button class="pin-btn" onclick="pinKey('3')">3</button>
+        <button class="pin-btn" onclick="pinKey('4')">4</button>
+        <button class="pin-btn" onclick="pinKey('5')">5</button>
+        <button class="pin-btn" onclick="pinKey('6')">6</button>
+        <button class="pin-btn" onclick="pinKey('7')">7</button>
+        <button class="pin-btn" onclick="pinKey('8')">8</button>
+        <button class="pin-btn" onclick="pinKey('9')">9</button>
+        <button class="pin-btn" onclick="pinKey('clr')" style="font-size:14px">⌫</button>
+        <button class="pin-btn" onclick="pinKey('0')">0</button>
+        <div></div>
+      </div>
+    </div>
+    <div id="w-name-view" style="display:none">
+      <p style="font-size:14px;color:var(--text2);margin-bottom:14px">Welcome! What's your name?</p>
+      <input class="name-input" id="name-in" placeholder="Your first name..." maxlength="30">
+      <button class="btn btn-pri" style="width:100%" onclick="submitName()">Let's Go →</button>
+    </div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app" style="display:none">
+  <div id="hdr">
+    <span class="logo">✝ CCFWB Services</span>
+    <div class="hright">
+      <span class="sdot" id="sdot"></span>
+      <button class="hbtn" onclick="openShare()">📲 Share</button>
+      <button class="hbtn" onclick="window.print()">🖨️</button>
+      <button class="hbtn" onclick="openAdmin()">⚙️</button>
+      <button class="hbtn" id="dbtn" onclick="toggleDark()">🌙</button>
+    </div>
+  </div>
+
+  <div id="nav">
+    <button class="ntab active" onclick="sw('p-checklist',this)">✅ Checklist</button>
+    <button class="ntab" onclick="sw('p-schedule',this);renderSchedule()">📅 Schedule</button>
+  </div>
+
+  <!-- CHECKLIST -->
+  <div id="p-checklist" class="panel active">
+    <div class="svc-bar">
+      <select class="svc-sel" id="svc-pick" onchange="loadService(this.value)">
+        <option value="">— Select a service —</option>
+      </select>
+      <button class="btn btn-gh sm" onclick="openNewService()">+ New</button>
+    </div>
+    <div class="main" id="checklist-main">
+      <div class="empty"><div class="empty-icon">📋</div><div>Select a service above or create a new one</div></div>
+    </div>
+  </div>
+
+  <!-- SCHEDULE -->
+  <div id="p-schedule" class="panel">
+    <div class="main">
+      <div class="row" style="margin-bottom:12px;justify-content:space-between">
+        <div style="font-size:15px;font-weight:700">Upcoming Services</div>
+        <button class="btn btn-pri sm" onclick="openNewService()">+ New</button>
+      </div>
+      <div id="schedule-list"></div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: NOTE -->
+<div class="mbg" id="m-note">
+  <div class="mbox">
+    <div class="mtitle">💬 Note <button class="mclose" onclick="cm('m-note')">✕</button></div>
+    <input type="hidden" id="note-sec"><input type="hidden" id="note-item">
+    <div class="fg"><label class="fl">Note</label>
+      <textarea class="fta" id="note-text" placeholder="e.g. Thermostat 3 adjusted to 72..."></textarea>
+    </div>
+    <div class="row rend mt">
+      <button class="btn btn-gh" onclick="cm('m-note')">Cancel</button>
+      <button class="btn btn-pri" onclick="saveNote()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: NEW SERVICE -->
+<div class="mbg" id="m-new-svc">
+  <div class="mbox">
+    <div class="mtitle"><span id="nsvc-modal-title">New Service</span><button class="mclose" onclick="cm('m-new-svc')">✕</button></div>
+    <input type="hidden" id="nsvc-id">
+    <div class="r2">
+      <div class="fg"><label class="fl">Date</label><input class="fi" id="nsvc-date" type="date"></div>
+      <div class="fg"><label class="fl">Time</label><input class="fi" id="nsvc-time" type="time" value="10:00"></div>
+    </div>
+    <div class="fg"><label class="fl">Title</label>
+      <input class="fi" id="nsvc-title-in" placeholder="Sunday Service, Christmas Eve...">
+    </div>
+    <div class="fg"><label class="fl">Speaker</label>
+      <input class="fi" id="nsvc-speaker" placeholder="Pastor Andy">
+    </div>
+    <div class="r2">
+      <div class="fg"><label class="fl">Opening Assigned To</label>
+        <select class="fs" id="nsvc-open"><option value="">Unassigned</option></select>
+      </div>
+      <div class="fg"><label class="fl">Closing Assigned To</label>
+        <select class="fs" id="nsvc-close"><option value="">Unassigned</option></select>
+      </div>
+    </div>
+    <div class="fg"><label class="fl">Notes</label>
+      <textarea class="fta" id="nsvc-notes" placeholder="Special instructions..."></textarea>
+    </div>
+    <div class="row rend mt">
+      <button class="btn btn-gh" onclick="cm('m-new-svc')">Cancel</button>
+      <button class="btn btn-dan sm" id="nsvc-del" onclick="deleteSvc()" style="display:none">Delete</button>
+      <button class="btn btn-pri" onclick="saveNewSvc()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: ADMIN -->
+<div class="mbg" id="m-admin">
+  <div class="mbox">
+    <div class="mtitle">⚙️ Admin <button class="mclose" onclick="cm('m-admin')">✕</button></div>
+    <div style="display:flex;gap:6px;border-bottom:1px solid var(--border);margin-bottom:14px;padding-bottom:2px">
+      <button class="ntab active" id="adm-tab-tpl" style="font-size:12px;padding:7px 12px" onclick="swAdm('tpl',this)">📋 Checklist Template</button>
+      <button class="ntab" id="adm-tab-asgn" style="font-size:12px;padding:7px 12px" onclick="swAdm('asgn',this)">👤 Assignments</button>
+    </div>
+    <div id="adm-tpl"><div id="tpl-body"></div>
+      <button class="btn btn-pri sm mt" onclick="saveTpl()">Save Template</button>
+    </div>
+    <div id="adm-asgn" style="display:none">
+      <div id="asgn-body"></div>
+      <button class="btn btn-pri sm mt" onclick="saveAssignments()">Save Assignments</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: SHARE -->
+<div class="mbg" id="m-share">
+  <div class="mbox">
+    <div class="mtitle">📲 Share Checklist <button class="mclose" onclick="cm('m-share')">✕</button></div>
+    <p class="t2 mb">Send this link or show the QR code to your team. They'll need access code <strong>1225</strong>.</p>
+    <div class="qr-wrap">
+      <img id="qr-img" src="" alt="QR Code" width="200" height="200">
+      <div class="qr-url" id="qr-url"></div>
+    </div>
+    <div class="row mt" style="justify-content:center;gap:10px">
+      <button class="btn btn-pri sm" onclick="copyLink()">📋 Copy Link</button>
+    </div>
+    <hr style="border:none;border-top:1px solid var(--border);margin:16px 0">
+    <p class="t2" style="text-align:center">Access Code: <strong style="font-size:18px;letter-spacing:4px">1225</strong></p>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ====== CONFIG ======
+const BIN='69f39a9136566621a80e37bd';
+const KEY='$2a$10$u./u72JVwUVjuIdiEB4.d.iusC98TwDYyxS4VPqQIXNCXkx/2JOzq';
+const ACCESS_PIN='1225';
+const TEAM=['Pastor Andy','Kaitlyn','Angie','Nick','Josh','James','Other'];
+const APP_URL=window.location.href.split('?')[0];
+
+const DEFAULT_TPL=[
+  {id:'opening',name:'🔓 Opening',icon:'🔓',items:[
+    {id:'lights-main',text:'Main floor lights on — full walkthrough'},
+    {id:'lights-up',text:'Upstairs sweep — all lights on'},
+    {id:'thermostats',text:'Check all 5 thermostats'},
+    {id:'parking',text:'Parking lot walk — no hazards'},
+    {id:'restrooms',text:'Restrooms checked and stocked (paper, soap, towels)'},
+    {id:'nursery-open',text:'Nursery / kids rooms unlocked and ready'},
+    {id:'sensory',text:'Sensory room checked and unlocked'},
+    {id:'welcome-table',text:'Welcome table stocked (bulletins, connection cards, pens)'},
+    {id:'books-letters',text:'Books and pastor letters ready for visitors'},
+    {id:'mints',text:'Mints filled'},
+    {id:'signage',text:'Signage out (A-frame, directional signs)'},
+    {id:'offering',text:'Offering bags/boxes in place'},
+    {id:'doors-unlock',text:'Front doors unlocked at correct time'},
+    {id:'lobby-music',text:'Lobby music playing'},
+  ]},
+  {id:'service',name:'⛪ Service',icon:'⛪',items:[
+    {id:'briefing',text:'9:05 AM — Backstage pre-service team briefing'},
+    {id:'mics',text:'Microphones charged and tested'},
+    {id:'livestream',text:'Livestream / recording confirmed running'},
+    {id:'sound-check',text:'Sound check completed'},
+    {id:'speaker-conf',text:'Speaker confirmed and briefed'},
+    {id:'childcare',text:'Childcare / nursery volunteers in place'},
+    {id:'greeters',text:'Greeting team briefed and in position'},
+    {id:'attendance',text:'Attendance count recorded'},
+  ]},
+  {id:'closing',name:'🔒 Closing',icon:'🔒',items:[
+    {id:'lost-found',text:'Lost and found checked and secured'},
+    {id:'offering-sec',text:'Offering secured and logged'},
+    {id:'coffee-off',text:'Coffee station off and cleaned'},
+    {id:'kitchen',text:'Kitchen cleaned — all appliances off'},
+    {id:'ice-machine',text:'Ice machine door securely shut'},
+    {id:'fridge',text:'Refrigerator door securely shut'},
+    {id:'garbage',text:'Garbage out'},
+    {id:'lights-main-off',text:'All main floor lights off (check closets + bathrooms)'},
+    {id:'lights-up-off',text:'Upstairs lights off — full sweep'},
+    {id:'nursery-lock',text:'Nursery sanitized and locked'},
+    {id:'perimeter',text:'All exterior doors locked — perimeter walk'},
+    {id:'cafe-lock',text:'Café door locked'},
+    {id:'front-lock',text:'Front doors locked'},
+    {id:'hvac',text:'HVAC thermostats set back to weekday schedule'},
+    {id:'alarm',text:'Alarm set'},
+  ]}
+];
+
+let S={serviceChecklists:[],checklistTemplate:JSON.parse(JSON.stringify(DEFAULT_TPL))};
+let currentSvcId=null,saveT=null,pinBuffer='',warnInterval=null;
+
+// ====== JSONBIN ======
+async function loadData(){
+  sync('syncing');
+  try{
+    const r=await fetch(`https://api.jsonbin.io/v3/b/${BIN}/latest`,{headers:{'X-Master-Key':KEY}});
+    if(!r.ok)throw new Error();
+    const d=await r.json();
+    const rec=d.record||{};
+    S.serviceChecklists=rec.serviceChecklists||[];
+    if(rec.checklistTemplate)S.checklistTemplate=rec.checklistTemplate;
+    sync('ok');
+    populatePicker();
+    renderSchedule();
+    autoSelectNext();
+  }catch(e){sync('err');toast('⚠️ Could not load data');}
+}
+async function saveData(){
+  sync('syncing');
+  try{
+    const r=await fetch(`https://api.jsonbin.io/v3/b/${BIN}/latest`,{headers:{'X-Master-Key':KEY}});
+    const existing=(await r.json()).record||{};
+    existing.serviceChecklists=S.serviceChecklists;
+    existing.checklistTemplate=S.checklistTemplate;
+    await fetch(`https://api.jsonbin.io/v3/b/${BIN}`,{method:'PUT',
+      headers:{'Content-Type':'application/json','X-Master-Key':KEY},
+      body:JSON.stringify(existing)});
+    sync('ok');
+  }catch(e){sync('err');toast('⚠️ Save failed');}
+}
+function sched(){clearTimeout(saveT);saveT=setTimeout(saveData,1600);}
+function sync(s){const d=document.getElementById('sdot');if(!d)return;d.className='sdot'+(s==='syncing'?' syncing':s==='err'?' err':'');}
+
+// ====== AUTO SELECT NEXT SERVICE ======
+function autoSelectNext(){
+  if(!S.serviceChecklists.length)return;
+  const today=new Date().toISOString().split('T')[0];
+  const upcoming=[...S.serviceChecklists].filter(s=>s.date>=today).sort((a,b)=>a.date>b.date?1:-1);
+  if(upcoming.length){
+    document.getElementById('svc-pick').value=upcoming[0].id;
+    loadService(upcoming[0].id);
+  }
+}
+
+// ====== PIN / ACCESS ======
+function pinKey(k){
+  if(k==='clr'){pinBuffer=pinBuffer.slice(0,-1);}
+  else if(pinBuffer.length<4){pinBuffer+=k;}
+  updatePinDots();
+  if(pinBuffer.length===4){
+    setTimeout(()=>{
+      if(pinBuffer===ACCESS_PIN){
+        localStorage.setItem('ccfwb_sun_auth','1');
+        setTimeout(()=>localStorage.removeItem('ccfwb_sun_auth'),8*3600000);
+        const savedName=localStorage.getItem('ccfwb_sun_name');
+        if(savedName){enterApp();}
+        else{showNamePrompt();}
+      }else{
+        document.getElementById('pin-err').textContent='Incorrect code — try again';
+        pinBuffer='';updatePinDots();
+      }
+    },200);
+  }
+}
+function updatePinDots(){
+  for(let i=0;i<4;i++)document.getElementById('pd'+i).className='pin-dot'+(i<pinBuffer.length?' filled':'');
+}
+function showNamePrompt(){
+  document.getElementById('w-pin-view').style.display='none';
+  document.getElementById('w-name-view').style.display='block';
+  document.getElementById('w-sub').textContent='Welcome to CCFWB Services!';
+  setTimeout(()=>document.getElementById('name-in').focus(),100);
+}
+function submitName(){
+  const name=document.getElementById('name-in').value.trim();
+  if(!name){toast('Please enter your name');return;}
+  localStorage.setItem('ccfwb_sun_name',name);
+  enterApp();
+}
+function enterApp(){
+  document.getElementById('welcome').style.display='none';
+  document.getElementById('app').style.display='block';
+  loadData();
+  startWarnCheck();
+  if(localStorage.getItem('ccfwb_sun_dark')==='1'){
+    document.body.classList.add('dark');
+    document.getElementById('dbtn').textContent='☀️';
+  }
+}
+
+// ====== TABS ======
+function sw(id,el){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('#nav .ntab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if(el)el.classList.add('active');
+}
+function swAdm(id,el){
+  document.getElementById('adm-tpl').style.display=id==='tpl'?'block':'none';
+  document.getElementById('adm-asgn').style.display=id==='asgn'?'block':'none';
+  document.querySelectorAll('#m-admin .ntab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  if(id==='asgn')renderAssignList();
+  if(id==='tpl')renderTplEditor();
+}
+
+// ====== DARK MODE ======
+function toggleDark(){
+  const d=document.body.classList.toggle('dark');
+  localStorage.setItem('ccfwb_sun_dark',d?'1':'0');
+  document.getElementById('dbtn').textContent=d?'☀️':'🌙';
+}
+
+// ====== UTILS ======
+function uid(){return Date.now().toString(36)+Math.random().toString(36).substr(2,5);}
+function today(){return new Date().toISOString().split('T')[0];}
+function fmtDate(iso){if(!iso)return'';const d=new Date(iso+'T12:00:00');return d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});}
+function fmtShort(iso){if(!iso)return'';const d=new Date(iso+'T12:00:00');return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}
+function fmtTS(ts){if(!ts)return'';return new Date(ts).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}
+function fmtTime12(t){if(!t)return'';const[h,m]=t.split(':');const hh=+h;return`${hh%12||12}:${m} ${hh<12?'AM':'PM'}`;}
+function esc(s){return s?String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'):''}
+function minsUntilService(svc){
+  if(!svc.date||!svc.time)return null;
+  const now=new Date();
+  const svcTime=new Date(`${svc.date}T${svc.time}`);
+  return Math.round((svcTime-now)/60000);
+}
+
+// ====== WARN CHECK (30min before service) ======
+function startWarnCheck(){
+  if(warnInterval)clearInterval(warnInterval);
+  warnInterval=setInterval(updateWarnings,60000);
+  updateWarnings();
+}
+function updateWarnings(){
+  if(!currentSvcId)return;
+  const svc=S.serviceChecklists.find(x=>x.id===currentSvcId);
+  if(!svc)return;
+  const mins=minsUntilService(svc);
+  const warn=mins!==null&&mins>0&&mins<=30;
+  const openSec=S.checklistTemplate.find(x=>x.id==='opening');
+  if(!openSec||!svc.sections?.opening)return;
+  openSec.items.forEach(item=>{
+    const el=document.getElementById(`ci-opening-${item.id}`);
+    if(!el)return;
+    const checked=svc.sections.opening.items[item.id]?.checked;
+    if(warn&&!checked)el.classList.add('warn');
+    else el.classList.remove('warn');
+  });
+  const banner=document.getElementById('warn-banner');
+  if(banner){
+    if(warn){banner.classList.add('show');banner.querySelector('span').textContent=`Service starts in ${mins} min — ${openSec.items.filter(i=>!svc.sections.opening.items[i.id]?.checked).length} opening items remaining`;}
+    else banner.classList.remove('show');
+  }
+}
+
+// ====== POPULATE PICKER ======
+function populatePicker(){
+  const sel=document.getElementById('svc-pick');
+  const prev=sel.value;
+  sel.innerHTML='<option value="">— Select a service —</option>';
+  [...S.serviceChecklists].sort((a,b)=>a.date>b.date?1:-1).forEach(s=>{
+    const o=document.createElement('option');
+    o.value=s.id;
+    o.textContent=`${fmtShort(s.date)} — ${s.title}`;
+    sel.appendChild(o);
+  });
+  if(prev)sel.value=prev;
+}
+
+// ====== LOAD & RENDER SERVICE ======
+function loadService(id){
+  if(!id){document.getElementById('checklist-main').innerHTML='<div class="empty"><div class="empty-icon">📋</div><div>Select a service above or create a new one</div></div>';currentSvcId=null;return;}
+  currentSvcId=id;
+  const svc=S.serviceChecklists.find(x=>x.id===id);
+  if(!svc)return;
+  ensureSections(svc);
+  renderChecklist(svc);
+  setTimeout(updateWarnings,500);
+}
+
+function ensureSections(svc){
+  if(!svc.sections)svc.sections={};
+  S.checklistTemplate.forEach(sec=>{
+    if(!svc.sections[sec.id])svc.sections[sec.id]={items:{}};
+    sec.items.forEach(item=>{
+      if(!svc.sections[sec.id].items[item.id])
+        svc.sections[sec.id].items[item.id]={checked:false,checkedAt:null,checkedBy:null,note:null,assignee:''};
+    });
+  });
+}
+
+function renderChecklist(svc){
+  const tpl=S.checklistTemplate;
+  const totalItems=tpl.reduce((a,s)=>a+s.items.length,0);
+  const checkedItems=tpl.reduce((a,sec)=>a+sec.items.filter(i=>svc.sections[sec.id]?.items[i.id]?.checked).length,0);
+  const pct=totalItems?Math.round(checkedItems/totalItems*100):0;
+  const mins=minsUntilService(svc);
+  const warnActive=mins!==null&&mins>0&&mins<=30;
+
+  let h=`<div class="svc-hdr">
+    <div class="svc-date">${fmtDate(svc.date)}</div>
+    <div class="svc-meta">${esc(svc.title)}${svc.time?' · '+fmtTime12(svc.time):''}</div>
+    <div class="svc-speaker">
+      <span style="opacity:.75;font-size:11px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap">Speaker</span>
+      <input id="spk-live" value="${esc(svc.speaker||'Pastor Andy')}" placeholder="Pastor Andy" onchange="updateSpeaker(this.value)">
+    </div>
+    ${svc.notes?`<div style="margin-top:8px;font-size:12px;opacity:.8;padding:7px 10px;background:rgba(255,255,255,.1);border-radius:7px">${esc(svc.notes)}</div>`:''}
+    <div id="warn-banner" class="warn-banner${warnActive?' show':''}">
+      ⚠️ <span>${warnActive?`Service starts in ${mins} min — check opening items`:'Warning'}</span>
+    </div>
+    <div class="prog-wrap">
+      <div class="prog-label"><span>Overall</span><span>${checkedItems}/${totalItems} · ${pct}%</span></div>
+      <div class="prog-bar"><div class="prog-fill" style="width:${pct}%"></div></div>
+    </div>
+  </div>`;
+
+  tpl.forEach(sec=>{
+    const secData=svc.sections[sec.id]||{items:{}};
+    const secDone=sec.items.filter(i=>secData.items[i.id]?.checked).length;
+    const secTotal=sec.items.length;
+    const secPct=secTotal?Math.round(secDone/secTotal*100):0;
+    const complete=secDone===secTotal;
+    const isExp=!complete;
+    h+=`<div class="sec${isExp?' exp':''}${complete?' sec-complete':''}" id="sec-${sec.id}">
+      <div class="sec-hdr" onclick="document.getElementById('sec-${sec.id}').classList.toggle('exp')">
+        <span class="sec-icon">${sec.icon}</span>
+        <span class="sec-title">${sec.name}</span>
+        <span class="sec-done-badge">✓ Done</span>
+        <span class="sec-prog">${secDone}/${secTotal}</span>
+        <div class="sec-mini-bar"><div class="sec-mini-fill" style="width:${secPct}%"></div></div>
+        <span class="sec-chev">›</span>
+      </div>
+      <div class="sec-body">`;
+    sec.items.forEach(item=>{
+      const st=secData.items[item.id]||{};
+      const done=st.checked;
+      const warnItem=warnActive&&sec.id==='opening'&&!done;
+      h+=`<div class="ci${done?' done':''}${warnItem?' warn':''}" id="ci-${sec.id}-${item.id}">
+        <div class="ci-check" onclick="toggleItem('${sec.id}','${item.id}')">${done?'✓':''}</div>
+        <div class="ci-body">
+          <div class="ci-text">${esc(item.text)}</div>
+          <div class="ci-meta">
+            ${st.assignee?`<span class="ci-assignee">👤 ${esc(st.assignee)}</span>`:''}
+            ${done&&st.checkedAt?`<span class="ci-ts">✓ ${fmtTS(st.checkedAt)}${st.checkedBy?' · '+esc(st.checkedBy):''}</span>`:''}
+          </div>
+          ${st.note?`<div class="ci-note-text">💬 ${esc(st.note)}</div>`:''}
+          <div class="ci-actions">
+            <button class="btn btn-gh xs" onclick="openNoteModal('${sec.id}','${item.id}')">💬 Note</button>
+            ${done?`<button class="btn btn-gh xs" onclick="toggleItem('${sec.id}','${item.id}')">↩ Undo</button>`:''}
+          </div>
+        </div>
+      </div>`;
+    });
+    h+=`</div></div>`;
+  });
+
+  h+=`<div class="row rend mt" style="padding:0 4px">
+    <button class="btn btn-gh sm" onclick="openEditSvc('${svc.id}')">✏️ Edit</button>
+    <button class="btn btn-gh sm" onclick="openAdmin()">⚙️ Edit Checklist</button>
+  </div>`;
+
+  document.getElementById('checklist-main').innerHTML=h;
+}
+
+function updateSpeaker(val){
+  const svc=S.serviceChecklists.find(x=>x.id===currentSvcId);
+  if(!svc)return;svc.speaker=val||'Pastor Andy';sched();
+}
+
+function toggleItem(secId,itemId){
+  const svc=S.serviceChecklists.find(x=>x.id===currentSvcId);if(!svc)return;
+  const st=svc.sections[secId].items[itemId];
+  const prevSectionDone=S.checklistTemplate.find(x=>x.id===secId)?.items.every(i=>svc.sections[secId].items[i.id]?.checked);
+  st.checked=!st.checked;
+  st.checkedAt=st.checked?Date.now():null;
+  st.checkedBy=st.checked?(localStorage.getItem('ccfwb_sun_name')||null):null;
+  sched();
+  renderChecklist(svc);
+  setTimeout(updateWarnings,100);
+  // celebrate section complete
+  const nowDone=S.checklistTemplate.find(x=>x.id===secId)?.items.every(i=>svc.sections[secId].items[i.id]?.checked);
+  if(!prevSectionDone&&nowDone){
+    const secEl=document.getElementById(`sec-${secId}`);
+    if(secEl){secEl.classList.add('just-done');setTimeout(()=>secEl.classList.remove('just-done'),600);}
+    toast('🎉 Section complete!');
+  }else if(st.checked){toast('✓ Checked off!');}
+}
+
+// ====== NOTE ======
+function openNoteModal(secId,itemId){
+  const svc=S.serviceChecklists.find(x=>x.id===currentSvcId);
+  document.getElementById('note-sec').value=secId;
+  document.getElementById('note-item').value=itemId;
+  document.getElementById('note-text').value=svc?.sections[secId]?.items[itemId]?.note||'';
+  om('m-note');
+}
+function saveNote(){
+  const secId=document.getElementById('note-sec').value;
+  const itemId=document.getElementById('note-item').value;
+  const note=document.getElementById('note-text').value.trim();
+  const svc=S.serviceChecklists.find(x=>x.id===currentSvcId);if(!svc)return;
+  svc.sections[secId].items[itemId].note=note||null;
+  cm('m-note');sched();renderChecklist(svc);toast('Note saved ✓');
+}
+
+// ====== SCHEDULE ======
+function renderSchedule(){
+  const el=document.getElementById('schedule-list');if(!el)return;
+  if(!S.serviceChecklists.length){el.innerHTML='<div class="empty"><div class="empty-icon">📅</div><div>No services yet</div></div>';return;}
+  const sorted=[...S.serviceChecklists].sort((a,b)=>a.date>b.date?1:-1);
+  el.innerHTML=sorted.map(s=>{
+    const tpl=S.checklistTemplate;
+    const total=tpl.reduce((a,sec)=>a+sec.items.length,0);
+    const done=s.sections?tpl.reduce((a,sec)=>a+(s.sections[sec.id]?sec.items.filter(i=>s.sections[sec.id].items?.[i.id]?.checked).length:0),0):0;
+    const pct=total?Math.round(done/total*100):0;
+    return`<div class="svc-list-item${s.id===currentSvcId?' active':''}" onclick="selectSvc('${s.id}')">
+      <div>
+        <div class="sli-date">${fmtShort(s.date)}${s.time?' · '+fmtTime12(s.time):''}</div>
+        <div class="sli-sub">${esc(s.title)} · ${esc(s.speaker||'Pastor Andy')}</div>
+      </div>
+      <div class="sli-pct">${pct}%</div>
+    </div>`;
+  }).join('');
+}
+function selectSvc(id){
+  sw('p-checklist',document.querySelector('#nav .ntab'));
+  document.getElementById('svc-pick').value=id;
+  loadService(id);
+}
+
+// ====== NEW / EDIT SERVICE ======
+function populateAssignSelects(){
+  ['nsvc-open','nsvc-close'].forEach(id=>{
+    const sel=document.getElementById(id);
+    const cur=sel.value;
+    sel.innerHTML='<option value="">Unassigned</option>';
+    TEAM.forEach(t=>{const o=document.createElement('option');o.value=t;o.textContent=t;sel.appendChild(o);});
+    if(cur)sel.value=cur;
+  });
+}
+function openNewService(){
+  document.getElementById('nsvc-id').value='';
+  document.getElementById('nsvc-modal-title').textContent='New Service';
+  const d=new Date();const day=d.getDay();const diff=day===0?7:7-day;
+  d.setDate(d.getDate()+diff);
+  document.getElementById('nsvc-date').value=d.toISOString().split('T')[0];
+  document.getElementById('nsvc-time').value='10:00';
+  document.getElementById('nsvc-title-in').value='Sunday Service';
+  document.getElementById('nsvc-speaker').value='Pastor Andy';
+  document.getElementById('nsvc-notes').value='';
+  populateAssignSelects();
+  document.getElementById('nsvc-open').value='';
+  document.getElementById('nsvc-close').value='';
+  document.getElementById('nsvc-del').style.display='none';
+  om('m-new-svc');
+}
+function openEditSvc(id){
+  const s=S.serviceChecklists.find(x=>x.id===id);if(!s)return;
+  document.getElementById('nsvc-id').value=id;
+  document.getElementById('nsvc-modal-title').textContent='Edit Service';
+  document.getElementById('nsvc-date').value=s.date;
+  document.getElementById('nsvc-time').value=s.time||'10:00';
+  document.getElementById('nsvc-title-in').value=s.title;
+  document.getElementById('nsvc-speaker').value=s.speaker||'Pastor Andy';
+  document.getElementById('nsvc-notes').value=s.notes||'';
+  populateAssignSelects();
+  document.getElementById('nsvc-open').value=s.openAssignee||'';
+  document.getElementById('nsvc-close').value=s.closeAssignee||'';
+  document.getElementById('nsvc-del').style.display='inline-flex';
+  om('m-new-svc');
+}
+function saveNewSvc(){
+  const id=document.getElementById('nsvc-id').value;const isNew=!id;
+  const date=document.getElementById('nsvc-date').value;
+  const time=document.getElementById('nsvc-time').value;
+  const title=document.getElementById('nsvc-title-in').value.trim()||'Sunday Service';
+  const speaker=document.getElementById('nsvc-speaker').value.trim()||'Pastor Andy';
+  const openAss=document.getElementById('nsvc-open').value;
+  const closeAss=document.getElementById('nsvc-close').value;
+  const notes=document.getElementById('nsvc-notes').value.trim();
+  if(!date){toast('Please pick a date');return;}
+  if(isNew){
+    const sections={};
+    S.checklistTemplate.forEach(sec=>{
+      sections[sec.id]={items:{}};
+      sec.items.forEach(item=>{
+        let assignee='';
+        if(sec.id==='closing'&&closeAss)assignee=closeAss;
+        else if(openAss)assignee=openAss;
+        sections[sec.id].items[item.id]={checked:false,checkedAt:null,checkedBy:null,note:null,assignee};
+      });
+    });
+    const svc={id:uid(),date,time,title,speaker,openAssignee:openAss,closeAssignee:closeAss,notes,sections,createdAt:Date.now()};
+    S.serviceChecklists.push(svc);
+    currentSvcId=svc.id;toast('Service created ✓');
+  }else{
+    const svc=S.serviceChecklists.find(x=>x.id===id);if(!svc)return;
+    Object.assign(svc,{date,time,title,speaker,openAssignee:openAss,closeAssignee:closeAss,notes});
+    toast('Updated ✓');
+  }
+  cm('m-new-svc');sched();populatePicker();renderSchedule();
+  document.getElementById('svc-pick').value=currentSvcId;
+  loadService(currentSvcId);
+}
+function deleteSvc(){
+  const id=document.getElementById('nsvc-id').value;
+  const s=S.serviceChecklists.find(x=>x.id===id);
+  if(!confirm(`Delete "${s?.title}"?`))return;
+  S.serviceChecklists=S.serviceChecklists.filter(x=>x.id!==id);
+  if(currentSvcId===id){currentSvcId=null;document.getElementById('svc-pick').value='';}
+  cm('m-new-svc');sched();populatePicker();renderSchedule();loadService('');
+  toast('Deleted');
+}
+
+// ====== ADMIN ======
+function openAdmin(){
+  renderTplEditor();
+  document.getElementById('adm-tpl').style.display='block';
+  document.getElementById('adm-asgn').style.display='none';
+  document.getElementById('adm-tab-tpl').classList.add('active');
+  document.getElementById('adm-tab-asgn').classList.remove('active');
+  om('m-admin');
+}
+function renderTplEditor(){
+  let h='';
+  S.checklistTemplate.forEach(sec=>{
+    h+=`<div style="margin-bottom:16px">
+      <div style="font-size:12px;font-weight:800;text-transform:uppercase;color:var(--text2);margin-bottom:8px">${sec.icon} ${sec.name}</div>
+      <div id="tpl-sec-${sec.id}">`;
+    sec.items.forEach((item,ii)=>{
+      h+=`<div class="edit-row">
+        <input class="edit-input" data-sec="${sec.id}" data-idx="${ii}" value="${esc(item.text)}">
+        <button class="btn btn-dan xs" onclick="removeTplItem('${sec.id}',${ii})">✕</button>
+      </div>`;
+    });
+    h+=`</div><button class="btn btn-gh xs" style="margin-top:4px" onclick="addTplItem('${sec.id}')">+ Add Item</button></div>`;
+  });
+  document.getElementById('tpl-body').innerHTML=h;
+}
+function addTplItem(secId){
+  const sec=S.checklistTemplate.find(x=>x.id===secId);if(!sec)return;
+  sec.items.push({id:uid(),text:'New item'});renderTplEditor();
+}
+function removeTplItem(secId,idx){
+  const sec=S.checklistTemplate.find(x=>x.id===secId);if(!sec)return;
+  if(!confirm('Remove this item?'))return;
+  sec.items.splice(idx,1);renderTplEditor();
+}
+function saveTpl(){
+  document.querySelectorAll('.edit-input').forEach(inp=>{
+    const sec=S.checklistTemplate.find(x=>x.id===inp.dataset.sec);
+    if(sec&&sec.items[+inp.dataset.idx])sec.items[+inp.dataset.idx].text=inp.value.trim()||sec.items[+inp.dataset.idx].text;
+  });
+  sched();toast('Template saved ✓');
+}
+function renderAssignList(){
+  const svc=S.serviceChecklists.find(x=>x.id===currentSvcId);
+  if(!svc){document.getElementById('asgn-body').innerHTML='<p class="t2">Select a service first.</p>';return;}
+  let h='';
+  S.checklistTemplate.forEach(sec=>{
+    h+=`<div style="margin-bottom:14px"><div style="font-size:12px;font-weight:800;text-transform:uppercase;color:var(--text2);margin-bottom:6px">${sec.icon} ${sec.name}</div>`;
+    sec.items.forEach(item=>{
+      const cur=svc.sections?.[sec.id]?.items?.[item.id]?.assignee||'';
+      h+=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+        <span style="flex:1;font-size:13px">${esc(item.text)}</span>
+        <select class="fs" data-sec="${sec.id}" data-item="${item.id}" style="width:130px;font-size:12px;padding:5px 8px">
+          <option value="">Unassigned</option>
+          ${TEAM.map(t=>`<option${cur===t?' selected':''}>${t}</option>`).join('')}
+        </select>
+      </div>`;
+    });
+    h+=`</div>`;
+  });
+  document.getElementById('asgn-body').innerHTML=h;
+}
+function saveAssignments(){
+  const svc=S.serviceChecklists.find(x=>x.id===currentSvcId);if(!svc)return;
+  document.querySelectorAll('#asgn-body select').forEach(sel=>{
+    if(svc.sections?.[sel.dataset.sec]?.items?.[sel.dataset.item]!==undefined)
+      svc.sections[sel.dataset.sec].items[sel.dataset.item].assignee=sel.value;
+  });
+  sched();if(currentSvcId)renderChecklist(svc);toast('Assignments saved ✓');
+}
+
+// ====== SHARE / QR ======
+function openShare(){
+  const url=APP_URL;
+  document.getElementById('qr-img').src=`https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=5279A0&data=${encodeURIComponent(url)}`;
+  document.getElementById('qr-url').textContent=url;
+  om('m-share');
+}
+function copyLink(){
+  navigator.clipboard?.writeText(APP_URL).then(()=>toast('Link copied!')).catch(()=>{
+    const t=document.createElement('textarea');t.value=APP_URL;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);toast('Link copied!');
+  });
+}
+
+// ====== MODAL HELPERS ======
+function om(id){document.getElementById(id).classList.add('open');}
+function cm(id){document.getElementById(id).classList.remove('open');}
+document.querySelectorAll('.mbg').forEach(bg=>bg.addEventListener('click',e=>{if(e.target===bg)bg.classList.remove('open');}));
+
+// ====== TOAST ======
+function toast(msg){
+  const el=document.getElementById('toast');el.textContent=msg;
+  el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2500);
+}
+
+// ====== INIT ======
+(function(){
+  if(localStorage.getItem('ccfwb_sun_auth')==='1'){
+    const name=localStorage.getItem('ccfwb_sun_name');
+    if(name){enterApp();}
+    else{showNamePrompt();}
+  }
+})();
+</script>
+</body>
+</html>
