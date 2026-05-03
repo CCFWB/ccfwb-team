@@ -442,13 +442,12 @@ async function backupToGitHub() {
   if (!githubToken) return;
   try {
     const content = btoa(unescape(encodeURIComponent(JSON.stringify(appData, null, 2))));
-    // Get current SHA
-    const getRes = await fetch('https://api.github.com/repos/ccfwb/ccfwb-team/contents/backup.json', {
+    const getRes = await fetch('https://api.github.com/repos/CCFWB/ccfwb-team/contents/backup.json', {
       headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github.v3+json' }
     });
     let sha = '';
     if (getRes.ok) { const fd = await getRes.json(); sha = fd.sha; }
-    await fetch('https://api.github.com/repos/ccfwb/ccfwb-team/contents/backup.json', {
+    await fetch('https://api.github.com/repos/CCFWB/ccfwb-team/contents/backup.json', {
       method: 'PUT',
       headers: { 'Authorization': `token ${githubToken}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: 'Hourly backup', content, sha, branch: 'main' })
@@ -957,15 +956,19 @@ function isFirstWeek() {
   if (!appData.installDate) return true;
   const installDate = new Date(appData.installDate);
   const daysSince = (Date.now() - installDate) / 86400000;
-  return daysSince <= 7;
+  return daysSince <= 8;
 }
 
 async function sendMorningEmails() {
-  const testNote = isFirstWeek()
+  const firstEightDays = isFirstWeek();
+  const testNote = firstEightDays
     ? '\n\n---\n📱 NOTE: This email is a test function of the in-house Calvary Chapel FWB Church management app. If you notice any glitches or have suggestions, please let Angie know (admin@calvarychapelfwb.org).'
     : '';
 
-  for (const person of PEOPLE) {
+  // During first 8 days only send to Angie for testing
+  const recipients = firstEightDays ? ['Angie'] : PEOPLE;
+
+  for (const person of recipients) {
     const key = PEOPLE_KEYS[person];
     const email = PEOPLE_EMAILS[person];
     const tasks = appData.tasks.filter(t => t.assignedTo === person && !t.completed);
