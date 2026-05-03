@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>CCFWB Task Repair</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f0ede6;min-height:100vh;padding:1.5rem;}
+.card{background:white;border-radius:16px;padding:1.5rem;max-width:680px;margin:0 auto;box-shadow:0 8px 40px rgba(82,121,160,0.15);}
+h1{font-size:1.3rem;font-weight:700;color:#5279A0;margin-bottom:0.25rem;}
+.sub{font-size:0.85rem;color:#888;margin-bottom:1.5rem;}
+.step{background:#f8f7f3;border-radius:10px;padding:1rem;margin-bottom:1rem;}
+.step-title{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:#5279A0;margin-bottom:0.5rem;}
+.btn{background:#5279A0;color:white;border:none;border-radius:8px;padding:0.7rem 1.25rem;font-size:0.9rem;font-weight:600;cursor:pointer;font-family:inherit;transition:background 0.2s;}
+.btn:hover{background:#3F6285;}
+.btn:disabled{opacity:0.5;cursor:not-allowed;}
+.btn-sm{padding:0.35rem 0.75rem;font-size:0.8rem;border-radius:6px;}
+.btn-save{background:#1e8449;}
+.btn-save:hover{background:#166035;}
+.status{padding:0.65rem 1rem;border-radius:8px;font-size:0.85rem;margin-top:0.75rem;display:none;}
+.s-ok{background:#e8f8f0;color:#1e8449;display:block;}
+.s-err{background:#fdecea;color:#c0392b;display:block;}
+.s-load{background:#eaf0f8;color:#3F6285;display:block;}
+table{width:100%;border-collapse:collapse;margin-top:0.75rem;}
+th{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:#888;padding:0.5rem 0.6rem;border-bottom:2px solid #e0ddd4;text-align:left;}
+td{padding:0.5rem 0.6rem;border-bottom:1px solid #f0ede6;font-size:0.88rem;vertical-align:middle;}
+tr:hover td{background:#fafaf8;}
+select{padding:0.3rem 0.5rem;border:1.5px solid #e0ddd4;border-radius:6px;font-size:0.85rem;font-family:inherit;color:#1a1a2e;background:white;cursor:pointer;}
+select:focus{outline:none;border-color:#5279A0;}
+.task-title{font-weight:500;color:#1a1a2e;max-width:300px;}
+.unassigned{color:#e74c3c;font-size:0.78rem;font-weight:600;}
+.assigned{color:#1e8449;font-size:0.78rem;}
+.count-badge{display:inline-block;background:#eaf0f8;color:#3F6285;border-radius:20px;padding:2px 10px;font-size:0.78rem;font-weight:600;margin-left:0.5rem;}
+#task-table-wrap{max-height:60vh;overflow-y:auto;margin-top:0.5rem;}
+.filter-bar{display:flex;gap:0.5rem;margin-bottom:0.75rem;flex-wrap:wrap;}
+.filter-btn{background:#f0ede6;border:1.5px solid #e0ddd4;color:#5279A0;border-radius:20px;padding:0.3rem 0.8rem;font-size:0.8rem;font-weight:600;cursor:pointer;font-family:inherit;}
+.filter-btn.active{background:#5279A0;color:white;border-color:#5279A0;}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>✝ CCFWB Task Repair</h1>
+  <div class="sub">Assign tasks to the right person then save back to JSONBin</div>
+
+  <div class="step">
+    <div class="step-title">Step 1 — Load Tasks</div>
+    <button class="btn" onclick="loadTasks()">Load Tasks from JSONBin</button>
+    <div class="status" id="load-status"></div>
+  </div>
+
+  <div id="assign-section" style="display:none;">
+    <div class="step">
+      <div class="step-title">Step 2 — Assign Tasks</div>
+      <div style="font-size:0.85rem;color:#666;margin-bottom:0.75rem;">
+        Tasks loaded: <span id="total-count">0</span>
+        <span class="count-badge" id="unassigned-count">0 unassigned</span>
+      </div>
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterTasks('all',this)">All</button>
+        <button class="filter-btn" onclick="filterTasks('unassigned',this)">Unassigned only</button>
+        <button class="filter-btn" onclick="filterTasks('andy',this)">Pastor Andy</button>
+        <button class="filter-btn" onclick="filterTasks('kaitlyn',this)">Kaitlyn</button>
+        <button class="filter-btn" onclick="filterTasks('angie',this)">Angie</button>
+      </div>
+      <div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.75rem;flex-wrap:wrap;">
+        <span style="font-size:0.82rem;color:#888;">Assign all unassigned to:</span>
+        <select id="bulk-person">
+          <option value="">— pick —</option>
+          <option value="Pastor Andy">Pastor Andy</option>
+          <option value="Kaitlyn">Kaitlyn</option>
+          <option value="Angie">Angie</option>
+        </select>
+        <button class="btn btn-sm" onclick="bulkAssign()">Apply to unassigned</button>
+      </div>
+      <div id="task-table-wrap">
+        <table>
+          <thead><tr><th>Task</th><th>Assigned To</th></tr></thead>
+          <tbody id="task-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">Step 3 — Save</div>
+      <button class="btn btn-save" onclick="saveTasks()">💾 Save All Assignments to JSONBin</button>
+      <div class="status" id="save-status"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const BIN_ID = '69f39a9136566621a80e37bd';
+const BIN_KEY = '$2a$10$u./u72JVwUVjuIdiEB4.d.iusC98TwDYyxS4VPqQIXNCXkx/2JOzq';
+const PEOPLE = ['Pastor Andy','Kaitlyn','Angie'];
+
+let appData = null;
+let currentFilter = 'all';
+
+function showStatus(id, type, msg) {
+  const el = document.getElementById(id);
+  el.className = 'status ' + type;
+  el.textContent = msg;
+}
+
+async function loadTasks() {
+  showStatus('load-status','s-load','Loading from JSONBin...');
+  try {
+    const r = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+      headers: { 'X-Master-Key': BIN_KEY }
+    });
+    const json = await r.json();
+    appData = json.record;
+    if (!appData || !appData.tasks) throw new Error('No task data found');
+    showStatus('load-status','s-ok',`✅ Loaded ${appData.tasks.length} tasks`);
+    document.getElementById('assign-section').style.display = 'block';
+    renderTable('all');
+    updateCounts();
+  } catch(e) {
+    showStatus('load-status','s-err','❌ ' + (e.message || 'Failed to load'));
+  }
+}
+
+function renderTable(filter) {
+  currentFilter = filter;
+  const tbody = document.getElementById('task-tbody');
+  let tasks = appData.tasks;
+  if (filter === 'unassigned') tasks = tasks.filter(t => !t.assignedTo);
+  else if (filter === 'andy') tasks = tasks.filter(t => t.assignedTo === 'Pastor Andy');
+  else if (filter === 'kaitlyn') tasks = tasks.filter(t => t.assignedTo === 'Kaitlyn');
+  else if (filter === 'angie') tasks = tasks.filter(t => t.assignedTo === 'Angie');
+
+  if (!tasks.length) {
+    tbody.innerHTML = `<tr><td colspan="2" style="text-align:center;color:#888;padding:1.5rem;">No tasks in this filter</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = tasks.map(t => `
+    <tr>
+      <td class="task-title">${escHtml(t.title)}</td>
+      <td>
+        <select onchange="assignTask('${t.id}', this.value)">
+          <option value="" ${!t.assignedTo?'selected':''}>— Unassigned —</option>
+          ${PEOPLE.map(p => `<option value="${p}" ${t.assignedTo===p?'selected':''}>${p}</option>`).join('')}
+        </select>
+        ${!t.assignedTo ? '<span class="unassigned"> ⚠ unassigned</span>' : ''}
+      </td>
+    </tr>
+  `).join('');
+}
+
+function assignTask(id, person) {
+  const task = appData.tasks.find(t => t.id === id);
+  if (task) {
+    task.assignedTo = person;
+    task.updatedAt = new Date().toISOString();
+  }
+  updateCounts();
+  // Re-render to remove unassigned warning
+  renderTable(currentFilter);
+}
+
+function bulkAssign() {
+  const person = document.getElementById('bulk-person').value;
+  if (!person) { alert('Please pick a person first'); return; }
+  appData.tasks.forEach(t => { if (!t.assignedTo) { t.assignedTo = person; t.updatedAt = new Date().toISOString(); } });
+  updateCounts();
+  renderTable(currentFilter);
+}
+
+function updateCounts() {
+  const unassigned = appData.tasks.filter(t => !t.assignedTo).length;
+  document.getElementById('total-count').textContent = appData.tasks.length;
+  document.getElementById('unassigned-count').textContent = unassigned + ' unassigned';
+  document.getElementById('unassigned-count').style.background = unassigned > 0 ? '#fdecea' : '#e8f8f0';
+  document.getElementById('unassigned-count').style.color = unassigned > 0 ? '#c0392b' : '#1e8449';
+}
+
+function filterTasks(filter, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderTable(filter);
+}
+
+async function saveTasks() {
+  showStatus('save-status','s-load','Saving to JSONBin...');
+  try {
+    const r = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json', 'X-Master-Key': BIN_KEY },
+      body: JSON.stringify(appData)
+    });
+    if (!r.ok) throw new Error('Save failed — check your connection');
+    const unassigned = appData.tasks.filter(t => !t.assignedTo).length;
+    showStatus('save-status','s-ok', unassigned > 0
+      ? `✅ Saved! Note: ${unassigned} tasks still unassigned.`
+      : '✅ All tasks saved with assignments! Refresh the app to see them.');
+  } catch(e) {
+    showStatus('save-status','s-err','❌ ' + (e.message || 'Save failed'));
+  }
+}
+
+function escHtml(s) {
+  return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+</script>
+</body>
+</html>
