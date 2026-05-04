@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CCFWB Team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<style>
+:root {
+  --ocean: #5279A0;
+  --ocean-dark: #3F6285;
+  --tide: #62A8AB;
+  --yellow: #F4BE51;
+  --sand: #EBE9DF;
+  --sand-dark: #D8D5C8;
+  --white: #FFFFFF;
+  --text: #1a1a2e;
+  --text-mid: #4a4a6a;
+  --text-light: #8888aa;
+  --border: #e0ddd4;
+  --card-bg: #FFFFFF;
+  --page-bg: #F5F3ED;
+  --success: #4CAF50;
+  --danger: #e74c3c;
+  --warning: #F4BE51;
+  --p1: #e74c3c;
+  --p2: #e67e22;
+  --p3: #5279A0;
+  --p4: #62A8AB;
+  --shadow: 0 2px 12px rgba(82,121,160,0.10);
+  --shadow-lg: 0 8px 32px rgba(82,121,160,0.18);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+[data-theme="dark"] {
+  --text: #e8e6f0;
+  --text-mid: #b0aec8;
+  --text-light: #7070a0;
+  --border: #2e2e4a;
+  --card-bg: #1e1e32;
+  --page-bg: #13132a;
+  --sand: #1a1a2e;
+  --sand-dark: #2a2a42;
+  --white: #1e1e32;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--page-bg);color:var(--text);min-height:100vh;transition:background 0.3s,color 0.3s;}
+
+/* IDENTITY OVERLAY */
+#identity-overlay{position:fixed;inset:0;background:linear-gradient(135deg,var(--ocean) 0%,var(--tide) 100%);display:flex;align-items:center;justify-content:center;z-index:1000;}
+.identity-box{background:rgba(255,255,255,0.95);border-radius:20px;padding:2.5rem;text-align:center;max-width:400px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,0.3);}
+.identity-box h1{font-family:'Lora',serif;font-size:1.8rem;color:var(--ocean);margin-bottom:0.4rem;}
+.identity-box p{color:var(--text-mid);font-size:0.95rem;margin-bottom:2rem;}
+.identity-btns{display:flex;flex-direction:column;gap:0.75rem;}
+.identity-btn{padding:1rem;border-radius:var(--radius);border:2px solid var(--ocean);background:white;color:var(--ocean);font-size:1rem;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all 0.2s;}
+.identity-btn:hover{background:var(--ocean);color:white;}
+
+/* HEADER */
+header{background:var(--ocean);color:white;padding:0.75rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(82,121,160,0.3);}
+.header-left{display:flex;align-items:center;gap:0.75rem;}
+.header-logo{font-family:'Lora',serif;font-size:1.1rem;font-weight:600;}
+.header-clock{font-size:0.8rem;opacity:0.85;font-weight:300;}
+.header-right{display:flex;align-items:center;gap:0.5rem;}
+.header-user-badge{background:rgba(255,255,255,0.2);border-radius:20px;padding:0.3rem 0.75rem;font-size:0.8rem;font-weight:500;cursor:pointer;transition:background 0.2s;}
+.header-user-badge:hover{background:rgba(255,255,255,0.35);}
+.my-page-btn{background:var(--yellow);color:var(--ocean-dark);border:none;border-radius:20px;padding:0.3rem 0.75rem;font-size:0.8rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;}
+.my-page-btn:hover{background:#e6ad3a;}
+.icon-btn{background:none;border:none;color:white;cursor:pointer;padding:0.3rem;border-radius:6px;font-size:1.1rem;transition:background 0.2s;display:flex;align-items:center;justify-content:center;}
+.icon-btn:hover{background:rgba(255,255,255,0.2);}
+
+/* TABS */
+.tabs{background:var(--card-bg);border-bottom:1px solid var(--border);display:flex;overflow-x:auto;scrollbar-width:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{padding:0.8rem 1.1rem;font-size:0.85rem;font-weight:500;color:var(--text-mid);cursor:pointer;white-space:nowrap;border-bottom:3px solid transparent;transition:all 0.2s;flex-shrink:0;}
+.tab.active{color:var(--ocean);border-bottom-color:var(--ocean);font-weight:600;}
+.tab:hover:not(.active){color:var(--text);background:var(--page-bg);}
+.tab-badge{background:var(--p1);color:white;border-radius:10px;padding:1px 6px;font-size:0.7rem;margin-left:4px;font-weight:700;}
+
+/* MAIN */
+main{max-width:900px;margin:0 auto;padding:1.25rem;}
+
+/* CARDS */
+.task-card{background:var(--card-bg);border-radius:var(--radius);border:1px solid var(--border);padding:1rem 1.1rem;margin-bottom:0.6rem;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;}
+.task-card:hover{box-shadow:var(--shadow);transform:translateY(-1px);}
+.task-card.p1{border-left:4px solid var(--p1);}
+.task-card.p2{border-left:4px solid var(--p2);}
+.task-card.p3{border-left:4px solid var(--p3);}
+.task-card.p4{border-left:4px solid var(--p4);}
+.task-card.stale::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 70%,rgba(244,190,81,0.08));pointer-events:none;}
+.task-card.overdue{border-top:2px solid var(--p1);}
+.task-card.awaiting-input{border-left:4px solid #9b59b6;background:linear-gradient(135deg,var(--card-bg),rgba(155,89,182,0.04));}
+.task-card.waiting-outside{border-left:4px solid var(--text-light);}
+.task-row{display:flex;align-items:flex-start;gap:0.6rem;}
+.task-check{width:18px;height:18px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;margin-top:2px;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;}
+.task-check:hover{border-color:var(--ocean);}
+.task-check.done{background:var(--success);border-color:var(--success);color:white;font-size:10px;}
+.task-main{flex:1;min-width:0;}
+.task-title{font-size:0.93rem;font-weight:500;color:var(--text);line-height:1.4;margin-bottom:0.25rem;}
+.task-title.done{text-decoration:line-through;opacity:0.5;}
+.task-meta{display:flex;flex-wrap:wrap;gap:0.35rem;align-items:center;}
+.badge{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:20px;font-size:0.72rem;font-weight:500;}
+.badge-p1{background:#fdecea;color:#c0392b;}
+.badge-p2{background:#fef3e2;color:#d35400;}
+.badge-p3{background:#eaf0f8;color:#3F6285;}
+.badge-p4{background:#e8f5f5;color:#4a8c8f;}
+.badge-soft{background:#f0f0f0;color:#666;}
+.badge-hard{background:#fdecea;color:#c0392b;}
+.badge-input{background:#f3eafc;color:#7d3c98;}
+.badge-waiting{background:#f5f5f5;color:#888;}
+.badge-handoff{background:#e8f8f0;color:#1e8449;}
+.badge-overdue{background:#fdecea;color:#c0392b;}
+.badge-stale{background:#fef9e7;color:#b7950b;}
+.badge-decision{background:#fdf3e7;color:#935116;}
+.task-age{font-size:0.7rem;color:var(--text-light);margin-top:0.2rem;}
+.glow-pulse{animation:glowPulse 3s ease-in-out infinite;}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 0 rgba(244,190,81,0);}50%{box-shadow:0 0 12px rgba(244,190,81,0.4);}}
+
+/* SECTION HEADERS */
+.section-header{display:flex;align-items:center;justify-content:space-between;margin:1.2rem 0 0.6rem;}
+.section-title{font-family:'Lora',serif;font-size:1rem;font-weight:600;color:var(--ocean);}
+.add-btn{background:var(--ocean);color:white;border:none;border-radius:20px;padding:0.35rem 0.9rem;font-size:0.82rem;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s;}
+.add-btn:hover{background:var(--ocean-dark);}
+.add-btn.secondary{background:transparent;color:var(--ocean);border:1.5px solid var(--ocean);}
+.add-btn.secondary:hover{background:var(--ocean);color:white;}
+
+/* EMPTY STATE */
+.empty-state{text-align:center;padding:2.5rem 1rem;color:var(--text-light);}
+.empty-state .emoji{font-size:2rem;margin-bottom:0.5rem;}
+.empty-state p{font-size:0.9rem;}
+
+/* MODALS */
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:500;display:flex;align-items:flex-end;justify-content:center;}
+.modal-backdrop.center{align-items:center;}
+.modal{background:var(--card-bg);border-radius:var(--radius) var(--radius) 0 0;padding:1.5rem;width:100%;max-width:560px;max-height:92vh;overflow-y:auto;}
+.modal-backdrop.center .modal{border-radius:var(--radius);max-height:85vh;}
+.modal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;}
+.modal-title{font-family:'Lora',serif;font-size:1.1rem;font-weight:600;color:var(--ocean);}
+.close-btn{background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--text-mid);padding:0.2rem;}
+.form-group{margin-bottom:1rem;}
+label{display:block;font-size:0.82rem;font-weight:600;color:var(--text-mid);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:0.04em;}
+input,textarea,select{width:100%;padding:0.65rem 0.8rem;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:0.92rem;color:var(--text);background:var(--card-bg);transition:border 0.2s;}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--ocean);}
+textarea{resize:vertical;min-height:80px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
+.btn-primary{background:var(--ocean);color:white;border:none;border-radius:var(--radius-sm);padding:0.75rem 1.25rem;font-size:0.93rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;width:100%;transition:background 0.2s;margin-top:0.5rem;}
+.btn-primary:hover{background:var(--ocean-dark);}
+.btn-danger{background:var(--danger);color:white;border:none;border-radius:var(--radius-sm);padding:0.75rem 1.25rem;font-size:0.93rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;width:100%;transition:background 0.2s;margin-top:0.5rem;}
+.btn-secondary{background:transparent;color:var(--ocean);border:1.5px solid var(--ocean);border-radius:var(--radius-sm);padding:0.7rem 1.25rem;font-size:0.93rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;width:100%;transition:all 0.2s;margin-top:0.5rem;}
+.btn-secondary:hover{background:var(--ocean);color:white;}
+.btn-row{display:flex;gap:0.6rem;}
+.btn-row .btn-primary,.btn-row .btn-secondary,.btn-row .btn-danger{margin-top:0;}
+
+/* PERSONAL PAGE */
+#personal-page{position:fixed;inset:0;background:var(--page-bg);z-index:200;overflow-y:auto;display:none;}
+#personal-page.open{display:block;}
+.personal-header{background:linear-gradient(135deg,var(--ocean),var(--tide));color:white;padding:1.25rem;display:flex;align-items:center;justify-content:space-between;}
+.personal-header h2{font-family:'Lora',serif;font-size:1.3rem;}
+.personal-back-btn{background:rgba(255,255,255,0.2);border:none;color:white;border-radius:20px;padding:0.4rem 1rem;font-size:0.85rem;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s;}
+.personal-back-btn:hover{background:rgba(255,255,255,0.35);}
+.personal-tabs{background:var(--card-bg);border-bottom:1px solid var(--border);display:flex;}
+.personal-tab{padding:0.8rem 1.25rem;font-size:0.85rem;font-weight:500;color:var(--text-mid);cursor:pointer;border-bottom:3px solid transparent;transition:all 0.2s;}
+.personal-tab.active{color:var(--ocean);border-bottom-color:var(--ocean);font-weight:600;}
+
+/* BRIEFING */
+.briefing-card{background:linear-gradient(135deg,rgba(82,121,160,0.07),rgba(98,168,171,0.07));border:1px solid rgba(82,121,160,0.2);border-radius:var(--radius);padding:1rem;margin-bottom:0.6rem;position:relative;}
+.briefing-item{display:flex;align-items:flex-start;gap:0.6rem;padding:0.5rem 0;border-bottom:1px solid var(--border);}
+.briefing-item:last-child{border-bottom:none;}
+.briefing-item-text{flex:1;font-size:0.9rem;color:var(--text);}
+.briefing-item-meta{font-size:0.72rem;color:var(--text-light);margin-top:2px;}
+.briefing-delete{background:none;border:none;color:var(--text-light);cursor:pointer;font-size:0.85rem;padding:0.1rem 0.3rem;}
+.briefing-delete:hover{color:var(--danger);}
+
+/* WIN WALL */
+.win-card{background:linear-gradient(135deg,rgba(244,190,81,0.1),rgba(98,168,171,0.1));border:1px solid rgba(244,190,81,0.3);border-radius:var(--radius);padding:0.85rem 1rem;margin-bottom:0.5rem;display:flex;align-items:flex-start;gap:0.6rem;}
+.win-emoji{font-size:1.2rem;}
+.win-text{font-size:0.88rem;color:var(--text);}
+.win-meta{font-size:0.72rem;color:var(--text-light);margin-top:2px;}
+
+/* CREATIVE KANBAN */
+.kanban-board{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:0.75rem;}
+.kanban-col{background:var(--page-bg);border-radius:var(--radius);padding:0.75rem;}
+.kanban-col-title{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-mid);margin-bottom:0.6rem;padding-bottom:0.4rem;border-bottom:2px solid var(--border);}
+.kanban-card{background:var(--card-bg);border-radius:var(--radius-sm);padding:0.7rem;margin-bottom:0.5rem;border:1px solid var(--border);font-size:0.85rem;cursor:pointer;transition:all 0.2s;}
+.kanban-card:hover{box-shadow:var(--shadow);transform:translateY(-1px);}
+
+/* SETTINGS */
+.settings-section{margin-bottom:1.5rem;}
+.settings-title{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-light);margin-bottom:0.75rem;}
+.settings-row{display:flex;align-items:center;justify-content:space-between;padding:0.65rem 0;border-bottom:1px solid var(--border);}
+.settings-row:last-child{border-bottom:none;}
+.settings-label{font-size:0.9rem;color:var(--text);}
+.settings-value{font-size:0.82rem;color:var(--text-mid);}
+.toggle{width:40px;height:22px;background:var(--border);border-radius:11px;cursor:pointer;position:relative;transition:background 0.2s;}
+.toggle.on{background:var(--ocean);}
+.toggle::after{content:'';position:absolute;top:3px;left:3px;width:16px;height:16px;background:white;border-radius:50%;transition:left 0.2s;}
+.toggle.on::after{left:21px;}
+
+/* AGENDA */
+.agenda-section{background:var(--card-bg);border-radius:var(--radius);border:1px solid var(--border);padding:1rem;margin-bottom:0.75rem;}
+.agenda-section-title{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.6rem;}
+.agenda-item{font-size:0.88rem;color:var(--text-mid);padding:0.3rem 0;border-bottom:1px solid var(--border);display:flex;gap:0.5rem;}
+.agenda-item:last-child{border-bottom:none;}
+.agenda-item-dot{color:var(--ocean);flex-shrink:0;}
+
+/* TOAST */
+#toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);background:var(--text);color:white;padding:0.65rem 1.25rem;border-radius:20px;font-size:0.88rem;z-index:1000;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap;}
+#toast.show{opacity:1;}
+
+/* SYNC INDICATOR */
+.sync-dot{width:8px;height:8px;border-radius:50%;background:var(--success);display:inline-block;margin-left:4px;}
+.sync-dot.syncing{background:var(--yellow);animation:pulse 1s infinite;}
+.sync-dot.error{background:var(--danger);}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+
+/* ARCHIVE */
+.archive-search{position:relative;margin-bottom:1rem;}
+.archive-search input{padding-left:2.2rem;}
+.archive-search::before{content:'🔍';position:absolute;left:0.7rem;top:50%;transform:translateY(-50%);font-size:0.85rem;}
+
+/* DECISION PENDING */
+.decision-banner{background:linear-gradient(135deg,rgba(243,156,18,0.1),rgba(230,126,34,0.08));border:1px solid rgba(243,156,18,0.3);border-radius:var(--radius);padding:0.85rem 1rem;margin-bottom:0.75rem;}
+.decision-banner-title{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#935116;margin-bottom:0.4rem;}
+
+/* PRAYER FIELD */
+.prayer-field{background:linear-gradient(135deg,rgba(82,121,160,0.05),rgba(98,168,171,0.05));border:1px solid rgba(82,121,160,0.15);border-radius:var(--radius-sm);padding:0.65rem 0.8rem;font-size:0.85rem;color:var(--text-mid);font-style:italic;margin-top:0.5rem;}
+.prayer-label{font-size:0.7rem;color:var(--ocean);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:0.3rem;}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .form-row{grid-template-columns:1fr;}
+  .kanban-board{grid-template-columns:1fr 1fr;}
+  header{padding:0.65rem 1rem;}
+}
+
+/* TEMPLATES */
+.template-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:1rem;}
+.template-card{background:var(--page-bg);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:0.75rem;cursor:pointer;transition:all 0.2s;text-align:center;}
+.template-card:hover{border-color:var(--ocean);background:rgba(82,121,160,0.05);}
+.template-card .t-emoji{font-size:1.4rem;display:block;margin-bottom:0.3rem;}
+.template-card .t-name{font-size:0.8rem;font-weight:600;color:var(--text);}
+
+/* HANDOFF BANNER */
+.handoff-banner{background:linear-gradient(135deg,rgba(30,132,73,0.08),rgba(98,168,171,0.06));border:1px solid rgba(30,132,73,0.2);border-radius:var(--radius-sm);padding:0.5rem 0.75rem;font-size:0.8rem;color:#1e8449;margin-top:0.4rem;display:flex;align-items:center;gap:0.4rem;}
+
+/* INPUT REQUEST BANNER */
+.input-banner{background:linear-gradient(135deg,rgba(155,89,182,0.08),rgba(82,121,160,0.05));border:1px solid rgba(155,89,182,0.2);border-radius:var(--radius-sm);padding:0.5rem 0.75rem;font-size:0.8rem;color:#7d3c98;margin-top:0.4rem;}
+</style>
+</head>
+<body>
+
+<!-- IDENTITY OVERLAY -->
+<div id="identity-overlay">
+  <div class="identity-box">
+    <h1>CCFWB Team</h1>
+    <p>Who are you? Your choice is saved to this device.</p>
+    <div class="identity-btns">
+      <button class="identity-btn" onclick="setIdentity('Pastor Andy')">👨‍💼 Pastor Andy</button>
+      <button class="identity-btn" onclick="setIdentity('Kaitlyn')">👩‍💻 Kaitlyn</button>
+      <button class="identity-btn" onclick="setIdentity('Angie')">👩‍🌸 Angie</button>
+    </div>
+  </div>
+</div>
+
+<!-- PERSONAL PAGE -->
+<div id="personal-page">
+  <div class="personal-header">
+    <h2 id="personal-page-title">My Page</h2>
+    <button class="personal-back-btn" onclick="closePersonalPage()">← Back to Team View</button>
+  </div>
+  <div class="personal-tabs">
+    <div class="personal-tab active" onclick="switchPersonalTab('tasks',this)">My Tasks</div>
+    <div class="personal-tab" onclick="switchPersonalTab('briefing',this)">My Briefing</div>
+    <div class="personal-tab" onclick="switchPersonalTab('prayer',this)">Prayer Notes</div>
+  </div>
+  <div style="max-width:700px;margin:0 auto;padding:1.25rem;" id="personal-content"></div>
+</div>
+
+<!-- MAIN APP -->
+<header>
+  <div class="header-left">
+    <span class="header-logo">✝ CCFWB</span>
+    <span class="header-clock" id="header-clock"></span>
+    <span class="sync-dot" id="sync-dot" title="Sync status"></span>
+  </div>
+  <div class="header-right">
+    <button class="my-page-btn" id="my-page-btn" onclick="openPersonalPage()">My Page</button>
+    <button class="icon-btn" onclick="toggleDark()" title="Toggle dark mode">🌙</button>
+    <button class="icon-btn" onclick="openSettings()" title="Settings">⚙️</button>
+  </div>
+</header>
+
+<div class="tabs" id="main-tabs">
+  <div class="tab active" onclick="switchTab('all',this)">All Tasks</div>
+  <div class="tab" onclick="switchTab('andy',this)" id="tab-andy">Pastor Andy</div>
+  <div class="tab" onclick="switchTab('kaitlyn',this)" id="tab-kaitlyn">Kaitlyn</div>
+  <div class="tab" onclick="switchTab('angie',this)" id="tab-angie">Angie</div>
+  <div class="tab" onclick="switchTab('creative',this)">🎨 Creative</div>
+  <div class="tab" onclick="switchTab('wins',this)">🏆 Wins</div>
+  <div class="tab" onclick="switchTab('agenda',this)">📋 Agenda</div>
+  <div class="tab" onclick="switchTab('archive',this)">📁 Archive</div>
+</div>
+
+<main id="main-content"></main>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<!-- MODALS rendered by JS -->
+<div id="modal-container"></div>
+
+<script>
+// ============================================================
+// CONFIG
+// ============================================================
+const BIN_ID = '69f39a9136566621a80e37bd';
+const BIN_KEY = '$2a$10$u./u72JVwUVjuIdiEB4.d.iusC98TwDYyxS4VPqQIXNCXkx/2JOzq';
+const EMAILJS_SERVICE = 'service_65bjny9';
+const EMAILJS_TEMPLATE = 'template_lxtwyyp';
+const EMAILJS_KEY = 'aTa5AWSA-QmWGO0GY';
+const APP_URL = 'https://ccfwb.github.io/ccfwb-team/';
+const PEOPLE = ['Pastor Andy', 'Kaitlyn', 'Angie'];
+const PEOPLE_KEYS = {
+  'Pastor Andy': 'andy',
+  'Kaitlyn': 'kaitlyn',
+  'Angie': 'angie'
+};
+const PEOPLE_EMAILS = {
+  'Pastor Andy': 'pastor@calvarychapelfwb.org',
+  'Kaitlyn': 'hello@calvarychapelfwb.org',
+  'Angie': 'admin@calvarychapelfwb.org'
+};
+
+// ============================================================
+// STATE
+// ============================================================
+let appData = {
+  tasks: [],
+  archivedTasks: [],
+  creativeProjects: [],
+  winWall: [],
+  briefings: { andy: [], kaitlyn: [], angie: [] },
+  prayerNotes: { andy: '', kaitlyn: '', angie: '' },
+  installDate: null
+};
+let currentTab = 'all';
+let currentPersonalTab = 'tasks';
+let identity = localStorage.getItem('ccfwb_identity') || null;
+let darkMode = localStorage.getItem('ccfwb_dark') === 'true';
+let saveTimer = null;
+let lastSaved = localStorage.getItem('ccfwb_lastSaved') || null;
+let githubToken = localStorage.getItem('ccfwb_github_token') || '';
+let editingTask = null;
+
+// ============================================================
+// INIT
+// ============================================================
+emailjs.init(EMAILJS_KEY);
+if (darkMode) document.documentElement.setAttribute('data-theme','dark');
+
+async function init() {
+  startClock();
+  if (identity) {
+    document.getElementById('identity-overlay').style.display = 'none';
+    updateHeaderUser();
+  }
+  await loadData();
+  renderCurrentTab();
+  scheduleHourlySave();
+  checkMorningBriefing();
+  updateTabBadges();
+}
+
+function setIdentity(name) {
+  identity = name;
+  localStorage.setItem('ccfwb_identity', name);
+  document.getElementById('identity-overlay').style.display = 'none';
+  updateHeaderUser();
+  renderCurrentTab();
+  toast(`Welcome, ${name}! 👋`);
+}
+
+function updateHeaderUser() {
+  const btn = document.getElementById('my-page-btn');
+  if (btn && identity) btn.textContent = `👤 My Page`;
+}
+
+// ============================================================
+// DATA
+// ============================================================
+async function loadData() {
+  setSyncStatus('syncing');
+  try {
+    const r = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+      headers: { 'X-Master-Key': BIN_KEY }
+    });
+    const json = await r.json();
+    const d = json.record;
+    appData.tasks = d.tasks || [];
+    appData.archivedTasks = d.archivedTasks || [];
+    appData.creativeProjects = d.creativeProjects || [];
+    appData.winWall = d.winWall || [];
+    appData.briefings = d.briefings || { andy: [], kaitlyn: [], angie: [] };
+    appData.prayerNotes = d.prayerNotes || { andy: '', kaitlyn: '', angie: '' };
+    appData.installDate = d.installDate || new Date().toISOString();
+    if (!d.installDate) schedSave();
+    setSyncStatus('ok');
+  } catch(e) {
+    setSyncStatus('error');
+    toast('Could not load data — showing last state');
+  }
+}
+
+async function saveData() {
+  setSyncStatus('syncing');
+  try {
+    await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json', 'X-Master-Key': BIN_KEY },
+      body: JSON.stringify(appData)
+    });
+    lastSaved = new Date().toISOString();
+    localStorage.setItem('ccfwb_lastSaved', lastSaved);
+    setSyncStatus('ok');
+    if (githubToken) backupToGitHub();
+  } catch(e) {
+    setSyncStatus('error');
+  }
+}
+
+function schedSave() {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => saveData(), 1500);
+}
+
+function scheduleHourlySave() {
+  setInterval(() => saveData(), 60 * 60 * 1000);
+}
+
+async function backupToGitHub() {
+  if (!githubToken) return;
+  try {
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(appData, null, 2))));
+    const getRes = await fetch('https://api.github.com/repos/CCFWB/ccfwb-team/contents/backup.json', {
+      headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github.v3+json' }
+    });
+    let sha = '';
+    if (getRes.ok) { const fd = await getRes.json(); sha = fd.sha; }
+    await fetch('https://api.github.com/repos/CCFWB/ccfwb-team/contents/backup.json', {
+      method: 'PUT',
+      headers: { 'Authorization': `token ${githubToken}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: 'Hourly backup', content, sha, branch: 'main' })
+    });
+  } catch(e) { /* silent */ }
+}
+
+function exportData() {
+  const blob = new Blob([JSON.stringify(appData, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `ccfwb-backup-${new Date().toISOString().split('T')[0]}.json`;
+  a.click();
+  toast('Backup downloaded ✓');
+}
+
+function setSyncStatus(state) {
+  const dot = document.getElementById('sync-dot');
+  if (!dot) return;
+  dot.className = 'sync-dot' + (state === 'syncing' ? ' syncing' : state === 'error' ? ' error' : '');
+  dot.title = state === 'ok' ? `Last saved: ${lastSaved ? new Date(lastSaved).toLocaleTimeString() : 'never'}` : state === 'syncing' ? 'Saving...' : 'Save error';
+}
+
+// ============================================================
+// CLOCK
+// ============================================================
+function startClock() {
+  function tick() {
+    const now = new Date();
+    const el = document.getElementById('header-clock');
+    if (el) el.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  }
+  tick();
+  setInterval(tick, 1000);
+}
+
+// ============================================================
+// TABS
+// ============================================================
+function switchTab(tab, el) {
+  currentTab = tab;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  if (el) el.classList.add('active');
+  renderCurrentTab();
+}
+
+function renderCurrentTab() {
+  const c = document.getElementById('main-content');
+  if (!c) return;
+  const tab = currentTab;
+  if (tab === 'all') c.innerHTML = renderAllTasks();
+  else if (tab === 'andy') c.innerHTML = renderPersonTab('Pastor Andy');
+  else if (tab === 'kaitlyn') c.innerHTML = renderPersonTab('Kaitlyn');
+  else if (tab === 'angie') c.innerHTML = renderPersonTab('Angie');
+  else if (tab === 'creative') c.innerHTML = renderCreative();
+  else if (tab === 'wins') c.innerHTML = renderWins();
+  else if (tab === 'agenda') c.innerHTML = renderAgenda();
+  else if (tab === 'archive') c.innerHTML = renderArchive();
+}
+
+function updateTabBadges() {
+  // Count overdue per person
+  const now = new Date();
+  ['andy','kaitlyn','angie'].forEach(key => {
+    const name = PEOPLE.find(p => PEOPLE_KEYS[p] === key);
+    const overdue = appData.tasks.filter(t => !t.completed && t.assignedTo === name && t.dueDate && new Date(t.dueDate) < now).length;
+    const tab = document.getElementById(`tab-${key}`);
+    if (!tab) return;
+    const existing = tab.querySelector('.tab-badge');
+    if (existing) existing.remove();
+    if (overdue > 0) {
+      const badge = document.createElement('span');
+      badge.className = 'tab-badge';
+      badge.textContent = overdue;
+      tab.appendChild(badge);
+    }
+  });
+}
+
+// ============================================================
+// TASK RENDERING
+// ============================================================
+function taskAge(task) {
+  const updated = task.updatedAt || task.createdAt;
+  if (!updated) return '';
+  const days = Math.floor((Date.now() - new Date(updated)) / 86400000);
+  if (days === 0) return 'Updated today';
+  if (days === 1) return 'Updated yesterday';
+  return `Updated ${days} days ago`;
+}
+
+function isStale(task) {
+  const updated = task.updatedAt || task.createdAt;
+  if (!updated) return false;
+  return Math.floor((Date.now() - new Date(updated)) / 86400000) >= 7;
+}
+
+function isOverdue(task) {
+  if (!task.dueDate || task.completed) return false;
+  // Use end of day so a task due "today" is not overdue until midnight local time
+  return new Date(task.dueDate + 'T23:59:59') < new Date();
+}
+
+function renderTaskCard(task, showAssignee = false) {
+  const stale = isStale(task);
+  const overdue = isOverdue(task);
+  let classes = `task-card p${task.priority||4}`;
+  if (stale && !task.completed) classes += ' stale glow-pulse';
+  if (overdue) classes += ' overdue';
+  if (task.awaitingInputFrom) classes += ' awaiting-input';
+  if (task.status === 'waiting-outside') classes += ' waiting-outside';
+
+  let badges = '';
+  if (task.priority) badges += `<span class="badge badge-p${task.priority}">P${task.priority}</span>`;
+  if (overdue) badges += `<span class="badge badge-overdue">⚠ Overdue</span>`;
+  if (stale && !task.completed) badges += `<span class="badge badge-stale">🕰 Long open</span>`;
+  if (task.dueDateType === 'hard' && task.dueDate) badges += `<span class="badge badge-hard">🔴 Due ${formatDate(task.dueDate)}</span>`;
+  else if (task.dueDate) badges += `<span class="badge badge-soft">📅 ${formatDate(task.dueDate)}</span>`;
+  if (task.status === 'decision-pending') badges += `<span class="badge badge-decision">⏳ Decision Pending</span>`;
+  if (task.status === 'waiting-outside') badges += `<span class="badge badge-waiting">⏸ Waiting: ${task.waitingFor||'outside'}</span>`;
+  if (task.awaitingInputFrom) badges += `<span class="badge badge-input">💬 Input from ${task.awaitingInputFrom}</span>`;
+  if (task.handoffFrom) badges += `<span class="badge badge-handoff">↩ From ${task.handoffFrom}</span>`;
+  if (showAssignee && task.assignedTo) badges += `<span class="badge badge-p3">👤 ${task.assignedTo}</span>`;
+  if (task.recurring) badges += `<span class="badge badge-p4">🔄 Recurring</span>`;
+
+  return `<div class="${classes}" onclick="openTask('${task.id}')">
+    <div class="task-row">
+      <div class="task-check ${task.completed?'done':''}" onclick="event.stopPropagation();toggleComplete('${task.id}')">${task.completed?'✓':''}</div>
+      <div class="task-main">
+        <div class="task-title ${task.completed?'done':''}">${escHtml(task.title)}</div>
+        <div class="task-meta">${badges}</div>
+        <div class="task-age">${taskAge(task)}</div>
+        ${task.handoffFrom ? `<div class="handoff-banner">↩ Handed to you by ${escHtml(task.handoffFrom)}</div>` : ''}
+        ${task.awaitingInputFrom ? `<div class="input-banner">💬 Waiting for input from ${escHtml(task.awaitingInputFrom)} — will return when submitted</div>` : ''}
+      </div>
+    </div>
+  </div>`;
+}
+
+function formatDate(d) {
+  if (!d) return '';
+  const dt = new Date(d + 'T00:00:00');
+  return dt.toLocaleDateString([], { month: 'short', day: 'numeric' });
+}
+
+function escHtml(s) {
+  return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ============================================================
+// ALL TASKS TAB
+// ============================================================
+function renderAllTasks() {
+  const tasks = appData.tasks.filter(t => !t.completed && !t.awaitingInputFrom);
+  const completed = appData.archivedTasks.slice(-5).reverse();
+  const awaitingInput = appData.tasks.filter(t => t.awaitingInputFrom);
+
+  let html = `<div class="section-header">
+    <span class="section-title">All Active Tasks</span>
+    <button class="add-btn" onclick="openAddTask()">+ Add Task</button>
+  </div>`;
+
+  // Decisions pending
+  const decisions = tasks.filter(t => t.status === 'decision-pending');
+  if (decisions.length) {
+    html += `<div class="decision-banner"><div class="decision-banner-title">⏳ Awaiting Decisions</div>${decisions.map(t=>renderTaskCard(t,true)).join('')}</div>`;
+  }
+
+  // Awaiting input
+  if (awaitingInput.length) {
+    html += `<div class="section-header"><span class="section-title">💬 Awaiting Input</span></div>`;
+    html += awaitingInput.map(t => renderTaskCard(t, true)).join('');
+  }
+
+  const active = tasks.filter(t => t.status !== 'decision-pending');
+  if (active.length) {
+    html += active.map(t => renderTaskCard(t, true)).join('');
+  } else if (!decisions.length) {
+    html += `<div class="empty-state"><div class="emoji">✅</div><p>All clear! No active tasks.</p></div>`;
+  }
+
+  if (completed.length) {
+    html += `<div class="section-header"><span class="section-title">✅ Recently Completed</span></div>`;
+    html += completed.slice(0,5).map(t => renderTaskCard(t, true)).join('');
+  }
+  return html;
+}
+
+// ============================================================
+// PERSON TAB
+// ============================================================
+function renderPersonTab(person) {
+  const key = PEOPLE_KEYS[person];
+  const tasks = appData.tasks.filter(t => t.assignedTo === person && !t.completed && !t.awaitingInputFrom);
+  const inputTasks = appData.tasks.filter(t => t.awaitingInputFrom === person);
+  const completed = appData.archivedTasks.filter(t => t.assignedTo === person && t.completed);
+  const briefingItems = (appData.briefings[key] || []).filter(b => {
+    // Show today's briefing items
+    return b.date === todayStr();
+  });
+
+  let html = `<div class="section-header">
+    <span class="section-title">${person}'s Tasks</span>
+    <button class="add-btn" onclick="openAddTask('${person}')">+ Add</button>
+  </div>`;
+
+  // Briefing summary
+  if (briefingItems.length) {
+    html += `<div class="briefing-card"><div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--ocean);margin-bottom:0.5rem;">📬 Today's Briefing</div>`;
+    briefingItems.forEach(b => {
+      html += `<div class="briefing-item"><div class="briefing-item-text">${escHtml(b.text)}<div class="briefing-item-meta">Added by ${escHtml(b.addedBy)}</div></div></div>`;
+    });
+    html += `</div>`;
+  }
+
+  // Input requests
+  if (inputTasks.length) {
+    html += `<div class="section-header"><span class="section-title">💬 Needs Your Input</span></div>`;
+    html += inputTasks.map(t => renderTaskCard(t)).join('');
+  }
+
+  // Decisions
+  const decisions = tasks.filter(t => t.status === 'decision-pending');
+  if (decisions.length) {
+    html += `<div class="decision-banner"><div class="decision-banner-title">⏳ Awaiting Your Decision</div>${decisions.map(t=>renderTaskCard(t)).join('')}</div>`;
+  }
+
+  const active = tasks.filter(t => t.status !== 'decision-pending');
+  if (active.length) {
+    html += active.map(t => renderTaskCard(t)).join('');
+  } else if (!decisions.length && !inputTasks.length) {
+    html += `<div class="empty-state"><div class="emoji">✝️</div><p>Nothing on the list — all clear!</p></div>`;
+  }
+
+  if (completed.slice(0,3).length) {
+    html += `<div class="section-header"><span class="section-title">✅ Recent Completions</span></div>`;
+    html += completed.slice(0,3).map(t => renderTaskCard(t)).join('');
+  }
+  return html;
+}
+
+// ============================================================
+// CREATIVE TAB
+// ============================================================
+function renderCreative() {
+  const cols = ['Idea','In Progress','In Review','Published'];
+  const cats = ['Digital Media','Audio/Visual','Ads & Promotions','Video Projects'];
+
+  let html = `<div class="section-header">
+    <span class="section-title">Creative Ministries</span>
+    <button class="add-btn" onclick="openAddCreative()">+ New Project</button>
+  </div>
+  <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.75rem;">
+    ${cats.map(c=>`<span class="badge badge-p3" style="cursor:pointer" onclick="filterCreative('${c}')">${c}</span>`).join('')}
+    <span class="badge badge-soft" style="cursor:pointer" onclick="filterCreative('')">All</span>
+  </div>
+  <div class="kanban-board">`;
+  cols.forEach(col => {
+    const projs = appData.creativeProjects.filter(p => p.status === col);
+    html += `<div class="kanban-col">
+      <div class="kanban-col-title">${col} <span style="color:var(--text-light)">(${projs.length})</span></div>`;
+    if (projs.length === 0) html += `<div style="font-size:0.8rem;color:var(--text-light);text-align:center;padding:1rem 0;">Empty</div>`;
+    projs.forEach(p => {
+      html += `<div class="kanban-card" onclick="openCreativeProject('${p.id}')">
+        <div style="font-weight:600;font-size:0.85rem;margin-bottom:0.3rem;">${escHtml(p.title)}</div>
+        <div style="font-size:0.75rem;color:var(--text-mid)">${escHtml(p.category||'')}</div>
+        ${p.dueDate?`<div style="font-size:0.72rem;color:var(--text-light);margin-top:0.3rem;">📅 ${formatDate(p.dueDate)}</div>`:''}
+      </div>`;
+    });
+    html += `</div>`;
+  });
+  html += `</div>`;
+  return html;
+}
+
+// ============================================================
+// WINS
+// ============================================================
+function renderWins() {
+  let html = `<div class="section-header"><span class="section-title">🏆 Win Wall</span></div>`;
+  if (!appData.winWall.length) {
+    html += `<div class="empty-state"><div class="emoji">🙏</div><p>Completed tasks will appear here as wins!</p></div>`;
+    return html;
+  }
+  appData.winWall.slice().reverse().slice(0,30).forEach(w => {
+    html += `<div class="win-card">
+      <span class="win-emoji">🎉</span>
+      <div><div class="win-text">${escHtml(w.title)}</div>
+      <div class="win-meta">${escHtml(w.person)} · ${w.date ? new Date(w.date).toLocaleDateString() : ''}</div></div>
+    </div>`;
+  });
+  return html;
+}
+
+// ============================================================
+// AGENDA
+// ============================================================
+function renderAgenda() {
+  const now = new Date();
+  const todayEnd = new Date(); todayEnd.setHours(23,59,59,999);
+  const weekEnd = new Date(); weekEnd.setDate(weekEnd.getDate()+7);
+
+  const overdue = appData.tasks.filter(t=>!t.completed&&t.dueDate&&new Date(t.dueDate)<now);
+  const dueToday = appData.tasks.filter(t=>!t.completed&&t.dueDate&&new Date(t.dueDate+'T00:00:00')<=todayEnd&&new Date(t.dueDate+'T00:00:00')>=now);
+  const thisWeek = appData.tasks.filter(t=>!t.completed&&t.dueDate&&new Date(t.dueDate)>todayEnd&&new Date(t.dueDate)<=weekEnd);
+  const decisions = appData.tasks.filter(t=>!t.completed&&t.status==='decision-pending');
+  const stale = appData.tasks.filter(t=>!t.completed&&isStale(t));
+
+  let html = `<div class="section-header"><span class="section-title">📋 Meeting Agenda</span></div>`;
+
+  const section = (title, items, emoji) => {
+    if (!items.length) return '';
+    return `<div class="agenda-section">
+      <div class="agenda-section-title" style="color:var(--ocean)">${emoji} ${title} (${items.length})</div>
+      ${items.map(t=>`<div class="agenda-item"><span class="agenda-item-dot">•</span><span>${escHtml(t.title)} <span style="color:var(--text-light);font-size:0.8rem;">— ${escHtml(t.assignedTo||'')}</span></span></div>`).join('')}
+    </div>`;
+  };
+
+  html += section('Overdue — Needs Immediate Action', overdue, '🔴');
+  html += section('Due Today', dueToday, '📅');
+  html += section('This Week', thisWeek, '📆');
+  html += section('Awaiting Decisions', decisions, '⏳');
+  html += section('Long Open (7+ days)', stale, '🕰');
+
+  if (!overdue.length && !dueToday.length && !thisWeek.length && !decisions.length && !stale.length) {
+    html += `<div class="empty-state"><div class="emoji">✝️</div><p>Nothing pressing — great week ahead!</p></div>`;
+  }
+  return html;
+}
+
+// ============================================================
+// ARCHIVE
+// ============================================================
+function renderArchive(query='') {
+  let items = appData.archivedTasks;
+  if (query) items = items.filter(t => t.title.toLowerCase().includes(query.toLowerCase()) || (t.archiveNote||'').toLowerCase().includes(query.toLowerCase()));
+
+  let html = `<div class="section-header"><span class="section-title">📁 Archive</span></div>
+  <div class="archive-search"><input type="text" placeholder="Search archive..." value="${escHtml(query)}" oninput="renderArchiveSearch(this.value)"/></div>`;
+
+  if (!items.length) {
+    html += `<div class="empty-state"><div class="emoji">📭</div><p>No archived tasks${query?' matching your search':''}.</p></div>`;
+    return html;
+  }
+  items.slice().reverse().slice(0,50).forEach(t => {
+    html += `<div class="task-card p4">
+      <div class="task-row">
+        <div class="task-check done">✓</div>
+        <div class="task-main">
+          <div class="task-title done">${escHtml(t.title)}</div>
+          <div class="task-meta">
+            <span class="badge badge-soft">${escHtml(t.assignedTo||'')}</span>
+            <span class="badge badge-soft">${t.completedAt?new Date(t.completedAt).toLocaleDateString():''}</span>
+          </div>
+          ${t.archiveNote?`<div style="font-size:0.82rem;color:var(--text-mid);margin-top:0.4rem;font-style:italic;">"${escHtml(t.archiveNote)}"</div>`:''}
+        </div>
+      </div>
+    </div>`;
+  });
+  return html;
+}
+
+function renderArchiveSearch(q) {
+  document.getElementById('main-content').innerHTML = renderArchive(q);
+}
+
+// ============================================================
+// PERSONAL PAGE
+// ============================================================
+function openPersonalPage() {
+  if (!identity) { toast('Please select your identity first'); return; }
+  document.getElementById('personal-page').classList.add('open');
+  document.getElementById('personal-page-title').textContent = `${identity}'s Page`;
+  renderPersonalTab(currentPersonalTab);
+}
+
+function closePersonalPage() {
+  document.getElementById('personal-page').classList.remove('open');
+}
+
+function switchPersonalTab(tab, el) {
+  currentPersonalTab = tab;
+  document.querySelectorAll('.personal-tab').forEach(t => t.classList.remove('active'));
+  if (el) el.classList.add('active');
+  renderPersonalTab(tab);
+}
+
+function renderPersonalTab(tab) {
+  const c = document.getElementById('personal-content');
+  if (!c || !identity) return;
+  const key = PEOPLE_KEYS[identity];
+  if (tab === 'tasks') {
+    c.innerHTML = renderPersonTab(identity);
+  } else if (tab === 'briefing') {
+    c.innerHTML = renderMyBriefing(key);
+  } else if (tab === 'prayer') {
+    c.innerHTML = renderPrayerNotes(key);
+  }
+}
+
+function renderMyBriefing(key) {
+  const all = appData.briefings[key] || [];
+  const today = all.filter(b => b.date === todayStr());
+  const past = all.filter(b => b.date !== todayStr());
+
+  let html = `<div class="section-header">
+    <span class="section-title">📬 My Briefing</span>
+    <button class="add-btn" onclick="openAddBriefingFor('${key}')">+ Add Item</button>
+  </div>`;
+
+  html += `<div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-light);margin-bottom:0.5rem;">Today</div>`;
+
+  if (today.length) {
+    html += `<div class="briefing-card">`;
+    today.forEach(b => {
+      html += `<div class="briefing-item">
+        <div class="briefing-item-text">${escHtml(b.text)}<div class="briefing-item-meta">Added by ${escHtml(b.addedBy)}</div></div>
+        <button class="briefing-delete" onclick="deleteBriefingItem('${key}','${b.id}')">✕</button>
+      </div>`;
+    });
+    html += `</div>`;
+  } else {
+    html += `<div class="empty-state" style="padding:1rem 0"><p>No briefing items for today yet.</p></div>`;
+  }
+
+  // Add to someone else's briefing
+  html += `<div class="section-header"><span class="section-title">Add to a Teammate's Briefing</span></div>
+  <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">`;
+  PEOPLE.filter(p => PEOPLE_KEYS[p] !== key).forEach(p => {
+    html += `<button class="add-btn secondary" onclick="openAddBriefingFor('${PEOPLE_KEYS[p]}')">${p}</button>`;
+  });
+  html += `</div>`;
+
+  return html;
+}
+
+function renderPrayerNotes(key) {
+  const note = appData.prayerNotes[key] || '';
+  return `<div class="section-header"><span class="section-title">🙏 Prayer & Intention Notes</span></div>
+  <div style="font-size:0.85rem;color:var(--text-mid);margin-bottom:0.75rem;">These notes are private — only visible to you.</div>
+  <div class="prayer-label">Your prayer notes</div>
+  <textarea style="min-height:180px;margin-bottom:0.75rem;" placeholder="Write a prayer, scripture, or intention..." id="prayer-textarea">${escHtml(note)}</textarea>
+  <button class="btn-primary" onclick="savePrayerNote('${key}')">Save Prayer Notes</button>`;
+}
+
+function savePrayerNote(key) {
+  appData.prayerNotes[key] = document.getElementById('prayer-textarea').value;
+  schedSave();
+  toast('Prayer notes saved 🙏');
+}
+
+// ============================================================
+// BRIEFING
+// ============================================================
+function openAddBriefingFor(personKey) {
+  const personName = PEOPLE.find(p => PEOPLE_KEYS[p] === personKey);
+  showModal(`
+    <div class="modal-header">
+      <span class="modal-title">Add to ${personName}'s Briefing</span>
+      <button class="close-btn" onclick="closeModal()">✕</button>
+    </div>
+    <div class="form-group">
+      <label>Briefing Item</label>
+      <textarea id="briefing-text" placeholder="What should ${personName} know about today?" style="min-height:100px;"></textarea>
+    </div>
+    <button class="btn-primary" onclick="saveBriefingItem('${personKey}')">Add to Briefing</button>
+  `);
+}
+
+function saveBriefingItem(personKey) {
+  const text = document.getElementById('briefing-text').value.trim();
+  if (!text) return;
+  if (!appData.briefings[personKey]) appData.briefings[personKey] = [];
+  appData.briefings[personKey].push({
+    id: uid(), text, addedBy: identity || 'Team', date: todayStr(), createdAt: new Date().toISOString()
+  });
+  closeModal();
+  schedSave();
+  toast('Added to briefing ✓');
+  if (currentTab === 'all' || currentTab === 'andy' || currentTab === 'kaitlyn' || currentTab === 'angie') renderCurrentTab();
+  if (document.getElementById('personal-page').classList.contains('open')) renderPersonalTab(currentPersonalTab);
+}
+
+function deleteBriefingItem(personKey, id) {
+  appData.briefings[personKey] = (appData.briefings[personKey]||[]).filter(b => b.id !== id);
+  schedSave();
+  renderPersonalTab(currentPersonalTab);
+  toast('Removed from briefing');
+}
+
+// ============================================================
+// MORNING EMAIL CHECK
+// ============================================================
+function checkMorningBriefing() {
+  const now = new Date();
+  const hour = now.getHours();
+  const todayKey = `ccfwb_email_sent_${todayStr()}`;
+  // Only attempt if it's between 7am and 8am and not sent today
+  if (hour >= 7 && hour < 8 && !localStorage.getItem(todayKey)) {
+    sendMorningEmails();
+    localStorage.setItem(todayKey, '1');
+  }
+}
+
+function isFirstWeek() {
+  if (!appData.installDate) return true;
+  const installDate = new Date(appData.installDate);
+  const daysSince = (Date.now() - installDate) / 86400000;
+  return daysSince <= 8;
+}
+
+async function sendMorningEmails() {
+  const testNote = isFirstWeek()
+    ? '\n\n---\n📱 NOTE: This email is a test function of the in-house Calvary Chapel FWB Church management app. If you notice any glitches or have suggestions, please let Angie know (admin@calvarychapelfwb.org).'
+    : '';
+
+  for (const person of PEOPLE) {
+    const key = PEOPLE_KEYS[person];
+    const email = PEOPLE_EMAILS[person];
+    const tasks = appData.tasks.filter(t => t.assignedTo === person && !t.completed);
+    const briefing = (appData.briefings[key] || []).filter(b => b.date === todayStr());
+    const overdue = tasks.filter(t => isOverdue(t));
+    const decisions = tasks.filter(t => t.status === 'decision-pending');
+    const inputNeeded = appData.tasks.filter(t => t.awaitingInputFrom === person);
+
+    let body = `Good morning, ${person}! ☀️\n\nHere's your briefing for today:\n\n`;
+
+    if (briefing.length) {
+      body += `📬 BRIEFING ITEMS:\n`;
+      briefing.forEach(b => { body += `  • ${b.text}\n`; });
+      body += '\n';
+    }
+    if (overdue.length) {
+      body += `⚠️ OVERDUE (${overdue.length}):\n`;
+      overdue.forEach(t => { body += `  • ${t.title}\n`; });
+      body += '\n';
+    }
+    if (decisions.length) {
+      body += `⏳ AWAITING YOUR DECISION (${decisions.length}):\n`;
+      decisions.forEach(t => { body += `  • ${t.title}\n`; });
+      body += '\n';
+    }
+    if (inputNeeded.length) {
+      body += `💬 INPUT REQUESTED FROM YOU (${inputNeeded.length}):\n`;
+      inputNeeded.forEach(t => { body += `  • ${t.title} (from ${t.inputRequestFrom||'team'})\n`; });
+      body += '\n';
+    }
+    if (tasks.length) {
+      body += `📋 YOUR ACTIVE TASKS (${tasks.length}):\n`;
+      tasks.slice(0,10).forEach(t => { body += `  • ${t.title}${t.dueDate?' — Due '+formatDate(t.dueDate):''}\n`; });
+      body += '\n';
+    }
+
+    body += `🔗 Open the app: ${APP_URL}${testNote}`;
+
+    try {
+      await emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE, {
+        to_name: person,
+        to_email: email,
+        subject: `CCFWB Morning Briefing — ${new Date().toLocaleDateString([], {weekday:'long', month:'long', day:'numeric'})}`,
+        message: body
+      });
+    } catch(e) { console.log('Email error for', person, e); }
+  }
+  localStorage.setItem('ccfwb_email_today_sent', '1');
+}
+
+// ============================================================
+// ADD / EDIT TASK
+// ============================================================
+function openAddTask(assignedTo = '') {
+  editingTask = null;
+  showModal(`
+    <div class="modal-header">
+      <span class="modal-title">Add Task</span>
+      <button class="close-btn" onclick="closeModal()">✕</button>
+    </div>
+    <div style="margin-bottom:1rem;">
+      <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-mid);margin-bottom:0.5rem;">Templates</div>
+      <div class="template-grid">
+        <div class="template-card" onclick="applyTemplate('event')"><span class="t-emoji">🎉</span><span class="t-name">Special Event</span></div>
+        <div class="template-card" onclick="applyTemplate('speaker')"><span class="t-emoji">🎤</span><span class="t-name">Guest Speaker</span></div>
+        <div class="template-card" onclick="applyTemplate('video')"><span class="t-emoji">🎬</span><span class="t-name">Video Project</span></div>
+        <div class="template-card" onclick="applyTemplate('print')"><span class="t-emoji">🖨️</span><span class="t-name">Print Campaign</span></div>
+      </div>
+    </div>
+    <div class="form-group"><label>Task Title *</label><input id="task-title" type="text" placeholder="What needs to be done?"/></div>
+    <div class="form-row">
+      <div class="form-group"><label>Assigned To</label>
+        <select id="task-person">
+          <option value="">Unassigned</option>
+          ${PEOPLE.map(p=>`<option value="${p}" ${p===assignedTo?'selected':''}>${p}</option>`).join('')}
+        </select>
+      </div>
+      <div class="form-group"><label>Priority</label>
+        <select id="task-priority">
+          <option value="1">P1 — Urgent</option>
+          <option value="2">P2 — High</option>
+          <option value="3" selected>P3 — Normal</option>
+          <option value="4">P4 — Low</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>Due Date</label><input id="task-due" type="date"/></div>
+      <div class="form-group"><label>Due Date Type</label>
+        <select id="task-due-type">
+          <option value="soft">Soft (ideally by)</option>
+          <option value="hard">Hard (must be by)</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group"><label>Status</label>
+      <select id="task-status">
+        <option value="">Active</option>
+        <option value="waiting-outside">Waiting on Outside Person</option>
+        <option value="decision-pending">Decision Pending</option>
+      </select>
+    </div>
+    <div id="waiting-for-group" style="display:none;" class="form-group"><label>Waiting For (name/vendor)</label><input id="task-waiting-for" type="text" placeholder="e.g. Flooring company, Sign vendor"/></div>
+    <div class="form-group"><label>Notes</label><textarea id="task-notes" placeholder="Additional context..."></textarea></div>
+    <div class="form-group" style="display:flex;align-items:center;gap:0.5rem;">
+      <input type="checkbox" id="task-recurring" style="width:auto"/>
+      <label style="margin:0;text-transform:none;font-size:0.92rem;font-weight:400;">Recurring task (resets on completion)</label>
+    </div>
+    <button class="btn-primary" onclick="saveTask()">Add Task</button>
+  `);
+  document.getElementById('task-status').addEventListener('change', function() {
+    document.getElementById('waiting-for-group').style.display = this.value === 'waiting-outside' ? 'block' : 'none';
+  });
+}
+
+function applyTemplate(type) {
+  const templates = {
+    event: { title: 'Special Event Planning', priority: '2', notes: 'Venue, catering, volunteers, promotion, follow-up' },
+    speaker: { title: 'Guest Speaker Coordination', priority: '2', notes: 'Travel, accommodations, intro, honorarium, AV needs' },
+    video: { title: 'Video Project', priority: '3', notes: 'Script, footage, edit, graphics, caption, approval, publish' },
+    print: { title: 'Print Campaign', priority: '3', notes: 'Copy, design, proof, print order, distribution' }
+  };
+  const t = templates[type];
+  if (!t) return;
+  document.getElementById('task-title').value = t.title;
+  document.getElementById('task-priority').value = t.priority;
+  document.getElementById('task-notes').value = t.notes;
+}
+
+function saveTask() {
+  const title = document.getElementById('task-title').value.trim();
+  if (!title) { toast('Please enter a task title'); return; }
+  const status = document.getElementById('task-status').value;
+  const task = {
+    id: editingTask ? editingTask.id : uid(),
+    title,
+    assignedTo: document.getElementById('task-person').value,
+    priority: parseInt(document.getElementById('task-priority').value) || 3,
+    dueDate: document.getElementById('task-due').value,
+    dueDateType: document.getElementById('task-due-type').value,
+    status,
+    waitingFor: status === 'waiting-outside' ? document.getElementById('task-waiting-for').value : '',
+    notes: document.getElementById('task-notes').value,
+    recurring: document.getElementById('task-recurring').checked,
+    completed: false,
+    createdAt: editingTask ? editingTask.createdAt : new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+  };
+  if (editingTask) {
+    const idx = appData.tasks.findIndex(t => t.id === editingTask.id);
+    if (idx !== -1) appData.tasks[idx] = {
+      ...editingTask,
+      ...task,
+      // Preserve handoff/input state when editing
+      awaitingInputFrom: editingTask.awaitingInputFrom || null,
+      inputRequestFrom: editingTask.inputRequestFrom || null,
+      handoffFrom: editingTask.handoffFrom || null
+    };
+  } else {
+    appData.tasks.push(task);
+  }
+  closeModal();
+  schedSave();
+  renderCurrentTab();
+  updateTabBadges();
+  toast(editingTask ? 'Task updated ✓' : 'Task added ✓');
+  editingTask = null;
+}
+
+// ============================================================
+// TASK DETAIL
+// ============================================================
+function openTask(id) {
+  const task = appData.tasks.find(t => t.id === id);
+  if (!task) return;
+  editingTask = task;
+
+  const canInputRespond = task.awaitingInputFrom === identity;
+  const canHandoff = !task.awaitingInputFrom && !task.completed;
+
+  showModal(`
+    <div class="modal-header">
+      <span class="modal-title">${escHtml(task.title)}</span>
+      <button class="close-btn" onclick="closeModal()">✕</button>
+    </div>
+    <div class="task-meta" style="margin-bottom:1rem;gap:0.4rem;display:flex;flex-wrap:wrap;">
+      <span class="badge badge-p${task.priority}">P${task.priority}</span>
+      ${task.assignedTo?`<span class="badge badge-p3">👤 ${escHtml(task.assignedTo)}</span>`:''}
+      ${task.dueDate?`<span class="badge ${task.dueDateType==='hard'?'badge-hard':'badge-soft'}">📅 ${formatDate(task.dueDate)} (${task.dueDateType})</span>`:''}
+      ${task.status?`<span class="badge badge-decision">${escHtml(task.status)}</span>`:''}
+    </div>
+    ${task.notes?`<div style="font-size:0.9rem;color:var(--text-mid);margin-bottom:1rem;line-height:1.6;">${escHtml(task.notes)}</div>`:''}
+    ${task.handoffFrom?`<div class="handoff-banner">↩ Handed to you by ${escHtml(task.handoffFrom)}</div>`:''}
+    ${task.awaitingInputFrom&&!canInputRespond?`<div class="input-banner">💬 Waiting for input from ${escHtml(task.awaitingInputFrom)}</div>`:''}
+
+    ${canInputRespond ? `
+    <div style="border-top:1px solid var(--border);padding-top:1rem;margin-top:0.5rem;">
+      <div style="font-size:0.85rem;font-weight:600;color:#7d3c98;margin-bottom:0.5rem;">💬 Your input has been requested</div>
+      <div class="form-group"><label>Your Input / Response</label>
+        <textarea id="input-response" placeholder="Enter your response here..." style="min-height:100px;"></textarea>
+      </div>
+      <button class="btn-primary" style="background:#7d3c98;" onclick="submitInputResponse('${task.id}')">📤 Send Back with Input</button>
+    </div>` : ''}
+
+    <div style="border-top:1px solid var(--border);padding-top:1rem;margin-top:1rem;display:flex;flex-direction:column;gap:0.5rem;">
+      ${canHandoff ? `
+      <div class="btn-row">
+        <button class="btn-secondary" onclick="closeModal();openHandoffModal('${task.id}')">↩ Hand Off</button>
+        <button class="btn-secondary" onclick="closeModal();openInputRequestModal('${task.id}')">💬 Request Input</button>
+      </div>` : ''}
+      ${task.status==='decision-pending'?`<button class="btn-secondary" onclick="resolveDecision('${task.id}')">✅ Resolve Decision</button>`:''}
+      <div class="btn-row">
+        <button class="btn-primary" onclick="closeModal();openEditTask('${task.id}')">✏️ Edit</button>
+        <button class="btn-danger" onclick="deleteTask('${task.id}')">🗑 Delete</button>
+      </div>
+    </div>
+  `, true);
+}
+
+function openEditTask(id) {
+  const task = appData.tasks.find(t => t.id === id);
+  if (!task) return;
+  editingTask = task;
+  openAddTask(task.assignedTo);
+  // Pre-fill
+  setTimeout(() => {
+    document.getElementById('task-title').value = task.title || '';
+    document.getElementById('task-person').value = task.assignedTo || '';
+    document.getElementById('task-priority').value = task.priority || 3;
+    document.getElementById('task-due').value = task.dueDate || '';
+    document.getElementById('task-due-type').value = task.dueDateType || 'soft';
+    document.getElementById('task-status').value = task.status || '';
+    document.getElementById('task-waiting-for').value = task.waitingFor || '';
+    document.getElementById('task-notes').value = task.notes || '';
+    document.getElementById('task-recurring').checked = !!task.recurring;
+    if (task.status === 'waiting-outside') document.getElementById('waiting-for-group').style.display = 'block';
+    document.querySelector('.modal .btn-primary').textContent = 'Save Changes';
+    document.querySelector('.modal-title').textContent = 'Edit Task';
+  }, 50);
+}
+
+function deleteTask(id) {
+  if (!confirm('Delete this task?')) return;
+  appData.tasks = appData.tasks.filter(t => t.id !== id);
+  closeModal();
+  schedSave();
+  renderCurrentTab();
+  updateTabBadges();
+  toast('Task deleted');
+}
+
+// ============================================================
+// TOGGLE COMPLETE
+// ============================================================
+function toggleComplete(id) {
+  const task = appData.tasks.find(t => t.id === id);
+  if (!task) return;
+  if (!task.completed) {
+    // Archive prompt
+    const note = prompt('Add a completion note (optional):') || '';
+    task.completed = true;
+    task.completedAt = new Date().toISOString();
+    task.updatedAt = new Date().toISOString();
+    // Add to win wall
+    appData.winWall.push({ id: uid(), title: task.title, person: task.assignedTo || 'Team', date: new Date().toISOString() });
+    // Archive
+    appData.archivedTasks.push({ ...task, archiveNote: note });
+    // Handle recurring
+    if (task.recurring && task.dueDate) {
+      const newTask = { ...task, id: uid(), completed: false, completedAt: null, updatedAt: new Date().toISOString(), createdAt: new Date().toISOString() };
+      const nextDue = new Date(task.dueDate + 'T00:00:00');
+      nextDue.setDate(nextDue.getDate() + 7);
+      newTask.dueDate = nextDue.toISOString().split('T')[0];
+      appData.tasks.push(newTask);
+    }
+    appData.tasks = appData.tasks.filter(t => t.id !== id);
+  } else {
+    task.completed = false;
+    task.completedAt = null;
+    task.updatedAt = new Date().toISOString();
+  }
+  schedSave();
+  renderCurrentTab();
+  updateTabBadges();
+}
+
+// ============================================================
+// HANDOFF
+// ============================================================
+function openHandoffModal(id) {
+  const task = appData.tasks.find(t => t.id === id);
+  if (!task) return;
+  showModal(`
+    <div class="modal-header">
+      <span class="modal-title">Hand Off Task</span>
+      <button class="close-btn" onclick="closeModal()">✕</button>
+    </div>
+    <div style="font-size:0.88rem;color:var(--text-mid);margin-bottom:1rem;">"${escHtml(task.title)}"</div>
+    <div class="form-group"><label>Hand off to</label>
+      <select id="handoff-to">
+        ${PEOPLE.filter(p=>p!==task.assignedTo).map(p=>`<option value="${p}">${p}</option>`).join('')}
+      </select>
+    </div>
+    <div class="form-group"><label>Handoff Note</label>
+      <textarea id="handoff-note" placeholder="Why are you handing this off? Any context?" style="min-height:80px;"></textarea>
+    </div>
+    <button class="btn-primary" onclick="saveHandoff('${id}')">Hand Off Task</button>
+  `);
+}
+
+function saveHandoff(id) {
+  const task = appData.tasks.find(t => t.id === id);
+  if (!task) return;
+  const to = document.getElementById('handoff-to').value;
+  const note = document.getElementById('handoff-note').value;
+  task.handoffFrom = task.assignedTo || identity;
+  task.assignedTo = to;
+  task.notes = (task.notes ? task.notes + '\n\n' : '') + `Handoff note: ${note}`;
+  task.updatedAt = new Date().toISOString();
+  closeModal();
+  schedSave();
+  renderCurrentTab();
+  updateTabBadges();
+  toast(`Task handed off to ${to} ✓`);
+}
+
+// ============================================================
+// INPUT REQUEST
+// ============================================================
+function openInputRequestModal(id) {
+  const task = appData.tasks.find(t => t.id === id);
+  if (!task) return;
+  showModal(`
+    <div class="modal-header">
+      <span class="modal-title">Request Input</span>
+      <button class="close-btn" onclick="closeModal()">✕</button>
+    </div>
+    <div style="font-size:0.88rem;color:var(--text-mid);margin-bottom:1rem;">"${escHtml(task.title)}"</div>
+    <div style="font-size:0.85rem;color:var(--text-mid);background:rgba(155,89,182,0.08);border-radius:var(--radius-sm);padding:0.65rem;margin-bottom:1rem;">
+      The task will leave your list completely and appear on the recipient's list. Once they enter their input and submit, it will return to you automatically.
+    </div>
+    <div class="form-group"><label>Request input from</label>
+      <select id="input-from">
+        ${PEOPLE.filter(p=>p!==task.assignedTo).map(p=>`<option value="${p}">${p}</option>`).join('')}
+      </select>
+    </div>
+    <div class="form-group"><label>What do you need from them?</label>
+      <textarea id="input-request-note" placeholder="Describe what input or decision you need..." style="min-height:80px;"></textarea>
+    </div>
+    <button class="btn-primary" onclick="saveInputRequest('${id}')">Send Input Request</button>
+  `);
+}
+
+function saveInputRequest(id) {
+  const task = appData.tasks.find(t => t.id === id);
+  if (!task) return;
+  const from = document.getElementById('input-from').value;
+  const note = document.getElementById('input-request-note').value;
+  task.inputRequestFrom = task.assignedTo || identity;
+  task.awaitingInputFrom = from;
+  task.inputRequestNote = note;
+  task.notes = (task.notes ? task.notes + '\n\n' : '') + `Input requested: ${note}`;
+  task.updatedAt = new Date().toISOString();
+  closeModal();
+  schedSave();
+  renderCurrentTab();
+  updateTabBadges();
+  toast(`Input requested from ${from} ✓`);
+}
+
+function submitInputResponse(id) {
+  const task = appData.tasks.find(t => t.id === id);
+  if (!task) return;
+  const response = document.getElementById('input-response').value.trim();
+  if (!response) { toast('Please enter your input before sending'); return; }
+  const returnTo = task.inputRequestFrom;
+  task.notes = (task.notes ? task.notes + '\n\n' : '') + `Input from ${task.awaitingInputFrom}: ${response}`;
+  task.assignedTo = returnTo;
+  task.awaitingInputFrom = null;
+  task.inputRequestFrom = null;
+  task.inputRequestNote = null;
+  task.updatedAt = new Date().toISOString();
+  closeModal();
+  schedSave();
+  renderCurrentTab();
+  updateTabBadges();
+  toast(`Input sent back to ${returnTo} ✓`);
+}
+
+function resolveDecision(id) {
+  const note = prompt('Enter resolution note:');
+  if (note === null) return;
+  const task = appData.tasks.find(t => t.id === id);
+  if (!task) return;
+  task.status = '';
+  task.notes = (task.notes ? task.notes + '\n\n' : '') + `Decision resolved: ${note}`;
+  task.updatedAt = new Date().toISOString();
+  closeModal();
+  schedSave();
+  renderCurrentTab();
+  toast('Decision resolved ✓');
+}
+
+// ============================================================
+// CREATIVE PROJECTS
+// ============================================================
+function openAddCreative() {
+  showModal(`
+    <div class="modal-header">
+      <span class="modal-title">New Creative Project</span>
+      <button class="close-btn" onclick="closeModal()">✕</button>
+    </div>
+    <div class="form-group"><label>Project Title *</label><input id="cp-title" type="text" placeholder="Project name"/></div>
+    <div class="form-row">
+      <div class="form-group"><label>Category</label>
+        <select id="cp-cat">
+          <option>Digital Media</option>
+          <option>Audio/Visual</option>
+          <option>Ads & Promotions</option>
+          <option>Video Projects</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Due Date</label><input id="cp-due" type="date"/></div>
+    </div>
+    <div class="form-group"><label>Notes</label><textarea id="cp-notes" placeholder="Script, footage, edit, graphics, caption, approval..."></textarea></div>
+    <button class="btn-primary" onclick="saveCreativeProject()">Add Project</button>
+  `);
+}
+
+function saveCreativeProject() {
+  const title = document.getElementById('cp-title').value.trim();
+  if (!title) { toast('Please enter a project title'); return; }
+  appData.creativeProjects.push({
+    id: uid(), title,
+    category: document.getElementById('cp-cat').value,
+    dueDate: document.getElementById('cp-due').value,
+    notes: document.getElementById('cp-notes').value,
+    status: 'Idea',
+    createdAt: new Date().toISOString()
+  });
+  closeModal();
+  schedSave();
+  renderCurrentTab();
+  toast('Creative project added ✓');
+}
+
+function openCreativeProject(id) {
+  const proj = appData.creativeProjects.find(p => p.id === id);
+  if (!proj) return;
+  const cols = ['Idea','In Progress','In Review','Published'];
+  showModal(`
+    <div class="modal-header">
+      <span class="modal-title">${escHtml(proj.title)}</span>
+      <button class="close-btn" onclick="closeModal()">✕</button>
+    </div>
+    <div class="task-meta" style="margin-bottom:1rem;display:flex;flex-wrap:wrap;gap:0.4rem;">
+      <span class="badge badge-p3">${escHtml(proj.category||'')}</span>
+      ${proj.dueDate?`<span class="badge badge-soft">📅 ${formatDate(proj.dueDate)}</span>`:''}
+      <span class="badge badge-p4">${escHtml(proj.status)}</span>
+    </div>
+    ${proj.notes?`<div style="font-size:0.88rem;color:var(--text-mid);margin-bottom:1rem;line-height:1.6;">${escHtml(proj.notes)}</div>`:''}
+    <div class="form-group"><label>Move to Stage</label>
+      <select id="cp-status-sel">
+        ${cols.map(c=>`<option value="${c}" ${proj.status===c?'selected':''}>${c}</option>`).join('')}
+      </select>
+    </div>
+    <div class="btn-row">
+      <button class="btn-primary" onclick="moveCreativeProject('${id}')">Update Stage</button>
+      <button class="btn-danger" onclick="deleteCreativeProject('${id}')">Delete</button>
+    </div>
+  `, true);
+}
+
+function moveCreativeProject(id) {
+  const proj = appData.creativeProjects.find(p => p.id === id);
+  if (!proj) return;
+  const newStatus = document.getElementById('cp-status-sel').value;
+  if (newStatus === 'Published') {
+    appData.winWall.push({ id: uid(), title: `Creative: ${proj.title}`, person: 'Kaitlyn', date: new Date().toISOString() });
+  }
+  proj.status = newStatus;
+  closeModal();
+  schedSave();
+  renderCurrentTab();
+  toast(`Moved to ${newStatus} ✓`);
+}
+
+function deleteCreativeProject(id) {
+  if (!confirm('Delete this project?')) return;
+  appData.creativeProjects = appData.creativeProjects.filter(p => p.id !== id);
+  closeModal();
+  schedSave();
+  renderCurrentTab();
+  toast('Project deleted');
+}
+
+// ============================================================
+// SETTINGS
+// ============================================================
+function openSettings() {
+  const syncInfo = lastSaved ? `Last saved: ${new Date(lastSaved).toLocaleTimeString()}` : 'Not yet saved this session';
+  const emailSentToday = localStorage.getItem(`ccfwb_email_sent_${todayStr()}`) ? '✅ Sent today' : '⏳ Not yet sent';
+
+  showModal(`
+    <div class="modal-header">
+      <span class="modal-title">⚙️ Settings</span>
+      <button class="close-btn" onclick="closeModal()">✕</button>
+    </div>
+
+    <div class="settings-section">
+      <div class="settings-title">Identity</div>
+      <div class="settings-row">
+        <span class="settings-label">Currently signed in as</span>
+        <span class="settings-value">${escHtml(identity||'Not set')}</span>
+      </div>
+      <div class="settings-row">
+        <span class="settings-label">Switch Identity</span>
+        <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+          ${PEOPLE.map(p=>`<button class="add-btn ${p===identity?'':'secondary'}" onclick="setIdentity('${p}');closeModal()">${p}</button>`).join('')}
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <div class="settings-title">Data & Backup</div>
+      <div class="settings-row">
+        <span class="settings-label">Sync Status</span>
+        <span class="settings-value">${syncInfo}</span>
+      </div>
+      <div class="settings-row">
+        <span class="settings-label">Morning Email</span>
+        <span class="settings-value">${emailSentToday}</span>
+      </div>
+      <div class="settings-row">
+        <span class="settings-label">Export JSON Backup</span>
+        <button class="add-btn" onclick="exportData()">Download Backup</button>
+      </div>
+      <div class="settings-row" style="flex-direction:column;align-items:flex-start;gap:0.4rem;">
+        <span class="settings-label">GitHub Token (for hourly backup)</span>
+        <input type="password" id="gh-token-input" value="${escHtml(githubToken)}" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" style="font-family:var(--font-mono,monospace);font-size:0.82rem;"/>
+        <button class="add-btn" onclick="saveGithubToken()">Save Token</button>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <div class="settings-title">Appearance</div>
+      <div class="settings-row">
+        <span class="settings-label">Dark Mode</span>
+        <div class="toggle ${darkMode?'on':''}" onclick="toggleDark(this)"></div>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <div class="settings-title">Morning Briefing Emails</div>
+      <div class="settings-row">
+        <span class="settings-label">Pastor Andy</span>
+        <span class="settings-value">pastor@calvarychapelfwb.org · 7:00 AM</span>
+      </div>
+      <div class="settings-row">
+        <span class="settings-label">Kaitlyn</span>
+        <span class="settings-value">hello@calvarychapelfwb.org · 7:00 AM</span>
+      </div>
+      <div class="settings-row">
+        <span class="settings-label">Angie</span>
+        <span class="settings-value">admin@calvarychapelfwb.org · 7:00 AM</span>
+      </div>
+      <div class="settings-row">
+        <span class="settings-label">Test Email Now</span>
+        <button class="add-btn secondary" onclick="sendMorningEmails();toast('Test emails sent! ✓')">Send Test</button>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <div class="settings-title">App Info</div>
+      <div class="settings-row">
+        <span class="settings-label">Version</span>
+        <span class="settings-value">v11.5</span>
+      </div>
+      <div class="settings-row">
+        <span class="settings-label">Install Date</span>
+        <span class="settings-value">${appData.installDate?new Date(appData.installDate).toLocaleDateString():'-'}</span>
+      </div>
+    </div>
+  `, true);
+}
+
+function saveGithubToken() {
+  githubToken = document.getElementById('gh-token-input').value.trim();
+  localStorage.setItem('ccfwb_github_token', githubToken);
+  toast('GitHub token saved ✓');
+}
+
+// ============================================================
+// DARK MODE
+// ============================================================
+function toggleDark(toggleEl) {
+  darkMode = !darkMode;
+  localStorage.setItem('ccfwb_dark', darkMode);
+  document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : '');
+  if (toggleEl) toggleEl.classList.toggle('on', darkMode);
+}
+
+// ============================================================
+// MODAL HELPERS
+// ============================================================
+function showModal(html, center = false) {
+  const c = document.getElementById('modal-container');
+  c.innerHTML = `<div class="modal-backdrop ${center?'center':''}" onclick="handleBackdropClick(event)">
+    <div class="modal">${html}</div>
+  </div>`;
+}
+
+function closeModal() {
+  document.getElementById('modal-container').innerHTML = '';
+  editingTask = null;
+}
+
+function handleBackdropClick(e) {
+  if (e.target.classList.contains('modal-backdrop')) closeModal();
+}
+
+// ============================================================
+// TOAST
+// ============================================================
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// ============================================================
+// UTILS
+// ============================================================
+function uid() {
+  return Date.now().toString(36) + Math.random().toString(36).substr(2, 6);
+}
+
+function todayStr() {
+  return new Date().toISOString().split('T')[0];
+}
+
+function filterCreative(cat) {
+  // Simple filter — re-render with filter applied
+  const c = document.getElementById('main-content');
+  const cols = ['Idea','In Progress','In Review','Published'];
+  let html = `<div class="section-header">
+    <span class="section-title">Creative Ministries ${cat?`— ${cat}`:''}</span>
+    <button class="add-btn" onclick="openAddCreative()">+ New Project</button>
+  </div>
+  <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.75rem;">
+    ${['Digital Media','Audio/Visual','Ads & Promotions','Video Projects'].map(c2=>`<span class="badge badge-p3" style="cursor:pointer;opacity:${cat&&cat!==c2?'0.5':'1'}" onclick="filterCreative('${c2}')">${c2}</span>`).join('')}
+    <span class="badge badge-soft" style="cursor:pointer" onclick="filterCreative('')">All</span>
+  </div>
+  <div class="kanban-board">`;
+  cols.forEach(col => {
+    let projs = appData.creativeProjects.filter(p => p.status === col);
+    if (cat) projs = projs.filter(p => p.category === cat);
+    html += `<div class="kanban-col">
+      <div class="kanban-col-title">${col} <span style="color:var(--text-light)">(${projs.length})</span></div>`;
+    projs.forEach(p => {
+      html += `<div class="kanban-card" onclick="openCreativeProject('${p.id}')">
+        <div style="font-weight:600;font-size:0.85rem;margin-bottom:0.3rem;">${escHtml(p.title)}</div>
+        <div style="font-size:0.75rem;color:var(--text-mid)">${escHtml(p.category||'')}</div>
+        ${p.dueDate?`<div style="font-size:0.72rem;color:var(--text-light);margin-top:0.3rem;">📅 ${formatDate(p.dueDate)}</div>`:''}
+      </div>`;
+    });
+    html += `</div>`;
+  });
+  html += `</div>`;
+  c.innerHTML = html;
+}
+
+// ============================================================
+// START
+// ============================================================
+init();
+</script>
+</body>
+</html>
