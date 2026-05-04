@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>CCFWB Task → Event Converter</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f0ede6;min-height:100vh;padding:1.5rem;}
+.card{background:white;border-radius:16px;padding:1.5rem;max-width:700px;margin:0 auto;box-shadow:0 8px 40px rgba(82,121,160,0.15);}
+h1{font-size:1.3rem;font-weight:700;color:#5279A0;margin-bottom:0.25rem;}
+.sub{font-size:0.85rem;color:#888;margin-bottom:1.5rem;}
+.btn{background:#5279A0;color:white;border:none;border-radius:8px;padding:0.65rem 1.25rem;font-size:0.88rem;font-weight:600;cursor:pointer;font-family:inherit;transition:background 0.2s;}
+.btn:hover{background:#3F6285;}
+.btn:disabled{opacity:0.5;cursor:not-allowed;}
+.btn-success{background:#1e8449;}
+.btn-danger{background:#e74c3c;}
+.btn-sm{padding:0.35rem 0.75rem;font-size:0.8rem;border-radius:6px;}
+.status{padding:0.65rem 1rem;border-radius:8px;font-size:0.85rem;margin-top:0.75rem;display:none;}
+.s-ok{background:#e8f8f0;color:#1e8449;display:block;}
+.s-err{background:#fdecea;color:#c0392b;display:block;}
+.s-load{background:#eaf0f8;color:#3F6285;display:block;}
+.step{background:#f8f7f3;border-radius:10px;padding:1rem;margin-bottom:1rem;}
+.step-title{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:#5279A0;margin-bottom:0.75rem;}
+.task-row{display:flex;align-items:center;gap:0.75rem;padding:0.6rem 0.75rem;border-radius:8px;border:1.5px solid #e0ddd4;margin-bottom:0.5rem;background:white;cursor:pointer;transition:all 0.2s;}
+.task-row:hover{border-color:#5279A0;background:#f5f8fc;}
+.task-row.selected{border-color:#5279A0;background:#eaf0f8;}
+.task-check{width:18px;height:18px;border-radius:4px;border:2px solid #ccc;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;}
+.task-row.selected .task-check{background:#5279A0;border-color:#5279A0;color:white;}
+.task-title{font-weight:500;font-size:0.9rem;color:#1a1a2e;flex:1;}
+.task-meta{font-size:0.75rem;color:#888;}
+.convert-form{background:#f0f0f0;border-radius:8px;padding:0.85rem;margin-top:0.5rem;display:none;}
+.convert-form.open{display:block;}
+label{display:block;font-size:0.75rem;font-weight:700;color:#666;margin-bottom:0.25rem;text-transform:uppercase;letter-spacing:0.04em;}
+input,select{width:100%;padding:0.5rem 0.7rem;border:1.5px solid #e0ddd4;border-radius:6px;font-size:0.88rem;font-family:inherit;background:white;margin-bottom:0.6rem;}
+input:focus,select:focus{outline:none;border-color:#5279A0;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;}
+.badge{display:inline-flex;padding:2px 8px;border-radius:20px;font-size:0.72rem;font-weight:500;background:#eaf0f8;color:#3F6285;}
+.select-all-btn{font-size:0.78rem;color:#5279A0;background:none;border:none;cursor:pointer;text-decoration:underline;font-family:inherit;}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>✝ Task → Event Converter</h1>
+  <div class="sub">Convert existing tasks into proper Events in the CCFWB app</div>
+
+  <div class="step">
+    <div class="step-title">Step 1 — Load Tasks</div>
+    <button class="btn" onclick="loadTasks()">Load Tasks from JSONBin</button>
+    <div class="status" id="load-status"></div>
+  </div>
+
+  <div id="step2" style="display:none;">
+    <div class="step">
+      <div class="step-title">
+        Step 2 — Select Tasks to Convert
+        <button class="select-all-btn" onclick="selectAll()">Select all</button>
+        <button class="select-all-btn" onclick="selectNone()">Clear</button>
+      </div>
+      <div id="task-list"></div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">Step 3 — Set Event Details for Selected Tasks</div>
+      <div style="font-size:0.82rem;color:#666;margin-bottom:0.75rem;">These defaults apply to all selected tasks. You can edit individual events in the app after converting.</div>
+      <div class="form-row">
+        <div><label>Event Type</label>
+          <select id="bulk-type">
+            <option>Special Event</option>
+            <option>Sunday Service</option>
+            <option>Community Outreach</option>
+            <option>Youth</option>
+            <option>Men/Women</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div><label>Point Person</label>
+          <select id="bulk-person">
+            <option value="">— Keep from task —</option>
+            <option value="Pastor Andy">Pastor Andy</option>
+            <option value="Kaitlyn">Kaitlyn</option>
+            <option value="Angie">Angie</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div><label>Default Date (if task has none)</label>
+          <input type="date" id="bulk-date"/>
+        </div>
+        <div><label>Location</label>
+          <select id="bulk-location">
+            <option value="">—</option>
+            <option>On Campus</option>
+            <option>Off Campus</option>
+            <option>Online</option>
+          </select>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+        <input type="checkbox" id="bulk-delete" style="width:auto"/>
+        <label style="margin:0;text-transform:none;font-size:0.88rem;font-weight:400;">Delete original tasks after converting</label>
+      </div>
+      <button class="btn btn-success" onclick="convertSelected()">Convert Selected Tasks to Events</button>
+      <div class="status" id="convert-status"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const BIN_ID='69f39a9136566621a80e37bd';
+const BIN_KEY='$2a$10$u./u72JVwUVjuIdiEB4.d.iusC98TwDYyxS4VPqQIXNCXkx/2JOzq';
+const DEFAULT_CHECKLIST=['Venue confirmed','Volunteers scheduled','Promotion started','Bulletin/slides ready','Sound/AV arranged','Follow-up planned'];
+let appData=null;
+let selected=new Set();
+
+function showStatus(id,type,msg){
+  const el=document.getElementById(id);
+  el.className='status '+type;el.textContent=msg;
+}
+
+function uid(){return Date.now().toString(36)+Math.random().toString(36).substr(2,6);}
+
+async function loadTasks(){
+  showStatus('load-status','s-load','Loading...');
+  try{
+    const r=await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`,{headers:{'X-Master-Key':BIN_KEY}});
+    const json=await r.json();
+    appData=json.record;
+    if(!appData||!appData.tasks) throw new Error('No task data found');
+    const active=appData.tasks.filter(t=>!t.completed);
+    showStatus('load-status','s-ok',`✅ Loaded ${active.length} active tasks`);
+    document.getElementById('step2').style.display='block';
+    renderTaskList(active);
+  }catch(e){
+    showStatus('load-status','s-err','❌ '+(e.message||'Failed to load'));
+  }
+}
+
+function renderTaskList(tasks){
+  const el=document.getElementById('task-list');
+  if(!tasks.length){el.innerHTML='<div style="font-size:0.88rem;color:#888;padding:0.5rem;">No active tasks found.</div>';return;}
+  el.innerHTML=tasks.map(t=>`
+    <div class="task-row ${selected.has(t.id)?'selected':''}" onclick="toggleTask('${t.id}')" id="tr-${t.id}">
+      <div class="task-check">${selected.has(t.id)?'✓':''}</div>
+      <div class="task-title">${esc(t.title)}</div>
+      <div class="task-meta">
+        ${t.assignedTo?`<span class="badge">${esc(t.assignedTo)}</span> `:''}
+        ${t.dueDate?`📅 ${t.dueDate}`:''}
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleTask(id){
+  if(selected.has(id)) selected.delete(id);
+  else selected.add(id);
+  const row=document.getElementById('tr-'+id);
+  if(!row) return;
+  row.classList.toggle('selected',selected.has(id));
+  row.querySelector('.task-check').textContent=selected.has(id)?'✓':'';
+}
+
+function selectAll(){
+  const active=appData.tasks.filter(t=>!t.completed);
+  active.forEach(t=>selected.add(t.id));
+  renderTaskList(active);
+}
+
+function selectNone(){
+  selected.clear();
+  renderTaskList(appData.tasks.filter(t=>!t.completed));
+}
+
+function convertSelected(){
+  if(!selected.size){alert('Please select at least one task');return;}
+  showStatus('convert-status','s-load',`Converting ${selected.size} task${selected.size>1?'s':''}...`);
+
+  const eventType=document.getElementById('bulk-type').value;
+  const pointPersonOverride=document.getElementById('bulk-person').value;
+  const defaultDate=document.getElementById('bulk-date').value;
+  const location=document.getElementById('bulk-location').value;
+  const deleteOriginals=document.getElementById('bulk-delete').checked;
+
+  if(!appData.events) appData.events=[];
+
+  const tasksToConvert=appData.tasks.filter(t=>selected.has(t.id));
+
+  tasksToConvert.forEach(t=>{
+    const event={
+      id:uid(),
+      name:t.title,
+      date:t.dueDate||defaultDate||'',
+      timeStart:'',timeEnd:'',
+      eventType,
+      location,
+      pointPerson:pointPersonOverride||t.assignedTo||'',
+      expectedAttendance:'',
+      budget:'',
+      description:t.notes||'',
+      notes:`Converted from task on ${new Date().toLocaleDateString()}`,
+      subsplash:false,
+      checklist:DEFAULT_CHECKLIST.map(l=>({id:uid(),label:l,needed:true,done:false})),
+      status:'Planning',
+      createdAt:new Date().toISOString(),
+      createdBy:'Converter'
+    };
+    appData.events.push(event);
+  });
+
+  if(deleteOriginals){
+    appData.tasks=appData.tasks.filter(t=>!selected.has(t.id));
+  }
+
+  // Add to activity feed
+  if(!appData.activityFeed) appData.activityFeed=[];
+  appData.activityFeed.push({
+    id:uid(),
+    text:`📅 ${tasksToConvert.length} task${tasksToConvert.length>1?'s':''} converted to events`,
+    time:new Date().toISOString(),
+    by:'Converter'
+  });
+
+  saveData();
+}
+
+async function saveData(){
+  try{
+    const r=await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`,{
+      method:'PUT',
+      headers:{'Content-Type':'application/json','X-Master-Key':BIN_KEY},
+      body:JSON.stringify(appData)
+    });
+    if(!r.ok) throw new Error('Save failed');
+    const deleteOriginals=document.getElementById('bulk-delete').checked;
+    showStatus('convert-status','s-ok',
+      `✅ ${selected.size} task${selected.size>1?'s':''} converted to events!${deleteOriginals?' Original tasks deleted.':' Original tasks kept.'}\n\nRefresh the app to see your new events in the Events tab.`
+    );
+    selected.clear();
+    renderTaskList(appData.tasks.filter(t=>!t.completed));
+  }catch(e){
+    showStatus('convert-status','s-err','❌ '+(e.message||'Save failed'));
+  }
+}
+
+function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+</script>
+</body>
+</html>
