@@ -1100,25 +1100,6 @@
       "completed": false,
       "createdAt": "2026-05-04T04:45:45.245Z",
       "updatedAt": "2026-05-04T04:45:45.245Z"
-    },
-    {
-      "id": "morfyiwkscsdjx",
-      "title": "Set up Cox account autopay",
-      "assignedTo": "Angie",
-      "priority": 2,
-      "dueDate": "2026-05-12",
-      "dueDateType": "soft",
-      "estimatedTime": "20 minutes",
-      "status": "",
-      "waitingFor": "",
-      "blockedBy": null,
-      "followLevel": "none",
-      "readyForReviewAt": null,
-      "notes": "",
-      "recurring": false,
-      "completed": false,
-      "createdAt": "2026-05-04T16:56:17.972Z",
-      "updatedAt": "2026-05-04T16:56:17.972Z"
     }
   ],
   "archivedTasks": [
@@ -2024,12 +2005,6 @@
       "text": "📅 11 tasks converted to events",
       "time": "2026-05-04T05:57:52.610Z",
       "by": "Converter"
-    },
-    {
-      "id": "morfyiwlzy3rg7",
-      "text": "📝 Angie added task: Set up Cox account autopay",
-      "time": "2026-05-04T16:56:17.973Z",
-      "by": "Angie"
     }
   ],
   "approvalHistory": [],
