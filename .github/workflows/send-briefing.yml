@@ -1,0 +1,174 @@
+name: Morning Briefing Email
+
+on:
+  schedule:
+    # 7:00 AM US Central Standard Time = 13:00 UTC
+    # 7:00 AM US Central Daylight Time = 12:00 UTC
+    # Run at both to cover DST transitions
+    - cron: '0 12 * * *'
+    - cron: '0 13 * * *'
+  workflow_dispatch: # Allow manual trigger from GitHub Actions UI
+
+jobs:
+  send-briefing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Morning Briefing Emails
+        run: |
+          node << 'EOF'
+          const https = require('https');
+
+          const BIN_ID = '69f39a9136566621a80e37bd';
+          const BIN_KEY = '$2a$10$u./u72JVwUVjuIdiEB4.d.iusC98TwDYyxS4VPqQIXNCXkx/2JOzq';
+          const EMAILJS_SERVICE = 'service_65bjny9';
+          const EMAILJS_TEMPLATE = 'template_lxtwyyp';
+          const EMAILJS_KEY = 'aTa5AWSA-QmWGO0GY';
+          const APP_URL = 'https://ccfwb.github.io/ccfwb-team/';
+
+          const PEOPLE = {
+            'Pastor Andy': { key: 'andy', email: 'pastor@calvarychapelfwb.org' },
+            'Kaitlyn':     { key: 'kaitlyn', email: 'hello@calvarychapelfwb.org' },
+            'Angie':       { key: 'angie', email: 'admin@calvarychapelfwb.org' }
+          };
+
+          function request(options, body) {
+            return new Promise((resolve, reject) => {
+              const req = https.request(options, res => {
+                let data = '';
+                res.on('data', chunk => data += chunk);
+                res.on('end', () => {
+                  try { resolve(JSON.parse(data)); } catch { resolve(data); }
+                });
+              });
+              req.on('error', reject);
+              if (body) req.write(JSON.stringify(body));
+              req.end();
+            });
+          }
+
+          function todayStr() {
+            return new Date().toISOString().split('T')[0];
+          }
+
+          function formatDate(d) {
+            if (!d) return '';
+            const dt = new Date(d + 'T00:00:00');
+            return dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+          }
+
+          function isOverdue(task) {
+            if (!task.dueDate || task.completed) return false;
+            return new Date(task.dueDate) < new Date();
+          }
+
+          function isFirstWeek(installDate) {
+            if (!installDate) return true;
+            return (Date.now() - new Date(installDate)) / 86400000 <= 8;
+          }
+
+          async function run() {
+            console.log('Fetching app data...');
+            const data = await request({
+              hostname: 'api.jsonbin.io',
+              path: `/v3/b/${BIN_ID}/latest`,
+              method: 'GET',
+              headers: { 'X-Master-Key': BIN_KEY }
+            });
+
+            const appData = data.record;
+            if (!appData) { console.log('No data found'); process.exit(1); }
+
+            const testNote = isFirstWeek(appData.installDate)
+              ? '\n\n---\n📱 NOTE: This email is a test function of the in-house Calvary Chapel FWB Church management app. If you notice any glitches or have suggestions, please let Angie know at admin@calvarychapelfwb.org.'
+              : '';
+
+            const today = todayStr();
+            const now = new Date();
+            const weekEnd = new Date(); weekEnd.setDate(weekEnd.getDate() + 7);
+
+            for (const [personName, info] of Object.entries(PEOPLE)) {
+              const tasks = (appData.tasks || []).filter(t => t.assignedTo === personName && !t.completed);
+              const briefing = ((appData.briefings || {})[info.key] || []).filter(b => b.date === today);
+              const overdue = tasks.filter(t => isOverdue(t));
+              const decisions = tasks.filter(t => t.status === 'decision-pending');
+              const inputNeeded = (appData.tasks || []).filter(t => t.awaitingInputFrom === personName);
+              const dueThisWeek = tasks.filter(t => t.dueDate && new Date(t.dueDate) <= weekEnd && !isOverdue(t));
+
+              let body = `Good morning, ${personName}! ☀️\n\nHere's your briefing for ${new Date().toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric'})}:\n\n`;
+
+              if (briefing.length) {
+                body += `📬 BRIEFING ITEMS:\n`;
+                briefing.forEach(b => { body += `  • ${b.text}\n`; });
+                body += '\n';
+              }
+
+              if (overdue.length) {
+                body += `⚠️ OVERDUE — Needs Attention (${overdue.length}):\n`;
+                overdue.forEach(t => { body += `  • ${t.title}\n`; });
+                body += '\n';
+              }
+
+              if (decisions.length) {
+                body += `⏳ AWAITING YOUR DECISION (${decisions.length}):\n`;
+                decisions.forEach(t => { body += `  • ${t.title}\n`; });
+                body += '\n';
+              }
+
+              if (inputNeeded.length) {
+                body += `💬 INPUT REQUESTED FROM YOU (${inputNeeded.length}):\n`;
+                inputNeeded.forEach(t => { body += `  • ${t.title} (from ${t.inputRequestFrom || 'team'})\n`; });
+                body += '\n';
+              }
+
+              if (dueThisWeek.length) {
+                body += `📅 DUE THIS WEEK (${dueThisWeek.length}):\n`;
+                dueThisWeek.forEach(t => { body += `  • ${t.title} — Due ${formatDate(t.dueDate)}${t.dueDateType === 'hard' ? ' 🔴' : ''}\n`; });
+                body += '\n';
+              }
+
+              if (tasks.length) {
+                body += `📋 ALL YOUR ACTIVE TASKS (${tasks.length}):\n`;
+                tasks.slice(0, 12).forEach(t => { body += `  • ${t.title}\n`; });
+                if (tasks.length > 12) body += `  ... and ${tasks.length - 12} more\n`;
+                body += '\n';
+              }
+
+              if (!tasks.length && !briefing.length) {
+                body += `✝️ All clear today — no active tasks on your list.\n\n`;
+              }
+
+              body += `🔗 Open the app: ${APP_URL}${testNote}`;
+
+              // Send via EmailJS REST API
+              console.log(`Sending to ${personName} (${info.email})...`);
+              try {
+                const result = await request({
+                  hostname: 'api.emailjs.com',
+                  path: '/api/v1.0/email/send',
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json', 'origin': 'https://ccfwb.github.io' }
+                }, {
+                  service_id: EMAILJS_SERVICE,
+                  template_id: EMAILJS_TEMPLATE,
+                  user_id: EMAILJS_KEY,
+                  template_params: {
+                    to_name: personName,
+                    to_email: info.email,
+                    subject: `CCFWB Morning Briefing — ${new Date().toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric'})}`,
+                    message: body
+                  }
+                });
+                console.log(`✅ Sent to ${personName}:`, result);
+              } catch(e) {
+                console.log(`❌ Failed to send to ${personName}:`, e.message);
+              }
+
+              // Small delay between sends
+              await new Promise(r => setTimeout(r, 500));
+            }
+
+            console.log('Morning briefings complete!');
+          }
+
+          run().catch(e => { console.error(e); process.exit(1); });
+          EOF
