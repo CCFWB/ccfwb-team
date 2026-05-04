@@ -1334,6 +1334,25 @@
       "completed": false,
       "createdAt": "2026-05-03T07:27:13.044Z",
       "updatedAt": "2026-05-03T07:27:13.044Z"
+    },
+    {
+      "id": "moqpv1ctuqicbo",
+      "title": "Beach Baptism packet WAITING FOR APPROVAL",
+      "assignedTo": "Angie",
+      "priority": 2,
+      "dueDate": "2026-05-15",
+      "dueDateType": "soft",
+      "estimatedTime": "10 MINUTES",
+      "status": "waiting-outside",
+      "waitingFor": "Okaloosa County",
+      "blockedBy": null,
+      "followLevel": "notify",
+      "readyForReviewAt": null,
+      "notes": "",
+      "recurring": false,
+      "completed": false,
+      "createdAt": "2026-05-04T04:45:45.245Z",
+      "updatedAt": "2026-05-04T04:45:45.245Z"
     }
   ],
   "archivedTasks": [
@@ -1602,5 +1621,22 @@
     "kaitlyn": "",
     "angie": ""
   },
+  "notes": {
+    "andy": [],
+    "kaitlyn": [],
+    "angie": []
+  },
+  "shoutouts": [],
+  "announcements": [],
+  "events": [],
+  "activityFeed": [
+    {
+      "id": "moqpv1ctzajhpd",
+      "text": "📝 Angie added task: Beach Baptism packet WAITING FOR APPROVAL",
+      "time": "2026-05-04T04:45:45.245Z",
+      "by": "Angie"
+    }
+  ],
+  "approvalHistory": [],
   "installDate": "2026-05-03T07:04:46.166Z"
 }
