@@ -1,29 +1,6 @@
 {
   "tasks": [
     {
-      "id": "0erl2ac",
-      "title": "Friendsgiving (Nov 25) - Admin, Volunteers & Outreach",
-      "person": "Kaitlyn",
-      "priority": "P3",
-      "dueDate": null,
-      "status": "todo",
-      "category": "Administrative",
-      "notes": null,
-      "recurring": false,
-      "recurFreq": null,
-      "decPending": false,
-      "decWho": null,
-      "activityLog": [
-        {
-          "ts": 1776722891302,
-          "note": "Task imported from Firebase"
-        }
-      ],
-      "createdAt": 1776722891302,
-      "updatedAt": "2026-05-03T07:19:54.988Z",
-      "assignedTo": "Kaitlyn"
-    },
-    {
       "id": "1gzz3s2",
       "title": "Pay Ellasyn for Babysitting after last class",
       "person": "Angie",
@@ -116,29 +93,6 @@
       "assignedTo": "Kaitlyn"
     },
     {
-      "id": "5egtbgo",
-      "title": "Friendsgiving (Nov 25) - Marketing",
-      "person": "Kaitlyn",
-      "priority": "P3",
-      "dueDate": null,
-      "status": "todo",
-      "category": "Events",
-      "notes": null,
-      "recurring": false,
-      "recurFreq": null,
-      "decPending": false,
-      "decWho": null,
-      "activityLog": [
-        {
-          "ts": 1776723326438,
-          "note": "Task imported from Firebase"
-        }
-      ],
-      "createdAt": 1776723326438,
-      "updatedAt": "2026-05-03T07:20:08.104Z",
-      "assignedTo": "Kaitlyn"
-    },
-    {
       "id": "5zk5nf7",
       "title": "Beach Baptism packet",
       "person": "Angie",
@@ -187,29 +141,6 @@
       "createdAt": 1776722891302,
       "updatedAt": "2026-05-03T07:20:19.320Z",
       "assignedTo": "Angie"
-    },
-    {
-      "id": "6h76x9t",
-      "title": "Father's Day (Jun 21) - Marketing",
-      "person": "Kaitlyn",
-      "priority": "P3",
-      "dueDate": null,
-      "status": "todo",
-      "category": "Events",
-      "notes": null,
-      "recurring": false,
-      "recurFreq": null,
-      "decPending": false,
-      "decWho": null,
-      "activityLog": [
-        {
-          "ts": 1776723326438,
-          "note": "Task imported from Firebase"
-        }
-      ],
-      "createdAt": 1776723326438,
-      "updatedAt": "2026-05-03T07:20:22.171Z",
-      "assignedTo": "Kaitlyn"
     },
     {
       "id": "6jdzapt",
@@ -294,29 +225,6 @@
       ],
       "createdAt": 1776722891302,
       "updatedAt": "2026-05-03T07:20:30.071Z",
-      "assignedTo": "Kaitlyn"
-    },
-    {
-      "id": "9pd22ou",
-      "title": "Mother's Day (May 10) - Marketing",
-      "person": "Kaitlyn",
-      "priority": "P3",
-      "dueDate": null,
-      "status": "todo",
-      "category": "Events",
-      "notes": null,
-      "recurring": false,
-      "recurFreq": null,
-      "decPending": false,
-      "decWho": null,
-      "activityLog": [
-        {
-          "ts": 1776723326438,
-          "note": "Task imported from Firebase"
-        }
-      ],
-      "createdAt": 1776723326438,
-      "updatedAt": "2026-05-03T07:20:34.621Z",
       "assignedTo": "Kaitlyn"
     },
     {
@@ -489,29 +397,6 @@
       "assignedTo": "Kaitlyn"
     },
     {
-      "id": "f96vfeq",
-      "title": "Christmas Eve (Dec 24) - Volunteers",
-      "person": "Kaitlyn",
-      "priority": "P3",
-      "dueDate": null,
-      "status": "todo",
-      "category": "Administrative",
-      "notes": null,
-      "recurring": false,
-      "recurFreq": null,
-      "decPending": false,
-      "decWho": null,
-      "activityLog": [
-        {
-          "ts": 1776722891302,
-          "note": "Task imported from Firebase"
-        }
-      ],
-      "createdAt": 1776722891302,
-      "updatedAt": "2026-05-03T07:21:08.904Z",
-      "assignedTo": "Kaitlyn"
-    },
-    {
       "id": "g5qg7ls",
       "title": "Thrive Young Adults - Monthly Marketing",
       "person": "Kaitlyn",
@@ -558,29 +443,6 @@
       "assignedTo": "Angie"
     },
     {
-      "id": "gbizerr",
-      "title": "Friendsgiving (Nov 25) - Subsplash",
-      "person": "Kaitlyn",
-      "priority": "P3",
-      "dueDate": null,
-      "status": "todo",
-      "category": "Events",
-      "notes": null,
-      "recurring": false,
-      "recurFreq": null,
-      "decPending": false,
-      "decWho": null,
-      "activityLog": [
-        {
-          "ts": 1776723209459,
-          "note": "Task imported from Firebase"
-        }
-      ],
-      "createdAt": 1776723209459,
-      "updatedAt": "2026-05-03T07:21:19.654Z",
-      "assignedTo": "Kaitlyn"
-    },
-    {
       "id": "kjzj03y",
       "title": "Josh - Role assignment and app training",
       "person": "Angie",
@@ -604,52 +466,6 @@
       "assignedTo": "Kaitlyn"
     },
     {
-      "id": "kkgsb6p",
-      "title": "Christmas Eve (Dec 24) - Subsplash",
-      "person": "Kaitlyn",
-      "priority": "P3",
-      "dueDate": null,
-      "status": "todo",
-      "category": "Events",
-      "notes": null,
-      "recurring": false,
-      "recurFreq": null,
-      "decPending": false,
-      "decWho": null,
-      "activityLog": [
-        {
-          "ts": 1776723209459,
-          "note": "Task imported from Firebase"
-        }
-      ],
-      "createdAt": 1776723209459,
-      "updatedAt": "2026-05-03T07:21:31.055Z",
-      "assignedTo": "Kaitlyn"
-    },
-    {
-      "id": "kxldxck",
-      "title": "Baptism (Sep 13) - Marketing",
-      "person": "Kaitlyn",
-      "priority": "P3",
-      "dueDate": null,
-      "status": "todo",
-      "category": "Events",
-      "notes": null,
-      "recurring": false,
-      "recurFreq": null,
-      "decPending": false,
-      "decWho": null,
-      "activityLog": [
-        {
-          "ts": 1776723326438,
-          "note": "Task imported from Firebase"
-        }
-      ],
-      "createdAt": 1776723326438,
-      "updatedAt": "2026-05-03T07:21:33.471Z",
-      "assignedTo": "Kaitlyn"
-    },
-    {
       "id": "lr2wvtj",
       "title": "Pastor Jim's Monday Bible Study",
       "person": "Kaitlyn",
@@ -670,29 +486,6 @@
       ],
       "createdAt": 1776723326438,
       "updatedAt": "2026-05-03T07:21:36.971Z",
-      "assignedTo": "Kaitlyn"
-    },
-    {
-      "id": "m9gelx0",
-      "title": "Kaitlyn & Daria's Bridal Shower Event updated",
-      "person": "Kaitlyn",
-      "priority": "P3",
-      "dueDate": null,
-      "status": "todo",
-      "category": "Events",
-      "notes": null,
-      "recurring": false,
-      "recurFreq": null,
-      "decPending": false,
-      "decWho": null,
-      "activityLog": [
-        {
-          "ts": 1776723209459,
-          "note": "Task imported from Firebase"
-        }
-      ],
-      "createdAt": 1776723209459,
-      "updatedAt": "2026-05-03T07:21:39.922Z",
       "assignedTo": "Kaitlyn"
     },
     {
@@ -813,52 +606,6 @@
       "createdAt": 1776723638269,
       "updatedAt": "2026-05-03T07:22:01.970Z",
       "assignedTo": "Angie"
-    },
-    {
-      "id": "r3boqm9",
-      "title": "Christmas Eve (Dec 24) - Marketing",
-      "person": "Kaitlyn",
-      "priority": "P3",
-      "dueDate": null,
-      "status": "todo",
-      "category": "Events",
-      "notes": null,
-      "recurring": false,
-      "recurFreq": null,
-      "decPending": false,
-      "decWho": null,
-      "activityLog": [
-        {
-          "ts": 1776723326438,
-          "note": "Task imported from Firebase"
-        }
-      ],
-      "createdAt": 1776723326438,
-      "updatedAt": "2026-05-03T07:22:04.271Z",
-      "assignedTo": "Kaitlyn"
-    },
-    {
-      "id": "rkfq9y3",
-      "title": "Baptism (Sep 13) - Subsplash",
-      "person": "Kaitlyn",
-      "priority": "P3",
-      "dueDate": null,
-      "status": "todo",
-      "category": "Events",
-      "notes": null,
-      "recurring": false,
-      "recurFreq": null,
-      "decPending": false,
-      "decWho": null,
-      "activityLog": [
-        {
-          "ts": 1776723209459,
-          "note": "Task imported from Firebase"
-        }
-      ],
-      "createdAt": 1776723209459,
-      "updatedAt": "2026-05-03T07:22:07.222Z",
-      "assignedTo": "Kaitlyn"
     },
     {
       "id": "rt4v5wz",
@@ -1628,15 +1375,640 @@
   },
   "shoutouts": [],
   "announcements": [],
-  "events": [],
+  "events": [
+    {
+      "id": "moqsfscyefrn60",
+      "name": "Friendsgiving (Nov 25) - Admin, Volunteers & Outreach",
+      "date": "",
+      "timeStart": "",
+      "timeEnd": "",
+      "eventType": "Special Event",
+      "location": "",
+      "pointPerson": "Kaitlyn",
+      "expectedAttendance": "",
+      "budget": "",
+      "description": "",
+      "notes": "Converted from task on 5/4/2026",
+      "subsplash": false,
+      "checklist": [
+        {
+          "id": "moqsfsddl2xndd",
+          "label": "Venue confirmed",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsddkm4vvk",
+          "label": "Volunteers scheduled",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdddsj136",
+          "label": "Promotion started",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsddb64v41",
+          "label": "Bulletin/slides ready",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsddliu5yu",
+          "label": "Sound/AV arranged",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdddww14t",
+          "label": "Follow-up planned",
+          "needed": true,
+          "done": false
+        }
+      ],
+      "status": "Planning",
+      "createdAt": "2026-05-04T05:57:52.609Z",
+      "createdBy": "Converter"
+    },
+    {
+      "id": "moqsfsdet7nvn3",
+      "name": "Friendsgiving (Nov 25) - Marketing",
+      "date": "",
+      "timeStart": "",
+      "timeEnd": "",
+      "eventType": "Special Event",
+      "location": "",
+      "pointPerson": "Kaitlyn",
+      "expectedAttendance": "",
+      "budget": "",
+      "description": "",
+      "notes": "Converted from task on 5/4/2026",
+      "subsplash": false,
+      "checklist": [
+        {
+          "id": "moqsfsdeqw02ps",
+          "label": "Venue confirmed",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsde5tngwp",
+          "label": "Volunteers scheduled",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdeoria3h",
+          "label": "Promotion started",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdef24gic",
+          "label": "Bulletin/slides ready",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsde1kzo55",
+          "label": "Sound/AV arranged",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdezq2csz",
+          "label": "Follow-up planned",
+          "needed": true,
+          "done": false
+        }
+      ],
+      "status": "Planning",
+      "createdAt": "2026-05-04T05:57:52.610Z",
+      "createdBy": "Converter"
+    },
+    {
+      "id": "moqsfsded4rhd9",
+      "name": "Father's Day (Jun 21) - Marketing",
+      "date": "",
+      "timeStart": "",
+      "timeEnd": "",
+      "eventType": "Special Event",
+      "location": "",
+      "pointPerson": "Kaitlyn",
+      "expectedAttendance": "",
+      "budget": "",
+      "description": "",
+      "notes": "Converted from task on 5/4/2026",
+      "subsplash": false,
+      "checklist": [
+        {
+          "id": "moqsfsder6b63f",
+          "label": "Venue confirmed",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdewtpcmf",
+          "label": "Volunteers scheduled",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdexse9wb",
+          "label": "Promotion started",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsde3ng5av",
+          "label": "Bulletin/slides ready",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsde3m1422",
+          "label": "Sound/AV arranged",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdet5f6qi",
+          "label": "Follow-up planned",
+          "needed": true,
+          "done": false
+        }
+      ],
+      "status": "Planning",
+      "createdAt": "2026-05-04T05:57:52.610Z",
+      "createdBy": "Converter"
+    },
+    {
+      "id": "moqsfsdezveun1",
+      "name": "Mother's Day (May 10) - Marketing",
+      "date": "",
+      "timeStart": "",
+      "timeEnd": "",
+      "eventType": "Special Event",
+      "location": "",
+      "pointPerson": "Kaitlyn",
+      "expectedAttendance": "",
+      "budget": "",
+      "description": "",
+      "notes": "Converted from task on 5/4/2026",
+      "subsplash": false,
+      "checklist": [
+        {
+          "id": "moqsfsdeq0abah",
+          "label": "Venue confirmed",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdeec8ctx",
+          "label": "Volunteers scheduled",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsde3jrpmo",
+          "label": "Promotion started",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdeckqyig",
+          "label": "Bulletin/slides ready",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdefvl55l",
+          "label": "Sound/AV arranged",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdescjkso",
+          "label": "Follow-up planned",
+          "needed": true,
+          "done": false
+        }
+      ],
+      "status": "Planning",
+      "createdAt": "2026-05-04T05:57:52.610Z",
+      "createdBy": "Converter"
+    },
+    {
+      "id": "moqsfsdeq8td10",
+      "name": "Christmas Eve (Dec 24) - Volunteers",
+      "date": "",
+      "timeStart": "",
+      "timeEnd": "",
+      "eventType": "Special Event",
+      "location": "",
+      "pointPerson": "Kaitlyn",
+      "expectedAttendance": "",
+      "budget": "",
+      "description": "",
+      "notes": "Converted from task on 5/4/2026",
+      "subsplash": false,
+      "checklist": [
+        {
+          "id": "moqsfsdemhylpd",
+          "label": "Venue confirmed",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsde3w35bs",
+          "label": "Volunteers scheduled",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsde2h01si",
+          "label": "Promotion started",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdehbr72e",
+          "label": "Bulletin/slides ready",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdeyqwkli",
+          "label": "Sound/AV arranged",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdep5lgh8",
+          "label": "Follow-up planned",
+          "needed": true,
+          "done": false
+        }
+      ],
+      "status": "Planning",
+      "createdAt": "2026-05-04T05:57:52.610Z",
+      "createdBy": "Converter"
+    },
+    {
+      "id": "moqsfsdeq2rltd",
+      "name": "Friendsgiving (Nov 25) - Subsplash",
+      "date": "",
+      "timeStart": "",
+      "timeEnd": "",
+      "eventType": "Special Event",
+      "location": "",
+      "pointPerson": "Kaitlyn",
+      "expectedAttendance": "",
+      "budget": "",
+      "description": "",
+      "notes": "Converted from task on 5/4/2026",
+      "subsplash": false,
+      "checklist": [
+        {
+          "id": "moqsfsde6jiyb1",
+          "label": "Venue confirmed",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdembt6sa",
+          "label": "Volunteers scheduled",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdexddxed",
+          "label": "Promotion started",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdehdcbew",
+          "label": "Bulletin/slides ready",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdejgoazq",
+          "label": "Sound/AV arranged",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsde03qi9x",
+          "label": "Follow-up planned",
+          "needed": true,
+          "done": false
+        }
+      ],
+      "status": "Planning",
+      "createdAt": "2026-05-04T05:57:52.610Z",
+      "createdBy": "Converter"
+    },
+    {
+      "id": "moqsfsde6kab8q",
+      "name": "Christmas Eve (Dec 24) - Subsplash",
+      "date": "",
+      "timeStart": "",
+      "timeEnd": "",
+      "eventType": "Special Event",
+      "location": "",
+      "pointPerson": "Kaitlyn",
+      "expectedAttendance": "",
+      "budget": "",
+      "description": "",
+      "notes": "Converted from task on 5/4/2026",
+      "subsplash": false,
+      "checklist": [
+        {
+          "id": "moqsfsdem57vej",
+          "label": "Venue confirmed",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdezdwozq",
+          "label": "Volunteers scheduled",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsde5w6c6g",
+          "label": "Promotion started",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdeulioct",
+          "label": "Bulletin/slides ready",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdedtq08j",
+          "label": "Sound/AV arranged",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsde0ykf0y",
+          "label": "Follow-up planned",
+          "needed": true,
+          "done": false
+        }
+      ],
+      "status": "Planning",
+      "createdAt": "2026-05-04T05:57:52.610Z",
+      "createdBy": "Converter"
+    },
+    {
+      "id": "moqsfsdecmfrxj",
+      "name": "Baptism (Sep 13) - Marketing",
+      "date": "",
+      "timeStart": "",
+      "timeEnd": "",
+      "eventType": "Special Event",
+      "location": "",
+      "pointPerson": "Kaitlyn",
+      "expectedAttendance": "",
+      "budget": "",
+      "description": "",
+      "notes": "Converted from task on 5/4/2026",
+      "subsplash": false,
+      "checklist": [
+        {
+          "id": "moqsfsdeb1x7nf",
+          "label": "Venue confirmed",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdedirgkz",
+          "label": "Volunteers scheduled",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdejekfme",
+          "label": "Promotion started",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsde8js2gf",
+          "label": "Bulletin/slides ready",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdeuinlei",
+          "label": "Sound/AV arranged",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdes4defo",
+          "label": "Follow-up planned",
+          "needed": true,
+          "done": false
+        }
+      ],
+      "status": "Planning",
+      "createdAt": "2026-05-04T05:57:52.610Z",
+      "createdBy": "Converter"
+    },
+    {
+      "id": "moqsfsdear8rrs",
+      "name": "Kaitlyn & Daria's Bridal Shower Event updated",
+      "date": "",
+      "timeStart": "",
+      "timeEnd": "",
+      "eventType": "Special Event",
+      "location": "",
+      "pointPerson": "Kaitlyn",
+      "expectedAttendance": "",
+      "budget": "",
+      "description": "",
+      "notes": "Converted from task on 5/4/2026",
+      "subsplash": false,
+      "checklist": [
+        {
+          "id": "moqsfsdez0si97",
+          "label": "Venue confirmed",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsde1141ti",
+          "label": "Volunteers scheduled",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdesvv28x",
+          "label": "Promotion started",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdehd90vj",
+          "label": "Bulletin/slides ready",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdeigq6vl",
+          "label": "Sound/AV arranged",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsde4rwiud",
+          "label": "Follow-up planned",
+          "needed": true,
+          "done": false
+        }
+      ],
+      "status": "Planning",
+      "createdAt": "2026-05-04T05:57:52.610Z",
+      "createdBy": "Converter"
+    },
+    {
+      "id": "moqsfsdeyg44zn",
+      "name": "Christmas Eve (Dec 24) - Marketing",
+      "date": "",
+      "timeStart": "",
+      "timeEnd": "",
+      "eventType": "Special Event",
+      "location": "",
+      "pointPerson": "Kaitlyn",
+      "expectedAttendance": "",
+      "budget": "",
+      "description": "",
+      "notes": "Converted from task on 5/4/2026",
+      "subsplash": false,
+      "checklist": [
+        {
+          "id": "moqsfsdevbd2on",
+          "label": "Venue confirmed",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsde2bzmr8",
+          "label": "Volunteers scheduled",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdeckfgwb",
+          "label": "Promotion started",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdendkiyx",
+          "label": "Bulletin/slides ready",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdent9nyr",
+          "label": "Sound/AV arranged",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdevmgifu",
+          "label": "Follow-up planned",
+          "needed": true,
+          "done": false
+        }
+      ],
+      "status": "Planning",
+      "createdAt": "2026-05-04T05:57:52.610Z",
+      "createdBy": "Converter"
+    },
+    {
+      "id": "moqsfsdeu507no",
+      "name": "Baptism (Sep 13) - Subsplash",
+      "date": "",
+      "timeStart": "",
+      "timeEnd": "",
+      "eventType": "Special Event",
+      "location": "",
+      "pointPerson": "Kaitlyn",
+      "expectedAttendance": "",
+      "budget": "",
+      "description": "",
+      "notes": "Converted from task on 5/4/2026",
+      "subsplash": false,
+      "checklist": [
+        {
+          "id": "moqsfsdetd82ya",
+          "label": "Venue confirmed",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsde0qi8b5",
+          "label": "Volunteers scheduled",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsde4a5uju",
+          "label": "Promotion started",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsdem6amsd",
+          "label": "Bulletin/slides ready",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsde6ckqds",
+          "label": "Sound/AV arranged",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "moqsfsde5pl97a",
+          "label": "Follow-up planned",
+          "needed": true,
+          "done": false
+        }
+      ],
+      "status": "Planning",
+      "createdAt": "2026-05-04T05:57:52.610Z",
+      "createdBy": "Converter"
+    }
+  ],
   "activityFeed": [
     {
       "id": "moqpv1ctzajhpd",
       "text": "📝 Angie added task: Beach Baptism packet WAITING FOR APPROVAL",
       "time": "2026-05-04T04:45:45.245Z",
       "by": "Angie"
+    },
+    {
+      "id": "moqsfsde5ut2ky",
+      "text": "📅 11 tasks converted to events",
+      "time": "2026-05-04T05:57:52.610Z",
+      "by": "Converter"
     }
   ],
   "approvalHistory": [],
+  "meetings": [],
+  "agendaItems": [],
   "installDate": "2026-05-03T07:04:46.166Z"
 }
