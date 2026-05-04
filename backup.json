@@ -1,0 +1,1606 @@
+{
+  "tasks": [
+    {
+      "id": "0erl2ac",
+      "title": "Friendsgiving (Nov 25) - Admin, Volunteers & Outreach",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776722891302,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776722891302,
+      "updatedAt": "2026-05-03T07:19:54.988Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "1gzz3s2",
+      "title": "Pay Ellasyn for Babysitting after last class",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776730176264,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776730176264,
+      "updatedAt": "2026-05-03T07:19:57.487Z",
+      "assignedTo": "Angie"
+    },
+    {
+      "id": "2lyuoyi",
+      "title": "Music Academy Poster & Slide",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Projects",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723326438,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723326438,
+      "updatedAt": "2026-05-03T07:20:00.319Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "3vvvk6g",
+      "title": "Food Pantry A-Frame",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Projects",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723326438,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723326438,
+      "updatedAt": "2026-05-03T07:20:02.671Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "3yt6ppl",
+      "title": "Cleaning to-do list",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776722891302,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776722891302,
+      "updatedAt": "2026-05-03T07:20:05.504Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "5egtbgo",
+      "title": "Friendsgiving (Nov 25) - Marketing",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723326438,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723326438,
+      "updatedAt": "2026-05-03T07:20:08.104Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "5zk5nf7",
+      "title": "Beach Baptism packet",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "in-progress",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776721359438,
+          "note": "Task imported from Firebase"
+        },
+        {
+          "ts": 1776883469902,
+          "note": "Complete packet sent in April 15 waiting for response from the county"
+        }
+      ],
+      "createdAt": 1776721359438,
+      "updatedAt": "2026-05-03T07:20:13.287Z",
+      "assignedTo": "Angie"
+    },
+    {
+      "id": "6abz6xi",
+      "title": "Flooring company",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776722891302,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776722891302,
+      "updatedAt": "2026-05-03T07:20:19.320Z",
+      "assignedTo": "Angie"
+    },
+    {
+      "id": "6h76x9t",
+      "title": "Father's Day (Jun 21) - Marketing",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723326438,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723326438,
+      "updatedAt": "2026-05-03T07:20:22.171Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "6jdzapt",
+      "title": "James W - volunteer role",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": "2026-04-27",
+      "status": "in-progress",
+      "category": null,
+      "notes": "James needs a volunteer role- His mom suggested he is good at inventorying first aid kits",
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776722588487,
+          "note": "Task imported from Firebase"
+        },
+        {
+          "ts": 1777596526116,
+          "note": "Task updated"
+        }
+      ],
+      "createdAt": 1776722588487,
+      "updatedAt": "2026-05-03T07:20:24.371Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "6vev85d",
+      "title": "NFC implementation",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": "2026-05-14",
+      "status": "in-progress",
+      "category": "Projects",
+      "notes": "Changing assignment to Kaitlyn as of 4/29 to move into implementation and programing phase.",
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": true,
+      "decWho": "Kaitlyn",
+      "activityLog": [
+        {
+          "ts": 1776730176264,
+          "note": "Task imported from Firebase"
+        },
+        {
+          "ts": 1776956723612,
+          "note": "Purchase made and items shipped implementation still pending"
+        },
+        {
+          "ts": 1777598230679,
+          "note": "Task updated"
+        },
+        {
+          "ts": 1777598230679,
+          "note": "Awaiting decision from Kaitlyn"
+        }
+      ],
+      "createdAt": 1776730176264,
+      "updatedAt": "2026-05-03T07:20:26.921Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "8jp3zs7",
+      "title": "Volunteer Onboarding - Role Descriptions / Application",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776722891302,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776722891302,
+      "updatedAt": "2026-05-03T07:20:30.071Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "9pd22ou",
+      "title": "Mother's Day (May 10) - Marketing",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723326438,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723326438,
+      "updatedAt": "2026-05-03T07:20:34.621Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "a8mtpe6",
+      "title": "Identify volunteer to price out excess equipment in storage",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776722891302,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776722891302,
+      "updatedAt": "2026-05-03T07:20:44.537Z",
+      "assignedTo": "Pastor Andy"
+    },
+    {
+      "id": "bk2kn2i",
+      "title": "Hospitality Checklist update",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776722891302,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776722891302,
+      "updatedAt": "2026-05-03T07:20:48.221Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "d0ninre",
+      "title": "I-9 Form",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776722891302,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776722891302,
+      "updatedAt": "2026-05-03T07:20:51.821Z",
+      "assignedTo": "Angie"
+    },
+    {
+      "id": "e3846kf",
+      "title": "Office Furniture",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "in-progress",
+      "category": "Projects",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776754801190,
+          "note": "Task imported from Firebase"
+        },
+        {
+          "ts": 1776956894935,
+          "note": "Approved 2K- I will take the project from here"
+        }
+      ],
+      "createdAt": 1776754801190,
+      "updatedAt": "2026-05-03T07:20:54.088Z",
+      "assignedTo": "Angie"
+    },
+    {
+      "id": "e9504oq",
+      "title": "Seek volunteer childcare for night of worship",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Volunteer",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776730176264,
+          "note": "Task imported from Firebase"
+        },
+        {
+          "ts": 1777598403243,
+          "note": "Bri has volunteered"
+        }
+      ],
+      "createdAt": 1776730176264,
+      "updatedAt": "2026-05-03T07:20:56.952Z",
+      "assignedTo": "Angie"
+    },
+    {
+      "id": "eae44hh",
+      "title": "New greeter name tags to match",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Projects",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776730176264,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776730176264,
+      "updatedAt": "2026-05-03T07:20:59.938Z",
+      "assignedTo": "Angie"
+    },
+    {
+      "id": "evew6o5",
+      "title": "Print 50 Welcome Letters",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776722891302,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776722891302,
+      "updatedAt": "2026-05-03T07:21:05.072Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "f96vfeq",
+      "title": "Christmas Eve (Dec 24) - Volunteers",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776722891302,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776722891302,
+      "updatedAt": "2026-05-03T07:21:08.904Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "g5qg7ls",
+      "title": "Thrive Young Adults - Monthly Marketing",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723326438,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723326438,
+      "updatedAt": "2026-05-03T07:21:14.571Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "gb8bdiz",
+      "title": "USPS discount",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "in-progress",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776721359438,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776721359438,
+      "updatedAt": "2026-05-03T07:21:16.520Z",
+      "assignedTo": "Angie"
+    },
+    {
+      "id": "gbizerr",
+      "title": "Friendsgiving (Nov 25) - Subsplash",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723209459,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723209459,
+      "updatedAt": "2026-05-03T07:21:19.654Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "kjzj03y",
+      "title": "Josh - Role assignment and app training",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Volunteer",
+      "notes": "Role assignment and app training",
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776721490141,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776721490141,
+      "updatedAt": "2026-05-03T07:21:26.254Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "kkgsb6p",
+      "title": "Christmas Eve (Dec 24) - Subsplash",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723209459,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723209459,
+      "updatedAt": "2026-05-03T07:21:31.055Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "kxldxck",
+      "title": "Baptism (Sep 13) - Marketing",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723326438,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723326438,
+      "updatedAt": "2026-05-03T07:21:33.471Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "lr2wvtj",
+      "title": "Pastor Jim's Monday Bible Study",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Projects",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723326438,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723326438,
+      "updatedAt": "2026-05-03T07:21:36.971Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "m9gelx0",
+      "title": "Kaitlyn & Daria's Bridal Shower Event updated",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723209459,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723209459,
+      "updatedAt": "2026-05-03T07:21:39.922Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "msct2y3",
+      "title": "Sign up to become notary",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776722891302,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776722891302,
+      "updatedAt": "2026-05-03T07:21:42.536Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "n9o23mb",
+      "title": "Event process and notification timelines",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "in-progress",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776730176264,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776730176264,
+      "updatedAt": "2026-05-03T07:21:46.637Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "nz1ll3c",
+      "title": "Create building opening/closing process",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776722891302,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776722891302,
+      "updatedAt": "2026-05-03T07:21:58.971Z",
+      "assignedTo": "Angie"
+    },
+    {
+      "id": "p4l9his",
+      "title": "Check on office glass status and cost",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "in-progress",
+      "category": "Projects",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776754885124,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776754885124,
+      "updatedAt": "2026-05-03T07:21:55.738Z",
+      "assignedTo": "Angie"
+    },
+    {
+      "id": "pstwxy0",
+      "title": "iPad needs updated for purchasing",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": "2026-05-14",
+      "status": "in-progress",
+      "category": null,
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723638269,
+          "note": "Task imported from Firebase"
+        },
+        {
+          "ts": 1777598256878,
+          "note": "Task updated"
+        }
+      ],
+      "createdAt": 1776723638269,
+      "updatedAt": "2026-05-03T07:22:01.970Z",
+      "assignedTo": "Angie"
+    },
+    {
+      "id": "r3boqm9",
+      "title": "Christmas Eve (Dec 24) - Marketing",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723326438,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723326438,
+      "updatedAt": "2026-05-03T07:22:04.271Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "rkfq9y3",
+      "title": "Baptism (Sep 13) - Subsplash",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723209459,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723209459,
+      "updatedAt": "2026-05-03T07:22:07.222Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "rt4v5wz",
+      "title": "Family Time Broadcasting Slide",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Projects",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723326438,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723326438,
+      "updatedAt": "2026-05-03T07:22:10.254Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "s5lmspj",
+      "title": "Homeschool Co-op - Subsplash Forms",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723209459,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723209459,
+      "updatedAt": "2026-05-03T07:22:13.154Z",
+      "assignedTo": "Angie"
+    },
+    {
+      "id": "s7lqlk3",
+      "title": "Insurance review",
+      "person": "Pastor Andy",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "in-progress",
+      "category": null,
+      "notes": "Ready to be marked complete by Angie-Hand off to Andy- Reports and recommendation sent to Andy to develop a plan with Elders to mitigate the issue. Task handed off unless there is another request for Angie to take action can be archived.",
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776721359438,
+          "note": "Task imported from Firebase"
+        },
+        {
+          "ts": 1777598715231,
+          "note": "Task updated"
+        }
+      ],
+      "createdAt": 1776721359438,
+      "updatedAt": "2026-05-03T07:22:15.655Z",
+      "assignedTo": "Angie"
+    },
+    {
+      "id": "shjxyyz",
+      "title": "Chairs - steam seats on lobby chairs",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": "fusion crs steam seats on lobby chairs",
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776803503393,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776803503393,
+      "updatedAt": "2026-05-03T07:22:19.921Z",
+      "assignedTo": "Angie"
+    },
+    {
+      "id": "smyvqi8",
+      "title": "USPS Routes and postcard count",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": "2026-06-02",
+      "status": "in-progress",
+      "category": "Projects",
+      "notes": "Get counts and check online print and send services",
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776721439090,
+          "note": "Task imported from Firebase"
+        },
+        {
+          "ts": 1777598280244,
+          "note": "Task updated"
+        }
+      ],
+      "createdAt": 1776721439090,
+      "updatedAt": "2026-05-03T07:22:24.902Z",
+      "assignedTo": "Angie"
+    },
+    {
+      "id": "sytg9xf",
+      "title": "Prayer slide on Sunday",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Projects",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723326438,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723326438,
+      "updatedAt": "2026-05-03T07:22:28.072Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "t3zxy4k",
+      "title": "Discover the details on the Background checks from our insurance company",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "in-progress",
+      "category": "Volunteer",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776730176264,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776730176264,
+      "updatedAt": "2026-05-03T07:22:31.088Z",
+      "assignedTo": "Angie"
+    },
+    {
+      "id": "tbetrdi",
+      "title": "Create i-9 binder ready for inspection- add Nick",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "in-progress",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776730176264,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776730176264,
+      "updatedAt": "2026-05-03T07:22:32.955Z",
+      "assignedTo": "Angie"
+    },
+    {
+      "id": "u0r7896",
+      "title": "Sunday Video Walkthrough",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Projects",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723326438,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723326438,
+      "updatedAt": "2026-05-03T07:22:36.771Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "u4xicid",
+      "title": "Cartoon Art Canvas",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Projects",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723326438,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723326438,
+      "updatedAt": "2026-05-03T07:22:39.955Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "ua6fwr7",
+      "title": "JG's Plaza re: signage",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776722891302,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776722891302,
+      "updatedAt": "2026-05-03T07:22:43.055Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "urr5drr",
+      "title": "Learn to add events",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776883355510,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776883355510,
+      "updatedAt": "2026-05-03T07:22:46.105Z",
+      "assignedTo": "Angie"
+    },
+    {
+      "id": "v4d20se",
+      "title": "Baptism (Sep 13) - Volunteers & Logistics",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776722891302,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776722891302,
+      "updatedAt": "2026-05-03T07:22:56.388Z",
+      "assignedTo": "Pastor Andy"
+    },
+    {
+      "id": "waz3iqh",
+      "title": "YouTube / Subsplash descriptions",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723209459,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723209459,
+      "updatedAt": "2026-05-03T07:23:03.089Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "wism2gf",
+      "title": "App messages 8-8 courtesy policy and review solution team lead replies",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "in-progress",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776730176264,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776730176264,
+      "updatedAt": "2026-05-03T07:23:06.255Z",
+      "assignedTo": "Angie"
+    },
+    {
+      "id": "y5gf46a",
+      "title": "Locksmith companies (Trident, Crestview)",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776722891302,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776722891302,
+      "updatedAt": "2026-05-03T07:23:09.004Z",
+      "assignedTo": "Kaitlyn"
+    },
+    {
+      "id": "y5sxvui",
+      "title": "Handwritten Welcome Letter",
+      "person": "Pastor Andy",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776722614147,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776722614147,
+      "updatedAt": "2026-05-03T07:23:10.989Z",
+      "assignedTo": "Pastor Andy"
+    },
+    {
+      "id": "zkgolfk",
+      "title": "Office Hours",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776722891302,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776722891302,
+      "updatedAt": "2026-05-03T07:23:13.989Z",
+      "assignedTo": "Pastor Andy"
+    },
+    {
+      "title": "USPS Registration as a Religious Organization",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": "2026-05-08",
+      "status": "todo",
+      "category": "Projects",
+      "notes": "40% discount if approved for all our mailings",
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "updatedAt": "2026-05-03T07:23:19.871Z",
+      "id": "mom8f4lsi970k",
+      "createdAt": 1777598784784,
+      "activityLog": [
+        {
+          "ts": 1777598784784,
+          "note": "Task created"
+        }
+      ],
+      "assignedTo": "Angie"
+    },
+    {
+      "id": "mopfkpkyoh2pe1",
+      "title": "USPS Registration as a Religious Organization",
+      "assignedTo": "Angie",
+      "priority": 3,
+      "dueDate": "2026-05-08",
+      "dueDateType": "soft",
+      "status": "",
+      "waitingFor": "",
+      "notes": "40% discount if approved for all our mailings",
+      "recurring": false,
+      "completed": false,
+      "createdAt": "2026-05-03T07:10:01.090Z",
+      "updatedAt": "2026-05-03T07:10:01.090Z"
+    },
+    {
+      "id": "mopg6tucmsv67a",
+      "title": "Baptism (Sep 13) - Find a host, Volunteers & Logistics",
+      "assignedTo": "Pastor Andy",
+      "priority": 3,
+      "dueDate": "",
+      "dueDateType": "soft",
+      "status": "",
+      "waitingFor": "",
+      "notes": "",
+      "recurring": false,
+      "completed": false,
+      "createdAt": "2026-05-03T07:27:13.044Z",
+      "updatedAt": "2026-05-03T07:27:13.044Z"
+    }
+  ],
+  "archivedTasks": [
+    {
+      "id": "2yejkwg",
+      "title": "Hospitality purchasing volunteer",
+      "person": "Pastor Andy",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "done",
+      "category": "Volunteer",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776730176264,
+          "note": "Task imported from Firebase"
+        },
+        {
+          "ts": 1776818707375,
+          "note": "Jeremy will ask Rebecca and is confident that she will be willing to do the role of hospitality purchasing."
+        }
+      ],
+      "createdAt": 1776730176264,
+      "updatedAt": 1776818707375,
+      "archived": true,
+      "completedAt": 1776818707375,
+      "archiveNote": null
+    },
+    {
+      "id": "43bub37",
+      "title": "Tech Proposal",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": "2026-04-22",
+      "status": "done",
+      "category": "Projects",
+      "notes": "Sent to Andy- asked to determine methods for funding in current budget",
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776755015843,
+          "note": "Task imported from Firebase"
+        },
+        {
+          "ts": 1776956685127,
+          "note": "Make up to 3K purchases as approved 4-22 elders meeting"
+        }
+      ],
+      "createdAt": 1776755015843,
+      "updatedAt": 1776956685127,
+      "archived": true,
+      "completedAt": 1776956685127,
+      "archiveNote": null
+    },
+    {
+      "id": "arfuik4",
+      "title": "Men's Prayer Breakfast - Monthly tasks",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "done",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776722891302,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776722891302,
+      "updatedAt": 1776934550021,
+      "archived": true,
+      "completedAt": 1776934550021,
+      "archiveNote": null
+    },
+    {
+      "id": "dg8ehdk",
+      "title": "Let Beth know that the electrical is being fixed in the sensory room",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "done",
+      "category": "Volunteer",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776754856475,
+          "note": "Task imported from Firebase"
+        },
+        {
+          "ts": 1776956641211,
+          "note": "Tony will look at it the afternoon of the 23rd"
+        }
+      ],
+      "createdAt": 1776754856475,
+      "updatedAt": 1776956641211,
+      "archived": true,
+      "completedAt": 1776956641211,
+      "archiveNote": null
+    },
+    {
+      "id": "kacey9t",
+      "title": "Pay Bri for Babysitting",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "done",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776730176264,
+          "note": "Task imported from Firebase"
+        },
+        {
+          "ts": 1776956774181,
+          "note": "Kaitlyn has completed the payment"
+        }
+      ],
+      "createdAt": 1776730176264,
+      "updatedAt": 1776956774181,
+      "archived": true,
+      "completedAt": 1776956774181,
+      "archiveNote": null
+    },
+    {
+      "id": "8h9mf3d",
+      "title": "IRS Letter of our status",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "in-progress",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776721359438,
+          "note": "Task imported from Firebase"
+        },
+        {
+          "ts": 1776819017480,
+          "note": "Andy will discuss bypassing this letter and discuss creating a 501c3"
+        },
+        {
+          "ts": 1777598381576,
+          "note": "Completed: We are tabling this idea it is a cost of $600 and may tie our hands with some of our free speech freedom- Investigate Everyday Sunday as a NFP"
+        }
+      ],
+      "createdAt": 1776721359438,
+      "updatedAt": 1776819017480,
+      "archived": true,
+      "completedAt": 1777598381576,
+      "archiveNote": "We are tabling this idea it is a cost of $600 and may tie our hands with some of our free speech freedom- Investigate Everyday Sunday as a NFP"
+    }
+  ],
+  "creativeProjects": [
+    {
+      "title": "Office set up Test Project",
+      "category": "Audio/Visual",
+      "priority": "P4",
+      "stage": "In Progress",
+      "dueDate": "2026-05-08",
+      "notes": null,
+      "updatedAt": 1777598806117,
+      "id": "mom71pijp2r5w",
+      "createdAt": 1777596479083,
+      "activityLog": [
+        {
+          "ts": 1777596479083,
+          "note": "Project created"
+        },
+        {
+          "ts": 1777598801933,
+          "note": "Stage: In Progress → Idea"
+        },
+        {
+          "ts": 1777598806117,
+          "note": "Stage: Idea → In Progress"
+        }
+      ]
+    },
+    {
+      "id": "moqoz0pv0qm0ar",
+      "title": "Thank you cards",
+      "category": "Digital Media",
+      "dueDate": "2026-05-12",
+      "notes": "create a thank. you card cover for printing-",
+      "status": "Idea",
+      "createdAt": "2026-05-04T04:20:51.427Z"
+    }
+  ],
+  "winWall": [
+    {
+      "id": "mom86hhka2mxw",
+      "title": "IRS Letter of our status",
+      "person": "Angie",
+      "completedAt": 1777598381576,
+      "emoji": "🎯"
+    },
+    {
+      "id": "2yejkwg_w",
+      "title": "Hospitality purchasing volunteer",
+      "person": "Pastor Andy",
+      "completedAt": 1776818707375,
+      "emoji": "🎯"
+    },
+    {
+      "id": "43bub37_w",
+      "title": "Tech Proposal",
+      "person": "Angie",
+      "completedAt": 1776956685127,
+      "emoji": "💪"
+    },
+    {
+      "id": "arfuik4_w",
+      "title": "Men's Prayer Breakfast - Monthly tasks",
+      "person": "Kaitlyn",
+      "completedAt": 1776934550021,
+      "emoji": "⭐"
+    },
+    {
+      "id": "dg8ehdk_w",
+      "title": "Let Beth know that the electrical is being fixed in the sensory room",
+      "person": "Angie",
+      "completedAt": 1776956641211,
+      "emoji": "✅"
+    },
+    {
+      "id": "kacey9t_w",
+      "title": "Pay Bri for Babysitting",
+      "person": "Angie",
+      "completedAt": 1776956774181,
+      "emoji": "🙌"
+    }
+  ],
+  "briefings": {
+    "andy": [],
+    "kaitlyn": [],
+    "angie": []
+  },
+  "prayerNotes": {
+    "andy": "",
+    "kaitlyn": "",
+    "angie": ""
+  },
+  "installDate": "2026-05-03T07:04:46.166Z"
+}
