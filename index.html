@@ -976,14 +976,22 @@ function deleteCreativeProject(id){
 // EVENTS
 // ============================================================
 function renderEvents(){
-  const now=new Date();
-  const events=[...(appData.events||[])].sort((a,b)=>new Date(a.date)-new Date(b.date));
-  const upcoming=events.filter(e=>e.status!=='Cancelled'&&new Date(e.date)>=new Date(todayStr()));
-  const past=events.filter(e=>e.status!=='Cancelled'&&new Date(e.date)<new Date(todayStr()));
-  const cancelled=events.filter(e=>e.status==='Cancelled');
+  const events=[...(appData.events||[])].sort((a,b)=>{
+    if(!a.date&&!b.date) return 0;
+    if(!a.date) return 1;
+    if(!b.date) return -1;
+    return new Date(a.date)-new Date(b.date);
+  });
+  const undated=events.filter(e=>e.status!=='Cancelled'&&!e.date);
+  const upcoming=events.filter(e=>e.status!=='Cancelled'&&e.date&&new Date(e.date)>=new Date(todayStr()));
+  const past=events.filter(e=>e.status!=='Cancelled'&&e.date&&new Date(e.date)<new Date(todayStr()));
 
   let html=`<div class="section-header"><span class="section-title">📅 Events</span><button class="add-btn" onclick="openAddEvent()">+ New Event</button></div>`;
 
+  if(undated.length){
+    html+=`<div class="section-header"><span class="section-title" style="font-size:0.85rem;">📋 Needs a Date (${undated.length})</span></div>`;
+    undated.forEach(e=>{ html+=renderEventCard(e); });
+  }
   if(upcoming.length){
     html+=`<div class="section-header"><span class="section-title" style="font-size:0.85rem;">Upcoming</span></div>`;
     upcoming.forEach(e=>{ html+=renderEventCard(e); });
@@ -992,20 +1000,21 @@ function renderEvents(){
     html+=`<div class="section-header"><span class="section-title" style="font-size:0.85rem;">Past</span></div>`;
     past.slice(-5).reverse().forEach(e=>{ html+=renderEventCard(e); });
   }
-  if(!upcoming.length&&!past.length) html+=`<div class="empty-state"><div class="emoji">📅</div><p>No events yet — add your first one!</p></div>`;
+  if(!undated.length&&!upcoming.length&&!past.length) html+=`<div class="empty-state"><div class="emoji">📅</div><p>No events yet — add your first one!</p></div>`;
   return html;
 }
 
 function renderEventCard(e){
-  const daysUntil=Math.ceil((new Date(e.date)-new Date(todayStr()))/86400000);
-  const isSoon=daysUntil>=0&&daysUntil<=3;
-  const isThisWeek=daysUntil>3&&daysUntil<=7;
+  const daysUntil=e.date?Math.ceil((new Date(e.date)-new Date(todayStr()))/86400000):null;
+  const isSoon=daysUntil!==null&&daysUntil>=0&&daysUntil<=3;
+  const isThisWeek=daysUntil!==null&&daysUntil>3&&daysUntil<=7;
   const checklist=e.checklist||[];
   const needed=checklist.filter(c=>c.needed!==false);
   const done=needed.filter(c=>c.done);
   let classes=`event-card${isSoon?' soon':isThisWeek?' this-week':''}`;
   let countdown='';
-  if(daysUntil===0) countdown='<span class="event-countdown soon">Today!</span>';
+  if(daysUntil===null) countdown='<span style="font-size:0.75rem;color:var(--p2);font-weight:600;">⚠ No date set</span>';
+  else if(daysUntil===0) countdown='<span class="event-countdown soon">Today!</span>';
   else if(daysUntil===1) countdown='<span class="event-countdown soon">Tomorrow</span>';
   else if(daysUntil>0) countdown=`<span class="event-countdown ${isSoon?'soon':''}">in ${daysUntil} days</span>`;
   else countdown=`<span style="font-size:0.75rem;color:var(--text-light)">${Math.abs(daysUntil)} days ago</span>`;
