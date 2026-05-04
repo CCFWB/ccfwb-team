@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"/><title>CCFWB Data Check</title>
+<style>body{font-family:monospace;padding:1.5rem;background:#f0ede6;}pre{background:white;padding:1rem;border-radius:8px;overflow-x:auto;font-size:0.82rem;white-space:pre-wrap;word-break:break-all;}button{background:#5279A0;color:white;border:none;border-radius:8px;padding:0.65rem 1.25rem;font-size:0.9rem;cursor:pointer;margin-bottom:1rem;}h2{color:#5279A0;margin-bottom:0.5rem;font-family:sans-serif;}</style>
+</head>
+<body>
+<h2>CCFWB JSONBin Data Check</h2>
+<button onclick="check()">Check JSONBin Data</button>
+<div id="out"></div>
+<script>
+async function check(){
+  document.getElementById('out').innerHTML='Loading...';
+  try{
+    const r=await fetch('https://api.jsonbin.io/v3/b/69f39a9136566621a80e37bd/latest',{
+      headers:{'X-Master-Key':'$2a$10$u./u72JVwUVjuIdiEB4.d.iusC98TwDYyxS4VPqQIXNCXkx/2JOzq'}
+    });
+    const json=await r.json();
+    const d=json.record;
+    document.getElementById('out').innerHTML=`
+      <pre>Tasks: ${(d.tasks||[]).length}
+Archived Tasks: ${(d.archivedTasks||[]).length}
+Events: ${(d.events||[]).length}
+Meetings: ${(d.meetings||[]).length}
+Activity Feed: ${(d.activityFeed||[]).length}
+
+Event names:
+${(d.events||[]).map(e=>'  • '+e.name+' ('+e.date+')').join('\n')||'  (none)'}
+
+Raw events field type: ${Array.isArray(d.events)?'array':'NOT an array — '+typeof d.events}
+</pre>`;
+  }catch(e){
+    document.getElementById('out').innerHTML='<pre>Error: '+e.message+'</pre>';
+  }
+}
+</script>
+</body>
+</html>
