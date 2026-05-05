@@ -1054,6 +1054,25 @@
       "completed": false,
       "createdAt": "2026-05-04T04:45:45.245Z",
       "updatedAt": "2026-05-04T04:45:45.245Z"
+    },
+    {
+      "id": "mosr31wh2u6cqb",
+      "title": "Chairs - steam seats on lobby chairs",
+      "assignedTo": "Angie",
+      "priority": 3,
+      "dueDate": "",
+      "dueDateType": "soft",
+      "estimatedTime": "",
+      "status": "",
+      "waitingFor": "",
+      "blockedBy": null,
+      "followLevel": "none",
+      "readyForReviewAt": null,
+      "notes": "fusion crs steam seats on lobby chairs- 5-5 sent a online request for a quote to Fusion CRS",
+      "recurring": false,
+      "completed": false,
+      "createdAt": "2026-05-05T14:55:31.169Z",
+      "updatedAt": "2026-05-05T14:55:31.169Z"
     }
   ],
   "archivedTasks": [
@@ -2034,6 +2053,12 @@
       "id": "mosqjgd5gpb7nv",
       "text": "✅ USPS Registration as a Religious Organization completed by Angie",
       "time": "2026-05-05T14:40:16.793Z",
+      "by": "Angie"
+    },
+    {
+      "id": "mosr31wh0n5acb",
+      "text": "📝 Angie added task: Chairs - steam seats on lobby chairs",
+      "time": "2026-05-05T14:55:31.169Z",
       "by": "Angie"
     }
   ],
