@@ -1046,6 +1046,25 @@
       "completed": false,
       "createdAt": "2026-05-05T14:55:31.169Z",
       "updatedAt": "2026-05-05T14:55:31.169Z"
+    },
+    {
+      "id": "mosykhneb18cus",
+      "title": "AV booth tables measure and replace",
+      "assignedTo": "Angie",
+      "priority": 3,
+      "dueDate": "",
+      "dueDateType": "soft",
+      "estimatedTime": "",
+      "status": "",
+      "waitingFor": "",
+      "blockedBy": null,
+      "followLevel": "none",
+      "readyForReviewAt": null,
+      "notes": "",
+      "recurring": false,
+      "completed": false,
+      "createdAt": "2026-05-05T18:25:02.042Z",
+      "updatedAt": "2026-05-05T18:25:02.042Z"
     }
   ],
   "archivedTasks": [
@@ -2074,6 +2093,12 @@
       "id": "mosyex30celnnl",
       "text": "✅ Office Furniture completed by Angie",
       "time": "2026-05-05T18:20:42.108Z",
+      "by": "Angie"
+    },
+    {
+      "id": "mosykhneks50yh",
+      "text": "📝 Angie added task: AV booth tables measure and replace",
+      "time": "2026-05-05T18:25:02.042Z",
       "by": "Angie"
     }
   ],
