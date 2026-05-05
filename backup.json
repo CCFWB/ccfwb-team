@@ -1065,6 +1065,25 @@
       "completed": false,
       "createdAt": "2026-05-05T18:25:02.042Z",
       "updatedAt": "2026-05-05T18:25:02.042Z"
+    },
+    {
+      "id": "mosyn10b7cq902",
+      "title": "spotify playlist last 4 months and always updating",
+      "assignedTo": "Kaitlyn",
+      "priority": 3,
+      "dueDate": "2026-05-14",
+      "dueDateType": "soft",
+      "estimatedTime": "",
+      "status": "",
+      "waitingFor": "",
+      "blockedBy": null,
+      "followLevel": "notify",
+      "readyForReviewAt": null,
+      "notes": "",
+      "recurring": false,
+      "completed": false,
+      "createdAt": "2026-05-05T18:27:00.443Z",
+      "updatedAt": "2026-05-05T18:27:00.443Z"
     }
   ],
   "archivedTasks": [
@@ -2099,6 +2118,12 @@
       "id": "mosykhneks50yh",
       "text": "📝 Angie added task: AV booth tables measure and replace",
       "time": "2026-05-05T18:25:02.042Z",
+      "by": "Angie"
+    },
+    {
+      "id": "mosyn10bb0jnky",
+      "text": "📝 Angie added task: spotify playlist last 4 months and always updating",
+      "time": "2026-05-05T18:27:00.443Z",
       "by": "Angie"
     }
   ],
