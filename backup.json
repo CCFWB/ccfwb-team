@@ -2075,6 +2075,62 @@
       "status": "Planning",
       "createdAt": "2026-05-04T05:57:52.610Z",
       "createdBy": "Converter"
+    },
+    {
+      "id": "mosyuktiq9s1co",
+      "name": "IBS Seminar Jim Larson",
+      "date": "2026-06-12",
+      "timeStart": "",
+      "timeEnd": "",
+      "eventType": "Special Event",
+      "location": "On Campus",
+      "pointPerson": "Pastor Andy",
+      "expectedAttendance": "",
+      "budget": "",
+      "description": "Education $20 per person there are scholarships- ",
+      "notes": "Friday 6:30-9 and Saturday 9-4 offering lunch where?",
+      "subsplash": false,
+      "checklist": [
+        {
+          "id": "mosynigzr5ww0h",
+          "label": "Venue confirmed",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "mosynigz9h8cxe",
+          "label": "Volunteers scheduled",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "mosynigzo3i1mi",
+          "label": "Promotion started",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "mosynih0t9jf9p",
+          "label": "Bulletin/slides ready",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "mosynih0aydzvr",
+          "label": "Sound/AV arranged",
+          "needed": true,
+          "done": false
+        },
+        {
+          "id": "mosynih0sw3w7u",
+          "label": "Follow-up planned",
+          "needed": true,
+          "done": false
+        }
+      ],
+      "status": "Planning",
+      "createdAt": "2026-05-05T18:32:52.710Z",
+      "createdBy": "Angie"
     }
   ],
   "activityFeed": [
@@ -2124,6 +2180,12 @@
       "id": "mosyn10bb0jnky",
       "text": "📝 Angie added task: spotify playlist last 4 months and always updating",
       "time": "2026-05-05T18:27:00.443Z",
+      "by": "Angie"
+    },
+    {
+      "id": "mosyuktiomkggz",
+      "text": "📅 Angie created a new event: IBS Seminar Jim Larson on Jun 12",
+      "time": "2026-05-05T18:32:52.710Z",
       "by": "Angie"
     }
   ],
