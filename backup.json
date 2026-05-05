@@ -1103,6 +1103,44 @@
       "completed": false,
       "createdAt": "2026-05-05T18:36:01.594Z",
       "updatedAt": "2026-05-05T18:36:01.594Z"
+    },
+    {
+      "id": "moszeecii1bk6c",
+      "title": "meal train for Friday and Monday this week",
+      "assignedTo": "Angie",
+      "priority": 3,
+      "dueDate": "",
+      "dueDateType": "soft",
+      "estimatedTime": "",
+      "status": "",
+      "waitingFor": "",
+      "blockedBy": null,
+      "followLevel": "none",
+      "readyForReviewAt": null,
+      "notes": "",
+      "recurring": false,
+      "completed": false,
+      "createdAt": "2026-05-05T18:48:17.442Z",
+      "updatedAt": "2026-05-05T18:48:17.442Z"
+    },
+    {
+      "id": "moszuhweqfxyxh",
+      "title": "Key check in with Key Volunteers every 6 months starting",
+      "assignedTo": "Kaitlyn",
+      "priority": 3,
+      "dueDate": "2026-05-12",
+      "dueDateType": "hard",
+      "estimatedTime": "",
+      "status": "",
+      "waitingFor": "",
+      "blockedBy": null,
+      "followLevel": "none",
+      "readyForReviewAt": null,
+      "notes": "develop the process",
+      "recurring": false,
+      "completed": false,
+      "createdAt": "2026-05-05T19:00:48.542Z",
+      "updatedAt": "2026-05-05T19:00:48.542Z"
     }
   ],
   "archivedTasks": [
@@ -2211,6 +2249,18 @@
       "id": "mosyymkag2dk6v",
       "text": "📝 Angie added task: password plaquard for wifi",
       "time": "2026-05-05T18:36:01.594Z",
+      "by": "Angie"
+    },
+    {
+      "id": "moszeecij6p7x2",
+      "text": "📝 Angie added task: meal train for Friday and Monday this week",
+      "time": "2026-05-05T18:48:17.442Z",
+      "by": "Angie"
+    },
+    {
+      "id": "moszuhwenxsqtm",
+      "text": "📝 Angie added task: Key check in with Key Volunteers every 6 months starting",
+      "time": "2026-05-05T19:00:48.542Z",
       "by": "Angie"
     }
   ],
