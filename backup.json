@@ -1084,6 +1084,25 @@
       "completed": false,
       "createdAt": "2026-05-05T18:27:00.443Z",
       "updatedAt": "2026-05-05T18:27:00.443Z"
+    },
+    {
+      "id": "mosyymkat948jk",
+      "title": "password plaquard for wifi",
+      "assignedTo": "Angie",
+      "priority": 3,
+      "dueDate": "",
+      "dueDateType": "soft",
+      "estimatedTime": "",
+      "status": "",
+      "waitingFor": "",
+      "blockedBy": null,
+      "followLevel": "none",
+      "readyForReviewAt": null,
+      "notes": "",
+      "recurring": false,
+      "completed": false,
+      "createdAt": "2026-05-05T18:36:01.594Z",
+      "updatedAt": "2026-05-05T18:36:01.594Z"
     }
   ],
   "archivedTasks": [
@@ -2186,6 +2205,12 @@
       "id": "mosyuktiomkggz",
       "text": "📅 Angie created a new event: IBS Seminar Jim Larson on Jun 12",
       "time": "2026-05-05T18:32:52.710Z",
+      "by": "Angie"
+    },
+    {
+      "id": "mosyymkag2dk6v",
+      "text": "📝 Angie added task: password plaquard for wifi",
+      "time": "2026-05-05T18:36:01.594Z",
       "by": "Angie"
     }
   ],
