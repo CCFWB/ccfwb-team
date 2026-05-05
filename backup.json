@@ -558,29 +558,6 @@
       "assignedTo": "Angie"
     },
     {
-      "id": "p4l9his",
-      "title": "Check on office glass status and cost",
-      "person": "Angie",
-      "priority": "P3",
-      "dueDate": null,
-      "status": "in-progress",
-      "category": "Projects",
-      "notes": null,
-      "recurring": false,
-      "recurFreq": null,
-      "decPending": false,
-      "decWho": null,
-      "activityLog": [
-        {
-          "ts": 1776754885124,
-          "note": "Task imported from Firebase"
-        }
-      ],
-      "createdAt": 1776754885124,
-      "updatedAt": "2026-05-03T07:21:55.738Z",
-      "assignedTo": "Angie"
-    },
-    {
       "id": "pstwxy0",
       "title": "iPad needs updated for purchasing",
       "person": "Angie",
@@ -1030,29 +1007,6 @@
       "assignedTo": "Pastor Andy"
     },
     {
-      "title": "USPS Registration as a Religious Organization",
-      "person": "Angie",
-      "priority": "P3",
-      "dueDate": "2026-05-08",
-      "status": "todo",
-      "category": "Projects",
-      "notes": "40% discount if approved for all our mailings",
-      "recurring": false,
-      "recurFreq": null,
-      "decPending": false,
-      "decWho": null,
-      "updatedAt": "2026-05-03T07:23:19.871Z",
-      "id": "mom8f4lsi970k",
-      "createdAt": 1777598784784,
-      "activityLog": [
-        {
-          "ts": 1777598784784,
-          "note": "Task created"
-        }
-      ],
-      "assignedTo": "Angie"
-    },
-    {
       "id": "mopfkpkyoh2pe1",
       "title": "USPS Registration as a Religious Organization",
       "assignedTo": "Angie",
@@ -1276,6 +1230,58 @@
       "archived": true,
       "completedAt": 1777598381576,
       "archiveNote": "We are tabling this idea it is a cost of $600 and may tie our hands with some of our free speech freedom- Investigate Everyday Sunday as a NFP"
+    },
+    {
+      "id": "p4l9his",
+      "title": "Check on office glass status and cost",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "in-progress",
+      "category": "Projects",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776754885124,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776754885124,
+      "updatedAt": "2026-05-05T14:39:32.611Z",
+      "assignedTo": "Angie",
+      "completed": true,
+      "completedAt": "2026-05-05T14:39:32.611Z",
+      "archiveNote": ""
+    },
+    {
+      "title": "USPS Registration as a Religious Organization",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": "2026-05-08",
+      "status": "todo",
+      "category": "Projects",
+      "notes": "40% discount if approved for all our mailings",
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "updatedAt": "2026-05-05T14:40:16.793Z",
+      "id": "mom8f4lsi970k",
+      "createdAt": 1777598784784,
+      "activityLog": [
+        {
+          "ts": 1777598784784,
+          "note": "Task created"
+        }
+      ],
+      "assignedTo": "Angie",
+      "completed": true,
+      "completedAt": "2026-05-05T14:40:16.793Z",
+      "archiveNote": ""
     }
   ],
   "creativeProjects": [
@@ -1356,6 +1362,18 @@
       "person": "Angie",
       "completedAt": 1776956774181,
       "emoji": "🙌"
+    },
+    {
+      "id": "mosqii9vlcl38x",
+      "title": "Check on office glass status and cost",
+      "person": "Angie",
+      "date": "2026-05-05T14:39:32.611Z"
+    },
+    {
+      "id": "mosqjgd5i2exey",
+      "title": "USPS Registration as a Religious Organization",
+      "person": "Angie",
+      "date": "2026-05-05T14:40:16.793Z"
     }
   ],
   "briefings": {
@@ -2005,6 +2023,18 @@
       "text": "📅 11 tasks converted to events",
       "time": "2026-05-04T05:57:52.610Z",
       "by": "Converter"
+    },
+    {
+      "id": "mosqii9who0nec",
+      "text": "✅ Check on office glass status and cost completed by Angie",
+      "time": "2026-05-05T14:39:32.612Z",
+      "by": "Angie"
+    },
+    {
+      "id": "mosqjgd5gpb7nv",
+      "text": "✅ USPS Registration as a Religious Organization completed by Angie",
+      "time": "2026-05-05T14:40:16.793Z",
+      "by": "Angie"
     }
   ],
   "approvalHistory": [],
