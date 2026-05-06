@@ -537,6 +537,22 @@ async function loadData(){
     appData.agendaItems=toArray(d.agendaItems);
     appData.installDate=d.installDate||new Date().toISOString();
     if(!d.installDate) schedSave();
+    // Normalize short keys to full names ('andy' -> 'Pastor Andy') across all data
+    const KEY_TO_NAME={'andy':'Pastor Andy','kaitlyn':'Kaitlyn','angie':'Angie'};
+    [...appData.tasks,...appData.archivedTasks].forEach(t=>{
+      if(t.assignedTo&&KEY_TO_NAME[t.assignedTo]) t.assignedTo=KEY_TO_NAME[t.assignedTo];
+      if(t.awaitingInputFrom&&KEY_TO_NAME[t.awaitingInputFrom]) t.awaitingInputFrom=KEY_TO_NAME[t.awaitingInputFrom];
+      if(t.handoffFrom&&KEY_TO_NAME[t.handoffFrom]) t.handoffFrom=KEY_TO_NAME[t.handoffFrom];
+    });
+    // Normalize winWall person field
+    appData.winWall.forEach(w=>{
+      if(w.person&&KEY_TO_NAME[w.person]) w.person=KEY_TO_NAME[w.person];
+    });
+    // Ensure archivedTasks have completedAt so streak counter works
+    appData.archivedTasks.forEach(t=>{
+      if(!t.completedAt&&t.updatedAt) t.completedAt=t.updatedAt;
+      else if(!t.completedAt&&t.createdAt) t.completedAt=t.createdAt;
+    });
     setSyncStatus('ok');
   }catch(e){
     setSyncStatus('error');
@@ -1618,7 +1634,7 @@ function saveCapture(meetingTag){
     addToFeed(`📅 ${identity||'Team'} captured event from meeting: ${text}`);
     toast('Event created — set the date in the Events tab ✓');
   }
-  closeModal();schedSave();updateTabBadges();
+  closeModal();schedSave();renderCurrentTab();updateTabBadges();
 }
 
 function openPrevMeeting(id){
@@ -2348,7 +2364,7 @@ function openSettings(){
     </div>
     <div class="settings-section">
       <div class="settings-title">App Info</div>
-      <div class="settings-row"><span class="settings-label">Version</span><span class="settings-value">v13</span></div>
+      <div class="settings-row"><span class="settings-label">Version</span><span class="settings-value">v15</span></div>
       <div class="settings-row"><span class="settings-label">Install Date</span><span class="settings-value">${appData.installDate?new Date(appData.installDate).toLocaleDateString():'-'}</span></div>
     </div>
   `,true);
