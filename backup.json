@@ -1,6 +1,28 @@
 {
   "tasks": [
     {
+      "id": "0erl2ac",
+      "title": "Friendsgiving (Nov 25) - Admin, Volunteers & Outreach",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776722891302,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776722891302,
+      "updatedAt": 1776722891302
+    },
+    {
       "id": "1gzz3s2",
       "title": "Pay Ellasyn for Babysitting after last class",
       "person": "Angie",
@@ -20,8 +42,7 @@
         }
       ],
       "createdAt": 1776730176264,
-      "updatedAt": "2026-05-03T07:19:57.487Z",
-      "assignedTo": "Angie"
+      "updatedAt": 1776730176264
     },
     {
       "id": "2lyuoyi",
@@ -43,8 +64,7 @@
         }
       ],
       "createdAt": 1776723326438,
-      "updatedAt": "2026-05-03T07:20:00.319Z",
-      "assignedTo": "Kaitlyn"
+      "updatedAt": 1776723326438
     },
     {
       "id": "3vvvk6g",
@@ -66,8 +86,7 @@
         }
       ],
       "createdAt": 1776723326438,
-      "updatedAt": "2026-05-03T07:20:02.671Z",
-      "assignedTo": "Kaitlyn"
+      "updatedAt": 1776723326438
     },
     {
       "id": "3yt6ppl",
@@ -89,8 +108,29 @@
         }
       ],
       "createdAt": 1776722891302,
-      "updatedAt": "2026-05-03T07:20:05.504Z",
-      "assignedTo": "Kaitlyn"
+      "updatedAt": 1776722891302
+    },
+    {
+      "id": "5egtbgo",
+      "title": "Friendsgiving (Nov 25) - Marketing",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723326438,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723326438,
+      "updatedAt": 1776723326438
     },
     {
       "id": "5zk5nf7",
@@ -116,8 +156,7 @@
         }
       ],
       "createdAt": 1776721359438,
-      "updatedAt": "2026-05-03T07:20:13.287Z",
-      "assignedTo": "Angie"
+      "updatedAt": 1776883469902
     },
     {
       "id": "6abz6xi",
@@ -139,8 +178,29 @@
         }
       ],
       "createdAt": 1776722891302,
-      "updatedAt": "2026-05-03T07:20:19.320Z",
-      "assignedTo": "Angie"
+      "updatedAt": 1776722891302
+    },
+    {
+      "id": "6h76x9t",
+      "title": "Father's Day (Jun 21) - Marketing",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723326438,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723326438,
+      "updatedAt": 1776723326438
     },
     {
       "id": "6jdzapt",
@@ -166,8 +226,7 @@
         }
       ],
       "createdAt": 1776722588487,
-      "updatedAt": "2026-05-03T07:20:24.371Z",
-      "assignedTo": "Kaitlyn"
+      "updatedAt": 1777596526116
     },
     {
       "id": "6vev85d",
@@ -201,8 +260,7 @@
         }
       ],
       "createdAt": 1776730176264,
-      "updatedAt": "2026-05-03T07:20:26.921Z",
-      "assignedTo": "Kaitlyn"
+      "updatedAt": 1777598230679
     },
     {
       "id": "8jp3zs7",
@@ -224,8 +282,29 @@
         }
       ],
       "createdAt": 1776722891302,
-      "updatedAt": "2026-05-03T07:20:30.071Z",
-      "assignedTo": "Kaitlyn"
+      "updatedAt": 1776722891302
+    },
+    {
+      "id": "9pd22ou",
+      "title": "Mother's Day (May 10) - Marketing",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723326438,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723326438,
+      "updatedAt": 1776723326438
     },
     {
       "id": "a8mtpe6",
@@ -247,8 +326,7 @@
         }
       ],
       "createdAt": 1776722891302,
-      "updatedAt": "2026-05-03T07:20:44.537Z",
-      "assignedTo": "Pastor Andy"
+      "updatedAt": 1776722891302
     },
     {
       "id": "bk2kn2i",
@@ -270,8 +348,7 @@
         }
       ],
       "createdAt": 1776722891302,
-      "updatedAt": "2026-05-03T07:20:48.221Z",
-      "assignedTo": "Kaitlyn"
+      "updatedAt": 1776722891302
     },
     {
       "id": "d0ninre",
@@ -293,8 +370,33 @@
         }
       ],
       "createdAt": 1776722891302,
-      "updatedAt": "2026-05-03T07:20:51.821Z",
-      "assignedTo": "Angie"
+      "updatedAt": 1776722891302
+    },
+    {
+      "id": "e3846kf",
+      "title": "Office Furniture",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "in-progress",
+      "category": "Projects",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776754801190,
+          "note": "Task imported from Firebase"
+        },
+        {
+          "ts": 1776956894935,
+          "note": "Approved 2K- I will take the project from here"
+        }
+      ],
+      "createdAt": 1776754801190,
+      "updatedAt": 1776956908855
     },
     {
       "id": "e9504oq",
@@ -320,8 +422,7 @@
         }
       ],
       "createdAt": 1776730176264,
-      "updatedAt": "2026-05-03T07:20:56.952Z",
-      "assignedTo": "Angie"
+      "updatedAt": 1777598403243
     },
     {
       "id": "eae44hh",
@@ -343,8 +444,7 @@
         }
       ],
       "createdAt": 1776730176264,
-      "updatedAt": "2026-05-03T07:20:59.938Z",
-      "assignedTo": "Angie"
+      "updatedAt": 1776730176264
     },
     {
       "id": "evew6o5",
@@ -366,8 +466,29 @@
         }
       ],
       "createdAt": 1776722891302,
-      "updatedAt": "2026-05-03T07:21:05.072Z",
-      "assignedTo": "Kaitlyn"
+      "updatedAt": 1776722891302
+    },
+    {
+      "id": "f96vfeq",
+      "title": "Christmas Eve (Dec 24) - Volunteers",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Administrative",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776722891302,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776722891302,
+      "updatedAt": 1776722891302
     },
     {
       "id": "g5qg7ls",
@@ -389,8 +510,7 @@
         }
       ],
       "createdAt": 1776723326438,
-      "updatedAt": "2026-05-03T07:21:14.571Z",
-      "assignedTo": "Kaitlyn"
+      "updatedAt": 1776723326438
     },
     {
       "id": "gb8bdiz",
@@ -412,8 +532,29 @@
         }
       ],
       "createdAt": 1776721359438,
-      "updatedAt": "2026-05-03T07:21:16.520Z",
-      "assignedTo": "Angie"
+      "updatedAt": 1776730264820
+    },
+    {
+      "id": "gbizerr",
+      "title": "Friendsgiving (Nov 25) - Subsplash",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723209459,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723209459,
+      "updatedAt": 1776723209459
     },
     {
       "id": "kjzj03y",
@@ -435,8 +576,51 @@
         }
       ],
       "createdAt": 1776721490141,
-      "updatedAt": "2026-05-03T07:21:26.254Z",
-      "assignedTo": "Kaitlyn"
+      "updatedAt": 1776956910587
+    },
+    {
+      "id": "kkgsb6p",
+      "title": "Christmas Eve (Dec 24) - Subsplash",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723209459,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723209459,
+      "updatedAt": 1776723209459
+    },
+    {
+      "id": "kxldxck",
+      "title": "Baptism (Sep 13) - Marketing",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723326438,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723326438,
+      "updatedAt": 1776723326438
     },
     {
       "id": "lr2wvtj",
@@ -458,8 +642,29 @@
         }
       ],
       "createdAt": 1776723326438,
-      "updatedAt": "2026-05-03T07:21:36.971Z",
-      "assignedTo": "Kaitlyn"
+      "updatedAt": 1776723326438
+    },
+    {
+      "id": "m9gelx0",
+      "title": "Kaitlyn & Daria's Bridal Shower Event updated",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723209459,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723209459,
+      "updatedAt": 1776723209459
     },
     {
       "id": "msct2y3",
@@ -481,8 +686,7 @@
         }
       ],
       "createdAt": 1776722891302,
-      "updatedAt": "2026-05-03T07:21:42.536Z",
-      "assignedTo": "Kaitlyn"
+      "updatedAt": 1776722891302
     },
     {
       "id": "n9o23mb",
@@ -504,8 +708,7 @@
         }
       ],
       "createdAt": 1776730176264,
-      "updatedAt": "2026-05-03T07:21:46.637Z",
-      "assignedTo": "Kaitlyn"
+      "updatedAt": 1776730271009
     },
     {
       "id": "nz1ll3c",
@@ -527,8 +730,29 @@
         }
       ],
       "createdAt": 1776722891302,
-      "updatedAt": "2026-05-03T07:21:58.971Z",
-      "assignedTo": "Angie"
+      "updatedAt": 1776722891302
+    },
+    {
+      "id": "p4l9his",
+      "title": "Check on office glass status and cost",
+      "person": "Angie",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "in-progress",
+      "category": "Projects",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776754885124,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776754885124,
+      "updatedAt": 1776818968650
     },
     {
       "id": "pstwxy0",
@@ -554,8 +778,51 @@
         }
       ],
       "createdAt": 1776723638269,
-      "updatedAt": "2026-05-03T07:22:01.970Z",
-      "assignedTo": "Angie"
+      "updatedAt": 1777598256878
+    },
+    {
+      "id": "r3boqm9",
+      "title": "Christmas Eve (Dec 24) - Marketing",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723326438,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723326438,
+      "updatedAt": 1776723326438
+    },
+    {
+      "id": "rkfq9y3",
+      "title": "Baptism (Sep 13) - Subsplash",
+      "person": "Kaitlyn",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Events",
+      "notes": null,
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776723209459,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776723209459,
+      "updatedAt": 1776723209459
     },
     {
       "id": "rt4v5wz",
@@ -577,8 +844,7 @@
         }
       ],
       "createdAt": 1776723326438,
-      "updatedAt": "2026-05-03T07:22:10.254Z",
-      "assignedTo": "Kaitlyn"
+      "updatedAt": 1776723326438
     },
     {
       "id": "s5lmspj",
@@ -600,8 +866,7 @@
         }
       ],
       "createdAt": 1776723209459,
-      "updatedAt": "2026-05-03T07:22:13.154Z",
-      "assignedTo": "Angie"
+      "updatedAt": 1776723209459
     },
     {
       "id": "s7lqlk3",
@@ -627,8 +892,7 @@
         }
       ],
       "createdAt": 1776721359438,
-      "updatedAt": "2026-05-03T07:22:15.655Z",
-      "assignedTo": "Angie"
+      "updatedAt": 1777598715231
     },
     {
       "id": "shjxyyz",
@@ -650,8 +914,7 @@
         }
       ],
       "createdAt": 1776803503393,
-      "updatedAt": "2026-05-03T07:22:19.921Z",
-      "assignedTo": "Angie"
+      "updatedAt": 1776818908397
     },
     {
       "id": "smyvqi8",
@@ -677,8 +940,7 @@
         }
       ],
       "createdAt": 1776721439090,
-      "updatedAt": "2026-05-03T07:22:24.902Z",
-      "assignedTo": "Angie"
+      "updatedAt": 1777598280244
     },
     {
       "id": "sytg9xf",
@@ -700,8 +962,7 @@
         }
       ],
       "createdAt": 1776723326438,
-      "updatedAt": "2026-05-03T07:22:28.072Z",
-      "assignedTo": "Kaitlyn"
+      "updatedAt": 1776723326438
     },
     {
       "id": "t3zxy4k",
@@ -723,8 +984,7 @@
         }
       ],
       "createdAt": 1776730176264,
-      "updatedAt": "2026-05-03T07:22:31.088Z",
-      "assignedTo": "Angie"
+      "updatedAt": 1776730233468
     },
     {
       "id": "tbetrdi",
@@ -746,8 +1006,7 @@
         }
       ],
       "createdAt": 1776730176264,
-      "updatedAt": "2026-05-03T07:22:32.955Z",
-      "assignedTo": "Angie"
+      "updatedAt": 1776730277018
     },
     {
       "id": "u0r7896",
@@ -769,8 +1028,7 @@
         }
       ],
       "createdAt": 1776723326438,
-      "updatedAt": "2026-05-03T07:22:36.771Z",
-      "assignedTo": "Kaitlyn"
+      "updatedAt": 1776723326438
     },
     {
       "id": "u4xicid",
@@ -792,8 +1050,7 @@
         }
       ],
       "createdAt": 1776723326438,
-      "updatedAt": "2026-05-03T07:22:39.955Z",
-      "assignedTo": "Kaitlyn"
+      "updatedAt": 1776723326438
     },
     {
       "id": "ua6fwr7",
@@ -815,8 +1072,7 @@
         }
       ],
       "createdAt": 1776722891302,
-      "updatedAt": "2026-05-03T07:22:43.055Z",
-      "assignedTo": "Kaitlyn"
+      "updatedAt": 1776722891302
     },
     {
       "id": "urr5drr",
@@ -838,8 +1094,7 @@
         }
       ],
       "createdAt": 1776883355510,
-      "updatedAt": "2026-05-03T07:22:46.105Z",
-      "assignedTo": "Angie"
+      "updatedAt": 1776883355510
     },
     {
       "id": "v4d20se",
@@ -861,8 +1116,7 @@
         }
       ],
       "createdAt": 1776722891302,
-      "updatedAt": "2026-05-03T07:22:56.388Z",
-      "assignedTo": "Pastor Andy"
+      "updatedAt": 1776722891302
     },
     {
       "id": "waz3iqh",
@@ -884,8 +1138,7 @@
         }
       ],
       "createdAt": 1776723209459,
-      "updatedAt": "2026-05-03T07:23:03.089Z",
-      "assignedTo": "Kaitlyn"
+      "updatedAt": 1776723209459
     },
     {
       "id": "wism2gf",
@@ -907,8 +1160,7 @@
         }
       ],
       "createdAt": 1776730176264,
-      "updatedAt": "2026-05-03T07:23:06.255Z",
-      "assignedTo": "Angie"
+      "updatedAt": 1776730281695
     },
     {
       "id": "y5gf46a",
@@ -930,8 +1182,7 @@
         }
       ],
       "createdAt": 1776722891302,
-      "updatedAt": "2026-05-03T07:23:09.004Z",
-      "assignedTo": "Kaitlyn"
+      "updatedAt": 1776722891302
     },
     {
       "id": "y5sxvui",
@@ -953,8 +1204,7 @@
         }
       ],
       "createdAt": 1776722614147,
-      "updatedAt": "2026-05-03T07:23:10.989Z",
-      "assignedTo": "Pastor Andy"
+      "updatedAt": 1776722614147
     },
     {
       "id": "zkgolfk",
@@ -976,171 +1226,70 @@
         }
       ],
       "createdAt": 1776722891302,
-      "updatedAt": "2026-05-03T07:23:13.989Z",
-      "assignedTo": "Pastor Andy"
+      "updatedAt": 1776722891302
     },
     {
-      "id": "mopfkpkyoh2pe1",
+      "id": "zqlt98v",
+      "title": "Find a host for Beach Baptism",
+      "person": "Pastor Andy",
+      "priority": "P3",
+      "dueDate": null,
+      "status": "todo",
+      "category": "Volunteer",
+      "notes": "Joy and Wes would like someone else to take charge of the Baptism planning",
+      "recurring": false,
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "activityLog": [
+        {
+          "ts": 1776730176264,
+          "note": "Task imported from Firebase"
+        }
+      ],
+      "createdAt": 1776730176264,
+      "updatedAt": 1776818682908
+    },
+    {
       "title": "USPS Registration as a Religious Organization",
-      "assignedTo": "Angie",
-      "priority": 3,
+      "person": "Angie",
+      "priority": "P3",
       "dueDate": "2026-05-08",
-      "dueDateType": "soft",
-      "status": "",
-      "waitingFor": "",
+      "status": "todo",
+      "category": "Projects",
       "notes": "40% discount if approved for all our mailings",
       "recurring": false,
-      "completed": false,
-      "createdAt": "2026-05-03T07:10:01.090Z",
-      "updatedAt": "2026-05-03T07:10:01.090Z"
+      "recurFreq": null,
+      "decPending": false,
+      "decWho": null,
+      "updatedAt": 1777598784784,
+      "id": "mom8f4lsi970k",
+      "createdAt": 1777598784784,
+      "activityLog": [
+        {
+          "ts": 1777598784784,
+          "note": "Task created"
+        }
+      ]
     },
     {
-      "id": "mopg6tucmsv67a",
-      "title": "Baptism (Sep 13) - Find a host, Volunteers & Logistics",
-      "assignedTo": "Pastor Andy",
-      "priority": 3,
-      "dueDate": "",
-      "dueDateType": "soft",
-      "status": "",
-      "waitingFor": "",
-      "notes": "",
-      "recurring": false,
-      "completed": false,
-      "createdAt": "2026-05-03T07:27:13.044Z",
-      "updatedAt": "2026-05-03T07:27:13.044Z"
-    },
-    {
-      "id": "moqpv1ctuqicbo",
-      "title": "Beach Baptism packet WAITING FOR APPROVAL",
-      "assignedTo": "Angie",
+      "id": "motet27w35u5yl",
+      "title": "Special Event Planning",
+      "assignedTo": "Kaitlyn",
       "priority": 2,
-      "dueDate": "2026-05-15",
-      "dueDateType": "soft",
-      "estimatedTime": "10 MINUTES",
-      "status": "waiting-outside",
-      "waitingFor": "Okaloosa County",
-      "blockedBy": null,
-      "followLevel": "notify",
-      "readyForReviewAt": null,
-      "notes": "",
-      "recurring": false,
-      "completed": false,
-      "createdAt": "2026-05-04T04:45:45.245Z",
-      "updatedAt": "2026-05-04T04:45:45.245Z"
-    },
-    {
-      "id": "mosr31wh2u6cqb",
-      "title": "Chairs - steam seats on lobby chairs",
-      "assignedTo": "Angie",
-      "priority": 3,
-      "dueDate": "",
-      "dueDateType": "soft",
-      "estimatedTime": "",
-      "status": "",
-      "waitingFor": "",
-      "blockedBy": null,
-      "followLevel": "none",
-      "readyForReviewAt": null,
-      "notes": "fusion crs steam seats on lobby chairs- 5-5 sent a online request for a quote to Fusion CRS",
-      "recurring": false,
-      "completed": false,
-      "createdAt": "2026-05-05T14:55:31.169Z",
-      "updatedAt": "2026-05-05T14:55:31.169Z"
-    },
-    {
-      "id": "mosykhneb18cus",
-      "title": "AV booth tables measure and replace",
-      "assignedTo": "Angie",
-      "priority": 3,
-      "dueDate": "",
-      "dueDateType": "soft",
-      "estimatedTime": "",
-      "status": "",
-      "waitingFor": "",
-      "blockedBy": null,
-      "followLevel": "none",
-      "readyForReviewAt": null,
-      "notes": "",
-      "recurring": false,
-      "completed": false,
-      "createdAt": "2026-05-05T18:25:02.042Z",
-      "updatedAt": "2026-05-05T18:25:02.042Z"
-    },
-    {
-      "id": "mosyn10b7cq902",
-      "title": "spotify playlist last 4 months and always updating",
-      "assignedTo": "Kaitlyn",
-      "priority": 3,
-      "dueDate": "2026-05-14",
-      "dueDateType": "soft",
-      "estimatedTime": "",
-      "status": "",
-      "waitingFor": "",
-      "blockedBy": null,
-      "followLevel": "notify",
-      "readyForReviewAt": null,
-      "notes": "",
-      "recurring": false,
-      "completed": false,
-      "createdAt": "2026-05-05T18:27:00.443Z",
-      "updatedAt": "2026-05-05T18:27:00.443Z"
-    },
-    {
-      "id": "mosyymkat948jk",
-      "title": "password plaquard for wifi",
-      "assignedTo": "Angie",
-      "priority": 3,
-      "dueDate": "",
-      "dueDateType": "soft",
-      "estimatedTime": "",
-      "status": "",
-      "waitingFor": "",
-      "blockedBy": null,
-      "followLevel": "none",
-      "readyForReviewAt": null,
-      "notes": "",
-      "recurring": false,
-      "completed": false,
-      "createdAt": "2026-05-05T18:36:01.594Z",
-      "updatedAt": "2026-05-05T18:36:01.594Z"
-    },
-    {
-      "id": "moszeecii1bk6c",
-      "title": "meal train for Friday and Monday this week",
-      "assignedTo": "Angie",
-      "priority": 3,
-      "dueDate": "",
-      "dueDateType": "soft",
-      "estimatedTime": "",
-      "status": "",
-      "waitingFor": "",
-      "blockedBy": null,
-      "followLevel": "none",
-      "readyForReviewAt": null,
-      "notes": "",
-      "recurring": false,
-      "completed": false,
-      "createdAt": "2026-05-05T18:48:17.442Z",
-      "updatedAt": "2026-05-05T18:48:17.442Z"
-    },
-    {
-      "id": "moszuhweqfxyxh",
-      "title": "Key check in with Key Volunteers every 6 months starting",
-      "assignedTo": "Kaitlyn",
-      "priority": 3,
-      "dueDate": "2026-05-12",
+      "dueDate": "2026-10-12",
       "dueDateType": "hard",
-      "estimatedTime": "",
+      "estimatedTime": "6 hours",
       "status": "",
       "waitingFor": "",
       "blockedBy": null,
       "followLevel": "none",
       "readyForReviewAt": null,
-      "notes": "develop the process",
+      "notes": "Venue, catering, volunteers, promotion, follow-up",
       "recurring": false,
       "completed": false,
-      "createdAt": "2026-05-05T19:00:48.542Z",
-      "updatedAt": "2026-05-05T19:00:48.542Z"
+      "createdAt": "2026-05-06T01:59:35.804Z",
+      "updatedAt": "2026-05-06T01:59:35.804Z"
     }
   ],
   "archivedTasks": [
@@ -1317,88 +1466,6 @@
       "archived": true,
       "completedAt": 1777598381576,
       "archiveNote": "We are tabling this idea it is a cost of $600 and may tie our hands with some of our free speech freedom- Investigate Everyday Sunday as a NFP"
-    },
-    {
-      "id": "p4l9his",
-      "title": "Check on office glass status and cost",
-      "person": "Angie",
-      "priority": "P3",
-      "dueDate": null,
-      "status": "in-progress",
-      "category": "Projects",
-      "notes": null,
-      "recurring": false,
-      "recurFreq": null,
-      "decPending": false,
-      "decWho": null,
-      "activityLog": [
-        {
-          "ts": 1776754885124,
-          "note": "Task imported from Firebase"
-        }
-      ],
-      "createdAt": 1776754885124,
-      "updatedAt": "2026-05-05T14:39:32.611Z",
-      "assignedTo": "Angie",
-      "completed": true,
-      "completedAt": "2026-05-05T14:39:32.611Z",
-      "archiveNote": ""
-    },
-    {
-      "title": "USPS Registration as a Religious Organization",
-      "person": "Angie",
-      "priority": "P3",
-      "dueDate": "2026-05-08",
-      "status": "todo",
-      "category": "Projects",
-      "notes": "40% discount if approved for all our mailings",
-      "recurring": false,
-      "recurFreq": null,
-      "decPending": false,
-      "decWho": null,
-      "updatedAt": "2026-05-05T14:40:16.793Z",
-      "id": "mom8f4lsi970k",
-      "createdAt": 1777598784784,
-      "activityLog": [
-        {
-          "ts": 1777598784784,
-          "note": "Task created"
-        }
-      ],
-      "assignedTo": "Angie",
-      "completed": true,
-      "completedAt": "2026-05-05T14:40:16.793Z",
-      "archiveNote": ""
-    },
-    {
-      "id": "e3846kf",
-      "title": "Office Furniture",
-      "person": "Angie",
-      "priority": "P3",
-      "dueDate": null,
-      "status": "in-progress",
-      "category": "Projects",
-      "notes": null,
-      "recurring": false,
-      "recurFreq": null,
-      "decPending": false,
-      "decWho": null,
-      "activityLog": [
-        {
-          "ts": 1776754801190,
-          "note": "Task imported from Firebase"
-        },
-        {
-          "ts": 1776956894935,
-          "note": "Approved 2K- I will take the project from here"
-        }
-      ],
-      "createdAt": 1776754801190,
-      "updatedAt": "2026-05-05T18:20:42.108Z",
-      "assignedTo": "Angie",
-      "completed": true,
-      "completedAt": "2026-05-05T18:20:42.108Z",
-      "archiveNote": ""
     }
   ],
   "creativeProjects": [
@@ -1426,15 +1493,6 @@
           "note": "Stage: Idea → In Progress"
         }
       ]
-    },
-    {
-      "id": "moqoz0pv0qm0ar",
-      "title": "Thank you cards",
-      "category": "Digital Media",
-      "dueDate": "2026-05-12",
-      "notes": "create a thank. you card cover for printing-",
-      "status": "Idea",
-      "createdAt": "2026-05-04T04:20:51.427Z"
     }
   ],
   "winWall": [
@@ -1479,24 +1537,6 @@
       "person": "Angie",
       "completedAt": 1776956774181,
       "emoji": "🙌"
-    },
-    {
-      "id": "mosqii9vlcl38x",
-      "title": "Check on office glass status and cost",
-      "person": "Angie",
-      "date": "2026-05-05T14:39:32.611Z"
-    },
-    {
-      "id": "mosqjgd5i2exey",
-      "title": "USPS Registration as a Religious Organization",
-      "person": "Angie",
-      "date": "2026-05-05T14:40:16.793Z"
-    },
-    {
-      "id": "mosyex301y00ti",
-      "title": "Office Furniture",
-      "person": "Angie",
-      "date": "2026-05-05T18:20:42.108Z"
     }
   ],
   "briefings": {
@@ -1516,756 +1556,17 @@
   },
   "shoutouts": [],
   "announcements": [],
-  "events": [
-    {
-      "id": "moqsfscyefrn60",
-      "name": "Friendsgiving (Nov 25) - Admin, Volunteers & Outreach",
-      "date": "",
-      "timeStart": "",
-      "timeEnd": "",
-      "eventType": "Special Event",
-      "location": "",
-      "pointPerson": "Kaitlyn",
-      "expectedAttendance": "",
-      "budget": "",
-      "description": "",
-      "notes": "Converted from task on 5/4/2026",
-      "subsplash": false,
-      "checklist": [
-        {
-          "id": "moqsfsddl2xndd",
-          "label": "Venue confirmed",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsddkm4vvk",
-          "label": "Volunteers scheduled",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdddsj136",
-          "label": "Promotion started",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsddb64v41",
-          "label": "Bulletin/slides ready",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsddliu5yu",
-          "label": "Sound/AV arranged",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdddww14t",
-          "label": "Follow-up planned",
-          "needed": true,
-          "done": false
-        }
-      ],
-      "status": "Planning",
-      "createdAt": "2026-05-04T05:57:52.609Z",
-      "createdBy": "Converter"
-    },
-    {
-      "id": "moqsfsdet7nvn3",
-      "name": "Friendsgiving (Nov 25) - Marketing",
-      "date": "",
-      "timeStart": "",
-      "timeEnd": "",
-      "eventType": "Special Event",
-      "location": "",
-      "pointPerson": "Kaitlyn",
-      "expectedAttendance": "",
-      "budget": "",
-      "description": "",
-      "notes": "Converted from task on 5/4/2026",
-      "subsplash": false,
-      "checklist": [
-        {
-          "id": "moqsfsdeqw02ps",
-          "label": "Venue confirmed",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsde5tngwp",
-          "label": "Volunteers scheduled",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdeoria3h",
-          "label": "Promotion started",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdef24gic",
-          "label": "Bulletin/slides ready",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsde1kzo55",
-          "label": "Sound/AV arranged",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdezq2csz",
-          "label": "Follow-up planned",
-          "needed": true,
-          "done": false
-        }
-      ],
-      "status": "Planning",
-      "createdAt": "2026-05-04T05:57:52.610Z",
-      "createdBy": "Converter"
-    },
-    {
-      "id": "moqsfsded4rhd9",
-      "name": "Father's Day (Jun 21) - Marketing",
-      "date": "",
-      "timeStart": "",
-      "timeEnd": "",
-      "eventType": "Special Event",
-      "location": "",
-      "pointPerson": "Kaitlyn",
-      "expectedAttendance": "",
-      "budget": "",
-      "description": "",
-      "notes": "Converted from task on 5/4/2026",
-      "subsplash": false,
-      "checklist": [
-        {
-          "id": "moqsfsder6b63f",
-          "label": "Venue confirmed",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdewtpcmf",
-          "label": "Volunteers scheduled",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdexse9wb",
-          "label": "Promotion started",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsde3ng5av",
-          "label": "Bulletin/slides ready",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsde3m1422",
-          "label": "Sound/AV arranged",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdet5f6qi",
-          "label": "Follow-up planned",
-          "needed": true,
-          "done": false
-        }
-      ],
-      "status": "Planning",
-      "createdAt": "2026-05-04T05:57:52.610Z",
-      "createdBy": "Converter"
-    },
-    {
-      "id": "moqsfsdezveun1",
-      "name": "Mother's Day (May 10) - Marketing",
-      "date": "",
-      "timeStart": "",
-      "timeEnd": "",
-      "eventType": "Special Event",
-      "location": "",
-      "pointPerson": "Kaitlyn",
-      "expectedAttendance": "",
-      "budget": "",
-      "description": "",
-      "notes": "Converted from task on 5/4/2026",
-      "subsplash": false,
-      "checklist": [
-        {
-          "id": "moqsfsdeq0abah",
-          "label": "Venue confirmed",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdeec8ctx",
-          "label": "Volunteers scheduled",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsde3jrpmo",
-          "label": "Promotion started",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdeckqyig",
-          "label": "Bulletin/slides ready",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdefvl55l",
-          "label": "Sound/AV arranged",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdescjkso",
-          "label": "Follow-up planned",
-          "needed": true,
-          "done": false
-        }
-      ],
-      "status": "Planning",
-      "createdAt": "2026-05-04T05:57:52.610Z",
-      "createdBy": "Converter"
-    },
-    {
-      "id": "moqsfsdeq8td10",
-      "name": "Christmas Eve (Dec 24) - Volunteers",
-      "date": "",
-      "timeStart": "",
-      "timeEnd": "",
-      "eventType": "Special Event",
-      "location": "",
-      "pointPerson": "Kaitlyn",
-      "expectedAttendance": "",
-      "budget": "",
-      "description": "",
-      "notes": "Converted from task on 5/4/2026",
-      "subsplash": false,
-      "checklist": [
-        {
-          "id": "moqsfsdemhylpd",
-          "label": "Venue confirmed",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsde3w35bs",
-          "label": "Volunteers scheduled",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsde2h01si",
-          "label": "Promotion started",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdehbr72e",
-          "label": "Bulletin/slides ready",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdeyqwkli",
-          "label": "Sound/AV arranged",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdep5lgh8",
-          "label": "Follow-up planned",
-          "needed": true,
-          "done": false
-        }
-      ],
-      "status": "Planning",
-      "createdAt": "2026-05-04T05:57:52.610Z",
-      "createdBy": "Converter"
-    },
-    {
-      "id": "moqsfsdeq2rltd",
-      "name": "Friendsgiving (Nov 25) - Subsplash",
-      "date": "",
-      "timeStart": "",
-      "timeEnd": "",
-      "eventType": "Special Event",
-      "location": "",
-      "pointPerson": "Kaitlyn",
-      "expectedAttendance": "",
-      "budget": "",
-      "description": "",
-      "notes": "Converted from task on 5/4/2026",
-      "subsplash": false,
-      "checklist": [
-        {
-          "id": "moqsfsde6jiyb1",
-          "label": "Venue confirmed",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdembt6sa",
-          "label": "Volunteers scheduled",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdexddxed",
-          "label": "Promotion started",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdehdcbew",
-          "label": "Bulletin/slides ready",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdejgoazq",
-          "label": "Sound/AV arranged",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsde03qi9x",
-          "label": "Follow-up planned",
-          "needed": true,
-          "done": false
-        }
-      ],
-      "status": "Planning",
-      "createdAt": "2026-05-04T05:57:52.610Z",
-      "createdBy": "Converter"
-    },
-    {
-      "id": "moqsfsde6kab8q",
-      "name": "Christmas Eve (Dec 24) - Subsplash",
-      "date": "",
-      "timeStart": "",
-      "timeEnd": "",
-      "eventType": "Special Event",
-      "location": "",
-      "pointPerson": "Kaitlyn",
-      "expectedAttendance": "",
-      "budget": "",
-      "description": "",
-      "notes": "Converted from task on 5/4/2026",
-      "subsplash": false,
-      "checklist": [
-        {
-          "id": "moqsfsdem57vej",
-          "label": "Venue confirmed",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdezdwozq",
-          "label": "Volunteers scheduled",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsde5w6c6g",
-          "label": "Promotion started",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdeulioct",
-          "label": "Bulletin/slides ready",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdedtq08j",
-          "label": "Sound/AV arranged",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsde0ykf0y",
-          "label": "Follow-up planned",
-          "needed": true,
-          "done": false
-        }
-      ],
-      "status": "Planning",
-      "createdAt": "2026-05-04T05:57:52.610Z",
-      "createdBy": "Converter"
-    },
-    {
-      "id": "moqsfsdecmfrxj",
-      "name": "Baptism (Sep 13) - Marketing",
-      "date": "",
-      "timeStart": "",
-      "timeEnd": "",
-      "eventType": "Special Event",
-      "location": "",
-      "pointPerson": "Kaitlyn",
-      "expectedAttendance": "",
-      "budget": "",
-      "description": "",
-      "notes": "Converted from task on 5/4/2026",
-      "subsplash": false,
-      "checklist": [
-        {
-          "id": "moqsfsdeb1x7nf",
-          "label": "Venue confirmed",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdedirgkz",
-          "label": "Volunteers scheduled",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdejekfme",
-          "label": "Promotion started",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsde8js2gf",
-          "label": "Bulletin/slides ready",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdeuinlei",
-          "label": "Sound/AV arranged",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdes4defo",
-          "label": "Follow-up planned",
-          "needed": true,
-          "done": false
-        }
-      ],
-      "status": "Planning",
-      "createdAt": "2026-05-04T05:57:52.610Z",
-      "createdBy": "Converter"
-    },
-    {
-      "id": "moqsfsdear8rrs",
-      "name": "Kaitlyn & Daria's Bridal Shower Event updated",
-      "date": "",
-      "timeStart": "",
-      "timeEnd": "",
-      "eventType": "Special Event",
-      "location": "",
-      "pointPerson": "Kaitlyn",
-      "expectedAttendance": "",
-      "budget": "",
-      "description": "",
-      "notes": "Converted from task on 5/4/2026",
-      "subsplash": false,
-      "checklist": [
-        {
-          "id": "moqsfsdez0si97",
-          "label": "Venue confirmed",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsde1141ti",
-          "label": "Volunteers scheduled",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdesvv28x",
-          "label": "Promotion started",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdehd90vj",
-          "label": "Bulletin/slides ready",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdeigq6vl",
-          "label": "Sound/AV arranged",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsde4rwiud",
-          "label": "Follow-up planned",
-          "needed": true,
-          "done": false
-        }
-      ],
-      "status": "Planning",
-      "createdAt": "2026-05-04T05:57:52.610Z",
-      "createdBy": "Converter"
-    },
-    {
-      "id": "moqsfsdeyg44zn",
-      "name": "Christmas Eve (Dec 24) - Marketing",
-      "date": "",
-      "timeStart": "",
-      "timeEnd": "",
-      "eventType": "Special Event",
-      "location": "",
-      "pointPerson": "Kaitlyn",
-      "expectedAttendance": "",
-      "budget": "",
-      "description": "",
-      "notes": "Converted from task on 5/4/2026",
-      "subsplash": false,
-      "checklist": [
-        {
-          "id": "moqsfsdevbd2on",
-          "label": "Venue confirmed",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsde2bzmr8",
-          "label": "Volunteers scheduled",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdeckfgwb",
-          "label": "Promotion started",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdendkiyx",
-          "label": "Bulletin/slides ready",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdent9nyr",
-          "label": "Sound/AV arranged",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdevmgifu",
-          "label": "Follow-up planned",
-          "needed": true,
-          "done": false
-        }
-      ],
-      "status": "Planning",
-      "createdAt": "2026-05-04T05:57:52.610Z",
-      "createdBy": "Converter"
-    },
-    {
-      "id": "moqsfsdeu507no",
-      "name": "Baptism (Sep 13) - Subsplash",
-      "date": "",
-      "timeStart": "",
-      "timeEnd": "",
-      "eventType": "Special Event",
-      "location": "",
-      "pointPerson": "Kaitlyn",
-      "expectedAttendance": "",
-      "budget": "",
-      "description": "",
-      "notes": "Converted from task on 5/4/2026",
-      "subsplash": false,
-      "checklist": [
-        {
-          "id": "moqsfsdetd82ya",
-          "label": "Venue confirmed",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsde0qi8b5",
-          "label": "Volunteers scheduled",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsde4a5uju",
-          "label": "Promotion started",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsdem6amsd",
-          "label": "Bulletin/slides ready",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsde6ckqds",
-          "label": "Sound/AV arranged",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "moqsfsde5pl97a",
-          "label": "Follow-up planned",
-          "needed": true,
-          "done": false
-        }
-      ],
-      "status": "Planning",
-      "createdAt": "2026-05-04T05:57:52.610Z",
-      "createdBy": "Converter"
-    },
-    {
-      "id": "mosyuktiq9s1co",
-      "name": "IBS Seminar Jim Larson",
-      "date": "2026-06-12",
-      "timeStart": "",
-      "timeEnd": "",
-      "eventType": "Special Event",
-      "location": "On Campus",
-      "pointPerson": "Pastor Andy",
-      "expectedAttendance": "",
-      "budget": "",
-      "description": "Education $20 per person there are scholarships- ",
-      "notes": "Friday 6:30-9 and Saturday 9-4 offering lunch where?",
-      "subsplash": false,
-      "checklist": [
-        {
-          "id": "mosynigzr5ww0h",
-          "label": "Venue confirmed",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "mosynigz9h8cxe",
-          "label": "Volunteers scheduled",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "mosynigzo3i1mi",
-          "label": "Promotion started",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "mosynih0t9jf9p",
-          "label": "Bulletin/slides ready",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "mosynih0aydzvr",
-          "label": "Sound/AV arranged",
-          "needed": true,
-          "done": false
-        },
-        {
-          "id": "mosynih0sw3w7u",
-          "label": "Follow-up planned",
-          "needed": true,
-          "done": false
-        }
-      ],
-      "status": "Planning",
-      "createdAt": "2026-05-05T18:32:52.710Z",
-      "createdBy": "Angie"
-    }
-  ],
+  "events": [],
   "activityFeed": [
     {
-      "id": "moqpv1ctzajhpd",
-      "text": "📝 Angie added task: Beach Baptism packet WAITING FOR APPROVAL",
-      "time": "2026-05-04T04:45:45.245Z",
-      "by": "Angie"
-    },
-    {
-      "id": "moqsfsde5ut2ky",
-      "text": "📅 11 tasks converted to events",
-      "time": "2026-05-04T05:57:52.610Z",
-      "by": "Converter"
-    },
-    {
-      "id": "mosqii9who0nec",
-      "text": "✅ Check on office glass status and cost completed by Angie",
-      "time": "2026-05-05T14:39:32.612Z",
-      "by": "Angie"
-    },
-    {
-      "id": "mosqjgd5gpb7nv",
-      "text": "✅ USPS Registration as a Religious Organization completed by Angie",
-      "time": "2026-05-05T14:40:16.793Z",
-      "by": "Angie"
-    },
-    {
-      "id": "mosr31wh0n5acb",
-      "text": "📝 Angie added task: Chairs - steam seats on lobby chairs",
-      "time": "2026-05-05T14:55:31.169Z",
-      "by": "Angie"
-    },
-    {
-      "id": "mosyex30celnnl",
-      "text": "✅ Office Furniture completed by Angie",
-      "time": "2026-05-05T18:20:42.108Z",
-      "by": "Angie"
-    },
-    {
-      "id": "mosykhneks50yh",
-      "text": "📝 Angie added task: AV booth tables measure and replace",
-      "time": "2026-05-05T18:25:02.042Z",
-      "by": "Angie"
-    },
-    {
-      "id": "mosyn10bb0jnky",
-      "text": "📝 Angie added task: spotify playlist last 4 months and always updating",
-      "time": "2026-05-05T18:27:00.443Z",
-      "by": "Angie"
-    },
-    {
-      "id": "mosyuktiomkggz",
-      "text": "📅 Angie created a new event: IBS Seminar Jim Larson on Jun 12",
-      "time": "2026-05-05T18:32:52.710Z",
-      "by": "Angie"
-    },
-    {
-      "id": "mosyymkag2dk6v",
-      "text": "📝 Angie added task: password plaquard for wifi",
-      "time": "2026-05-05T18:36:01.594Z",
-      "by": "Angie"
-    },
-    {
-      "id": "moszeecij6p7x2",
-      "text": "📝 Angie added task: meal train for Friday and Monday this week",
-      "time": "2026-05-05T18:48:17.442Z",
-      "by": "Angie"
-    },
-    {
-      "id": "moszuhwenxsqtm",
-      "text": "📝 Angie added task: Key check in with Key Volunteers every 6 months starting",
-      "time": "2026-05-05T19:00:48.542Z",
+      "id": "motet27w5er87p",
+      "text": "📝 Angie added task: Special Event Planning",
+      "time": "2026-05-06T01:59:35.804Z",
       "by": "Angie"
     }
   ],
   "approvalHistory": [],
   "meetings": [],
   "agendaItems": [],
-  "installDate": "2026-05-03T07:04:46.166Z"
+  "installDate": "2026-05-05T19:01:01.034Z"
 }
