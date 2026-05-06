@@ -504,32 +504,44 @@ function updatePersonalTabVisibility(){
 // ============================================================
 // DATA
 // ============================================================
+// Normalize: if a field came back as an object (old Firebase format), convert to array
+function toArray(val){
+  if(!val) return [];
+  if(Array.isArray(val)) return val;
+  if(typeof val==='object') return Object.values(val);
+  return [];
+}
+
 async function loadData(){
   setSyncStatus('syncing');
   try{
     const r=await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`,{headers:{'X-Master-Key':BIN_KEY}});
     const json=await r.json();
     const d=json.record;
-    appData.tasks=d.tasks||[];
-    appData.archivedTasks=d.archivedTasks||[];
-    appData.creativeProjects=d.creativeProjects||[];
-    appData.winWall=d.winWall||[];
+    appData.tasks=toArray(d.tasks);
+    appData.archivedTasks=toArray(d.archivedTasks);
+    appData.creativeProjects=toArray(d.creativeProjects);
+    appData.winWall=toArray(d.winWall);
     appData.briefings=d.briefings||{andy:[],kaitlyn:[],angie:[]};
+    // normalize briefing sub-arrays too
+    ['andy','kaitlyn','angie'].forEach(k=>{appData.briefings[k]=toArray(appData.briefings[k]);});
     appData.prayerNotes=d.prayerNotes||{andy:'',kaitlyn:'',angie:''};
     appData.notes=d.notes||{andy:[],kaitlyn:[],angie:[]};
-    appData.shoutouts=d.shoutouts||[];
-    appData.announcements=d.announcements||[];
-    appData.events=d.events||[];
-    appData.activityFeed=d.activityFeed||[];
-    appData.approvalHistory=d.approvalHistory||[];
-    appData.meetings=d.meetings||[];
-    appData.agendaItems=d.agendaItems||[];
+    ['andy','kaitlyn','angie'].forEach(k=>{appData.notes[k]=toArray(appData.notes[k]);});
+    appData.shoutouts=toArray(d.shoutouts);
+    appData.announcements=toArray(d.announcements);
+    appData.events=toArray(d.events);
+    appData.activityFeed=toArray(d.activityFeed);
+    appData.approvalHistory=toArray(d.approvalHistory);
+    appData.meetings=toArray(d.meetings);
+    appData.agendaItems=toArray(d.agendaItems);
     appData.installDate=d.installDate||new Date().toISOString();
     if(!d.installDate) schedSave();
     setSyncStatus('ok');
   }catch(e){
     setSyncStatus('error');
-    toast('Could not load data');
+    toast('Could not load data — check connection');
+    console.error('loadData error:',e);
   }
 }
 
@@ -2336,7 +2348,7 @@ function openSettings(){
     </div>
     <div class="settings-section">
       <div class="settings-title">App Info</div>
-      <div class="settings-row"><span class="settings-label">Version</span><span class="settings-value">v12</span></div>
+      <div class="settings-row"><span class="settings-label">Version</span><span class="settings-value">v13</span></div>
       <div class="settings-row"><span class="settings-label">Install Date</span><span class="settings-value">${appData.installDate?new Date(appData.installDate).toLocaleDateString():'-'}</span></div>
     </div>
   `,true);
