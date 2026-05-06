@@ -553,6 +553,26 @@ async function loadData(){
       if(!t.completedAt&&t.updatedAt) t.completedAt=t.updatedAt;
       else if(!t.completedAt&&t.createdAt) t.completedAt=t.createdAt;
     });
+    // Normalize old Firebase schema: 'person' -> 'assignedTo', 'P3' -> 3, 'todo' -> ''
+    const STATUS_MAP={'todo':'','in-progress':'','done':'','complete':''};
+    [...appData.tasks,...appData.archivedTasks].forEach(t=>{
+      // person field -> assignedTo
+      if(!t.assignedTo&&t.person) t.assignedTo=t.person;
+      if(t.assignedTo&&KEY_TO_NAME[t.assignedTo]) t.assignedTo=KEY_TO_NAME[t.assignedTo];
+      // priority "P3" -> 3
+      if(typeof t.priority==='string'&&t.priority.startsWith('P')){
+        t.priority=parseInt(t.priority.replace('P',''))||3;
+      }
+      // status 'todo'/'done' -> app format
+      if(t.status&&STATUS_MAP.hasOwnProperty(t.status)) t.status=STATUS_MAP[t.status];
+      // completed flag from status
+      if(!t.completed&&t.status==='done') t.completed=true;
+      // createdAt/updatedAt as timestamps -> ISO strings
+      if(typeof t.createdAt==='number') t.createdAt=new Date(t.createdAt).toISOString();
+      if(typeof t.updatedAt==='number') t.updatedAt=new Date(t.updatedAt).toISOString();
+      // completedAt fallback
+      if(!t.completedAt&&t.completed&&t.updatedAt) t.completedAt=t.updatedAt;
+    });
     setSyncStatus('ok');
   }catch(e){
     setSyncStatus('error');
@@ -2364,7 +2384,7 @@ function openSettings(){
     </div>
     <div class="settings-section">
       <div class="settings-title">App Info</div>
-      <div class="settings-row"><span class="settings-label">Version</span><span class="settings-value">v15</span></div>
+      <div class="settings-row"><span class="settings-label">Version</span><span class="settings-value">v16</span></div>
       <div class="settings-row"><span class="settings-label">Install Date</span><span class="settings-value">${appData.installDate?new Date(appData.installDate).toLocaleDateString():'-'}</span></div>
     </div>
   `,true);
