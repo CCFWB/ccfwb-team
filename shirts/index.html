@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CCFWB 3rd Anniversary Shirts</title>
+</head>
+<body style="margin:0;background:#F4EAD3;font-family:sans-serif;">
+<p id="loading" style="text-align:center;margin-top:60px;color:#1F4E79;font-size:18px;">Loading the shirt order form&hellip;</p>
+<script>
+var FORM_URL = 'https://script.google.com/macros/s/AKfycbxWJnmahqKTa0bQonmuYuSNt8xORTUr6vBFgubt-lx694DXw27wN7CynTAP1M11Ax83/exec';
+
+// Sends orders straight to the church's Google Sheet without using anyone's Google login.
+function shim(url) {
+  function Runner(ok, fail) { this.ok = ok; this.fail = fail; }
+  Runner.prototype.withSuccessHandler = function (fn) { return new Runner(fn, this.fail); };
+  Runner.prototype.withFailureHandler = function (fn) { return new Runner(this.ok, fn); };
+  Runner.prototype.submitOrder = function (data) {
+    var ok = this.ok, fail = this.fail, tries = 0;
+    function send() {
+      tries++;
+      fetch(url, { method: 'POST', credentials: 'omit', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) })
+        .then(function (r) { return r.json(); })
+        .then(function (o) {
+          if (o && o.ok) { if (ok) ok(o.result); }
+          else { if (fail) fail({ message: (o && o.error) || 'Something went wrong. Please try again.' }); }
+        })
+        .catch(function () {
+          if (fail) { fail({ message: 'Connection problem. Please check your signal and tap Submit again.' }); }
+        });
+    }
+    send();
+  };
+  window.google = { script: { run: new Runner(null, null) } };
+}
+
+function loadForm(attempt) {
+  fetch(FORM_URL + '?src=raw', { credentials: 'omit', cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error('bad'); return r.text(); })
+    .then(function (html) {
+      if (html.indexOf('<head>') < 0) throw new Error('bad');
+      html = html.replace('<head>', '<head><script>(' + shim.toString() + ')(' + JSON.stringify(FORM_URL) + ');<\/script>');
+      document.open();
+      document.write(html);
+      document.close();
+    })
+    .catch(function () {
+      if (attempt < 4) { setTimeout(function () { loadForm(attempt + 1); }, 1500); }
+      else { document.getElementById('loading').innerHTML = 'Please refresh this page to load the form.'; }
+    });
+}
+loadForm(0);
+</script>
+</body>
+</html>
